@@ -32,13 +32,13 @@ namespace LOK1game.Editor
                     "Are you sure that you wanna delete this weapon?" +
                     "You will not have any chance to restore it.", "Yes", "Cancel"))
                 {
-                    var dataPath = Constants.Editor.WEAPON_DATA_PATH + "/" + _weaponName + ".asset";
-                    var prefabData = Constants.Editor.WEAPON_PREFAB_PATH + "/" + _weaponName;
-                    var animData = $"Assets/_Game/Character/Player/Arms/Animations/{_weaponName}";
+                    //var dataPath = Constants.Editor.WEAPON_DATA_PATH + "/" + _weaponName + ".asset";
+                    //var prefabData = Constants.Editor.WEAPON_PREFAB_PATH + "/" + _weaponName;
+                    //var animData = $"Assets/_Game/Character/Player/Arms/Animations/{_weaponName}";
 
-                    AssetDatabase.DeleteAsset(dataPath);
-                    AssetDatabase.DeleteAsset(prefabData);
-                    AssetDatabase.DeleteAsset(animData);
+                    //AssetDatabase.DeleteAsset(dataPath);
+                    //AssetDatabase.DeleteAsset(prefabData);
+                    //AssetDatabase.DeleteAsset(animData);
                 }
             }
 
