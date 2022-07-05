@@ -8,6 +8,8 @@ namespace LOK1game.Testers
     [RequireComponent(typeof(MusicTimeline))]
     public class MusicTimelineTester : BaseTester
     {
+        [SerializeField] private MusicData _songToPlay;
+
         private MusicTimeline _timeline;
 
         private void Start()
@@ -17,7 +19,7 @@ namespace LOK1game.Testers
 
         public override void Test1()
         {
-            _timeline.StartPlayback();
+            _timeline.StartPlayback(_songToPlay);
         }
 
         public override void Test2()

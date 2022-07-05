@@ -1227,6 +1227,7 @@ MonoBehaviour:
   TestKey1: 112
   TestKey2: 115
   TestKey3: 0
+  _songToPlay: {fileID: 11400000, guid: 1c8755311f4d2cc4d8e30f3c27e31514, type: 2}
 --- !u!114 &1970017503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1239,16 +1240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5210c9e7c81ca19468ae644f23f58f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _musicNodes:
-  - StartSecond: 1
-    Data: {fileID: 11400000, guid: 7ad758f72753c904e9e18b757131e27b, type: 2}
-    Played: 0
-  - StartSecond: 3
-    Data: {fileID: 11400000, guid: 7ad758f72753c904e9e18b757131e27b, type: 2}
-    Played: 0
-  - StartSecond: 5
-    Data: {fileID: 11400000, guid: 0e1712213e3c1c04d8c9937435016397, type: 2}
-    Played: 0
+  _music: {fileID: 0}
   _secondError: 0.25
 --- !u!1 &2068003186
 GameObject:
