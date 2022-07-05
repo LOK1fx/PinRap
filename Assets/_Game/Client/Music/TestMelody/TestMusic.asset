@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b40f93c54e05401448b3294162b350a0, type: 3}
   m_Name: TestMusic
   m_EditorClassIdentifier: 
+  _musicVolumeOutOfFocus: 0.25
   _nodes:
   - StartSecond: 1
     Data: {fileID: 11400000, guid: 89a7ce73f03fafc42b1cef2c4969daf3, type: 2}
@@ -19,5 +20,5 @@ MonoBehaviour:
     Data: {fileID: 11400000, guid: 89a7ce73f03fafc42b1cef2c4969daf3, type: 2}
   - StartSecond: 5
     Data: {fileID: 11400000, guid: 0e1712213e3c1c04d8c9937435016397, type: 2}
-  _music: {fileID: 8300000, guid: 8e6e915f6f30f014b9976d77199140c6, type: 3}
+  _music: {fileID: 8300000, guid: e71aa594fb1e3b846b5aa297b435d6d0, type: 3}
   _secondError: 0.25
