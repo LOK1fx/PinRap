@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Game/Shared/Scenes/PinRapGameplay.unity
+    path: Assets/_Game/Client/Scenes/PinRapGameplay.unity
     guid: f4980a5ae6a2f914b8ec1fb15512152e
   m_configObjects: {}

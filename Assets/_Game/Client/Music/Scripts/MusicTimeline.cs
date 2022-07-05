@@ -9,6 +9,7 @@ namespace LOK1game
         private const float MAX_AUDIO_SOURCE_VOLUME = 1f;
 
         public bool IsPlaying { get; private set; }
+        public bool PlaybackResumed { get; private set; }
 
         private MusicData _music;
         private float _currentSecond = 0;
@@ -25,7 +26,7 @@ namespace LOK1game
 
         private void Update()
         {
-            if (!IsPlaying) { return; }
+            if (!IsPlaying || _music == null) { return; }
 
             if (_position < _music.Nodes.Count)
                 TryBeatNextNode(OnBeatNode);
@@ -66,6 +67,7 @@ namespace LOK1game
         public void StartPlayback(MusicData music, float second = 0)
         {
             IsPlaying = true;
+            PlaybackResumed = false;
 
             var musicInstance = ScriptableObject.CreateInstance<MusicData>();
 
@@ -81,13 +83,15 @@ namespace LOK1game
         public void PausePlayback()
         {
             IsPlaying = false;
+            PlaybackResumed = false;
 
-            _source.volume = _music.MusicVolumeOutOfFocus;
+            _source.volume = _music != null ? _music.MusicVolumeOutOfFocus : 0.25f;
         }
 
         public void ResumePlayback()
         {
             IsPlaying = true;
+            PlaybackResumed = true;
 
             _source.Play();
             _source.volume = MAX_AUDIO_SOURCE_VOLUME;
@@ -98,6 +102,7 @@ namespace LOK1game
         public void StopPlayback()
         {
             IsPlaying = false;
+            PlaybackResumed = false;
 
             foreach (var node in _music.Nodes)
             {
