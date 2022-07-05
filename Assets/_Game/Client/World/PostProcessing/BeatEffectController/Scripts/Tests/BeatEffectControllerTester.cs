@@ -4,17 +4,17 @@ namespace LOK1game.Testers
     {
         public override void Test1()
         {
-            BeatEffectController.Instance.InstantiateBeat();
+            BeatEffectController.Instance.InstantiateBeat(EBeatEffectStrength.Weak);
         }
 
         public override void Test2()
         {
-            throw new System.NotImplementedException();
+            BeatEffectController.Instance.InstantiateBeat(EBeatEffectStrength.Medium);
         }
 
         public override void Test3()
         {
-            throw new System.NotImplementedException();
+            BeatEffectController.Instance.InstantiateBeat(EBeatEffectStrength.Strong);
         }
     }
 }

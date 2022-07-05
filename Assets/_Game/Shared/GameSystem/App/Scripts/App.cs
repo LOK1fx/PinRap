@@ -34,7 +34,7 @@ namespace LOK1game
         private void InitializeComponents()
         {
             ProjectContext = _projectContext;
-            ProjectContext.Intialize(this);
+            ProjectContext.Intialize();
         }
     }
 }

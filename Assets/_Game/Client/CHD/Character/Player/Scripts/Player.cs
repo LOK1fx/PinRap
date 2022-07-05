@@ -160,7 +160,7 @@ namespace LOK1game.Player
             SubscribeToEvents();
         }
 
-        public override void OnPocces(PlayerControllerBase sender)
+        public override void OnPocces(Controller sender)
         {
             
         }

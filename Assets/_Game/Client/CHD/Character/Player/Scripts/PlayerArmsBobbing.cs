@@ -107,7 +107,7 @@ namespace LOK1game
             playerMovement.OnStopCrouch -= OnStopCrouch;
         }
 
-        public void OnPocces(PlayerControllerBase sender)
+        public void OnPocces(Controller sender)
         {
             throw new System.NotImplementedException();
         }

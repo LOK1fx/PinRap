@@ -1,0 +1,19 @@
+{
+    "name": "LOK1game.Project",
+    "rootNamespace": "",
+    "references": [
+        "GUID:79d033de5b485c140b6d1dc4f78668bf",
+        "GUID:46ad88117e30a764084050018e452384",
+        "GUID:75217b1b7d26458409838e5a9fe39688",
+        "GUID:6ebc7a881a3da4049aee49a0c3afa29a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

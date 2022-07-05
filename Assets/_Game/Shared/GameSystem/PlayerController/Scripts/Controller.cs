@@ -2,17 +2,11 @@ using UnityEngine;
 
 namespace LOK1game
 {
-    public class PlayerControllerBase : MonoBehaviour
+    public abstract class Controller : MonoBehaviour
     {
         public IPawn ControlledPawn { get; private set; }
 
-        private void Update()
-        {
-            if(ControlledPawn != null)
-            {
-                ControlledPawn.OnInput(this);
-            }
-        }
+        protected abstract void Update();
 
         public void SetControlledPawn(IPawn pawn)
         {

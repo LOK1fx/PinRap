@@ -8,7 +8,7 @@ namespace LOK1game.Game
         Paused
     }
 
-    public class GameStateManager : PersistentSingleton<GameStateManager>
+    public class GameStateManager
     {
         public EGameState CurrentGameState { get; private set; }
 

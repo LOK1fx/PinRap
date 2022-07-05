@@ -2,8 +2,6 @@
 {
     public abstract class Context
     {
-        protected App App;
-
-        public abstract void Intialize(App app);
+        public abstract void Intialize();
     }
 }

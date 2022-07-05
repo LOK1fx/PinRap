@@ -142,7 +142,7 @@ namespace LOK1game.Player
             return _defaultFov;
         }
 
-        public void OnPocces(PlayerControllerBase sender)
+        public void OnPocces(Controller sender)
         {
             throw new System.NotImplementedException();
         }

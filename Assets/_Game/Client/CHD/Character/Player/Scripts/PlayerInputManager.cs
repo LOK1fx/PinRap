@@ -60,7 +60,7 @@ namespace LOK1game
             }
         }
 
-        public void OnPocces(PlayerControllerBase sender)
+        public void OnPocces(Controller sender)
         {
             throw new System.NotImplementedException();
         }

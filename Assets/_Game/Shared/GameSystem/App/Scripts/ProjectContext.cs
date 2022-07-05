@@ -11,16 +11,16 @@ namespace LOK1game
         public event Action OnInitialized;
 
         public GameModeManager GameModeManager => _gameModeManager;
+        public GameStateManager GameStateManager { get; private set; }
 
         [Header("GameModes")]
         [SerializeField] private GameModeManager _gameModeManager;
         [SerializeField] private EGameModeId _standardGameModeId;
         [SerializeField] private List<BaseGameMode> _gameModes = new List<BaseGameMode>();
 
-        public override void Intialize(App app)
+        public override void Intialize()
         {
-            App = app;
-
+            GameStateManager = new GameStateManager();
             _gameModeManager = new GameModeManager();
 
             foreach (var gamemode in _gameModes)

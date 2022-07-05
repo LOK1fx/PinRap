@@ -24,10 +24,19 @@ namespace LOK1game
         }
 
         [ContextMenu("Beat")]
-        public void InstantiateBeat()
+        public void InstantiateBeat(EBeatEffectStrength strength)
         {
-            _volume.weight = 1f;
+            _volume.weight = 1f / (int)strength;
+
+            Debug.Log(_volume.weight);
         }
     }
 
+
+    public enum EBeatEffectStrength : uint
+    {
+        Weak = 1,
+        Medium,
+        Strong,
+    }
 }
