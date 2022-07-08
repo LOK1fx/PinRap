@@ -24,7 +24,7 @@ namespace LOK1game.Testers
 
         public override void Test2()
         {
-            _timeline.StopPlayback();
+            _timeline.EndPlayback();
         }
 
         public override void Test3()

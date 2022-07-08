@@ -4,10 +4,10 @@ namespace LOK1game.UI
 {
     public class UIArrowSpawner : MonoBehaviour
     {
-        [SerializeField] private GameObject _leftArrowPrefab;
-        [SerializeField] private GameObject _downArrowPrefab;
-        [SerializeField] private GameObject _upArrowPrefab;
-        [SerializeField] private GameObject _rightArrowPrefab;
+        [SerializeField] private BeatArrow _leftArrowPrefab;
+        [SerializeField] private BeatArrow _downArrowPrefab;
+        [SerializeField] private BeatArrow _upArrowPrefab;
+        [SerializeField] private BeatArrow _rightArrowPrefab;
 
         [Space]
         [SerializeField] private Transform _arrowsSpawnPoint;
@@ -44,9 +44,13 @@ namespace LOK1game.UI
             }
         }
 
-        private void CreateArrow(GameObject prefab)
+        private void CreateArrow(BeatArrow prefab)
         {
-            var arrow = Instantiate(prefab, GetPositionForArrowType(_currentArrowType), Quaternion.identity);
+            var position = GetPositionForArrowType(_currentArrowType);
+            var arrow = Instantiate(prefab, position, Quaternion.identity);
+
+            position.y = 0;
+            arrow.Setup(position);
         }
 
         private Vector3 GetPositionForArrowType(EArrowType type)

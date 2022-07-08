@@ -4,9 +4,12 @@ using System;
 namespace LOK1game
 {
     [RequireComponent(typeof(AudioSource))]
-    public class MusicTimeline : MonoBehaviour
+    public class MusicTimeline : Singleton<MusicTimeline>
     {
         private const float MAX_AUDIO_SOURCE_VOLUME = 1f;
+
+        public event Action<MusicNode> OnBeat;
+        public event Action<MusicNode> OnEndBeat;
 
         public bool IsPlaying { get; private set; }
         public bool PlaybackResumed { get; private set; }
@@ -17,8 +20,10 @@ namespace LOK1game
 
         private AudioSource _source;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+
             _source = GetComponent<AudioSource>();
 
             App.ProjectContext.GameStateManager.OnGameStateChanged += OnGameStateChanged;
@@ -31,7 +36,7 @@ namespace LOK1game
             if (_position < _music.Nodes.Count)
                 TryBeatNextNode(OnBeatNode);
             else
-                EndPlayback();
+                StopPlayback();
 
             _currentSecond += Time.deltaTime;
         }
@@ -44,26 +49,25 @@ namespace LOK1game
                     ResumePlayback();
                     break;
                 case Game.EGameState.Paused:
-                    PausePlayback();
+                    OnGameStatePaused();
                     break;
             }
         }
 
         private void OnBeatNode(MusicNode node)
         {
-            Debug.Log("On node!!!");
+            OnBeat?.Invoke(node);
 
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                ClientApp.ClientContext.BeatController.InstantiateBeat(node.Data.Strength);
+            //if (Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    ClientApp.ClientContext.BeatController.InstantiateBeat(node.Data.Strength);
 
-                node.Play();
+            //    node.Play();
 
-                _position++;
-            }
+            //    _position++;
+            //}
         }
 
-        [ContextMenu("StartPlayback")]
         public void StartPlayback(MusicData music, float second = 0)
         {
             IsPlaying = true;
@@ -80,7 +84,7 @@ namespace LOK1game
             _source.time = second;
         }
 
-        public void PausePlayback()
+        public void OnGameStatePaused()
         {
             IsPlaying = false;
             PlaybackResumed = false;
@@ -98,8 +102,7 @@ namespace LOK1game
             _source.time = _currentSecond;
         }
 
-        [ContextMenu("StopPlayback")]
-        public void StopPlayback()
+        public void EndPlayback()
         {
             IsPlaying = false;
             PlaybackResumed = false;
@@ -116,7 +119,7 @@ namespace LOK1game
             _position = 0;
         }
 
-        public void EndPlayback()
+        public void StopPlayback()
         {
             IsPlaying = false;
         }
@@ -137,8 +140,16 @@ namespace LOK1game
         {
             if (node.StartSecond >= _currentSecond && node.StartSecond <= _currentSecond + _music.SecondError && !node.IsPlayed())
                 return true;
-            else
-                return false;
+
+            return false;
+        }
+
+        private bool IsNodeOutRange(MusicNode node)
+        {
+            if (_currentSecond > node.StartSecond + _music.SecondError && !node.IsPlayed())
+                return true;
+
+            return false;
         }
     }
 }
