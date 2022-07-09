@@ -13,6 +13,15 @@ public static class ToolbarExtensions
     private const string NAV_LEVEL_DB_TEXT = "Navigate the Levels DB";
     private const string NAV_LEVEL_DB_TOOLTIP = "Navigate the levels database";
 
+    private const string PLAY_AS_CLIENT_TEXT = "Play as client";
+    private const string PLAY_AS_CLIENT_TOOLTIP = "Start a game as a client";
+
+    private const string PLAY_AS_SERVER_TEXT = "Play as server";
+    private const string PLAY_AS_SERVER_TOOLTIP = "Start a game as a server";
+
+    private const string PLAY_AS_HOST_TEXT = "Play as host";
+    private const string PLAY_AS_HOST_TOOLTIP = "Start a game as a client with server on it";
+
     #endregion
 
     static ToolbarExtensions()
@@ -31,7 +40,38 @@ public static class ToolbarExtensions
 
     private static void DrawRightGUI()
     {
+        if(EditorApplication.isPlaying == false)
+        {
+            DrawPlayAsClientButton();
+            DrawPlayAsServerButton();
+            DrawPlayAsHostButton();
+        }
 
+        GUILayout.FlexibleSpace();
+    }
+
+    private static void DrawPlayAsClientButton()
+    {
+        if(GUILayout.Button(new GUIContent(PLAY_AS_CLIENT_TEXT, PLAY_AS_CLIENT_TOOLTIP)))
+        {
+            EditorApplication.ExecuteMenuItem("Edit/Play");
+        }
+    }
+
+    private static void DrawPlayAsServerButton()
+    {
+        if (GUILayout.Button(new GUIContent(PLAY_AS_SERVER_TEXT, PLAY_AS_SERVER_TOOLTIP)))
+        {
+            EditorApplication.ExecuteMenuItem("Edit/Play");
+        }
+    }
+
+    private static void DrawPlayAsHostButton()
+    {
+        if (GUILayout.Button(new GUIContent(PLAY_AS_HOST_TEXT, PLAY_AS_HOST_TOOLTIP)))
+        {
+            EditorApplication.ExecuteMenuItem("Edit/Play");
+        }
     }
 
     private static void DrawNavAppButton()
