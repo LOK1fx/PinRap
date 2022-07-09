@@ -25,10 +25,14 @@ public static class ToolbarExtensions
 
     #endregion
 
+    private static ELaunchGameOption _currentGameOptions;
+
     static ToolbarExtensions()
     {
         ToolbarExtender.LeftToolbarGUI.Add(DrawLeftGUI);
         ToolbarExtender.RightToolbarGUI.Add(DrawRightGUI);
+
+        _currentGameOptions = EditorConfig.GetConfig().LaunchGameOption;
     }
 
     private static void DrawLeftGUI()
@@ -41,14 +45,21 @@ public static class ToolbarExtensions
 
     private static void DrawRightGUI()
     {
-        if(EditorApplication.isPlaying == false)
+        if (EditorApplication.isPlaying == false)
         {
             DrawPlayAsClientButton();
             DrawPlayAsServerButton();
             DrawPlayAsHostButton();
         }
 
+        DrawCurrentGameLaunchOption();
+
         GUILayout.FlexibleSpace();
+    }
+
+    private static void DrawCurrentGameLaunchOption()
+    {
+        GUILayout.Label(new GUIContent($"Current launch option: {_currentGameOptions.ToString()}"));
     }
 
     private static void DrawPlayAsClientButton()
