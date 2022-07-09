@@ -1,34 +1,35 @@
+using LOK1game;
 using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Text))]
-public class TextLocaliserUI : MonoBehaviour
+public class TextLocaliserUI : MonoBehaviour, ILocalizer
 {
-    private Text textField;
+    private Text _textField;
 
     [SerializeField] private string _key;
 
     private void Start()
     {
-        if(_key == null && textField.text != null)
+        if(_key == null && _textField.text != null)
         {
-            Localise(textField.text);
+            Localize(_textField.text);
         }
         else
         {
-            Localise(_key);
+            Localize(_key);
         }   
     }
 
-    public void Localise(string key)
+    public void Localize(string key)
     {
         if (!string.IsNullOrEmpty(key))
         {
-            textField = GetComponent<Text>();
+            _textField = GetComponent<Text>();
 
             string value = LocalisationSystem.GetLocalisedValue(key);
 
-            textField.text = value;
+            _textField.text = value;
         }
     }
 
@@ -37,7 +38,7 @@ public class TextLocaliserUI : MonoBehaviour
     [ContextMenu("Update Text")]
     public void EditorUpdate()
     {
-        Localise(_key);
+        Localize(_key);
     }
 
 #endif

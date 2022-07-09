@@ -1,34 +1,35 @@
+using LOK1game;
 using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(TMP_Text))]
-public class TMPTextLocaliserUI : MonoBehaviour
+public class TMPTextLocaliserUI : MonoBehaviour, ILocalizer
 {
-    private TMP_Text textField;
+    private TMP_Text _textField;
 
     [SerializeField] private string _key;
 
     private void Start()
     {
-        if(_key == null && textField.text != null)
+        if(_key == null && _textField.text != null)
         {
-            Localise(textField.text);
+            Localize(_textField.text);
         }
         else
         {
-            Localise(_key);
+            Localize(_key);
         }   
     }
 
-    public void Localise(string key)
+    public void Localize(string key)
     {
         if (!string.IsNullOrEmpty(key))
         {
-            textField = GetComponent<TMP_Text>();
+            _textField = GetComponent<TMP_Text>();
 
-            string value = LocalisationSystem.GetLocalisedValue(key);
+            var value = LocalisationSystem.GetLocalisedValue(key);
 
-            textField.text = value;
+            _textField.text = value;
         }
     }
 
@@ -37,7 +38,7 @@ public class TMPTextLocaliserUI : MonoBehaviour
     [ContextMenu("Update Text")]
     public void EditorUpdate()
     {
-        Localise(_key);
+        Localize(_key);
     }
 
 #endif

@@ -2,64 +2,67 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-public class CSVLoader : MonoBehaviour
+namespace LOK1game
 {
-    private TextAsset _csvFile;
-    private readonly char _lineSeperator = '\n';
-    private readonly char _surround = '"';
-    private readonly string[] _fieldSeperator = { "\",\"" };
-
-    public void LoadCSV()
+    public class CSVLoader : MonoBehaviour
     {
-        _csvFile = Resources.Load<TextAsset>("UTF8/localisation");
-    }
+        private TextAsset _csvFile;
+        private readonly char _lineSeperator = '\n';
+        private readonly char _surround = '"';
+        private readonly string[] _fieldSeperator = { "\",\"" };
 
-    public Dictionary<string, string> GetDictionaryValues(string attributeId)
-    {
-        var dictionary = new Dictionary<string, string>();
-
-        string[] lines = _csvFile.text.Split(_lineSeperator);
-
-        var attribute_idnex = -1;
-
-        string[] headers = lines[0].Split(_fieldSeperator, System.StringSplitOptions.None);
-
-        for(int i = 0; i < headers.Length; i ++)
+        public void LoadCSV()
         {
-            if(headers[i].Contains(attributeId))
-            {
-                attribute_idnex = i;
-
-                break;
-            }
+            _csvFile = Resources.Load<TextAsset>("UTF8/localisation");
         }
 
-        var csvParser = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
-
-        for (int i = 1; i < lines.Length; i++)
+        public Dictionary<string, string> GetDictionaryValues(string attributeId)
         {
-            var line = lines[i];
+            var dictionary = new Dictionary<string, string>();
 
-            string[] fields = csvParser.Split(line);
+            string[] lines = _csvFile.text.Split(_lineSeperator);
 
-            for (int f = 0; f < fields.Length; f++)
+            var attribute_idnex = -1;
+
+            string[] headers = lines[0].Split(_fieldSeperator, System.StringSplitOptions.None);
+
+            for (int i = 0; i < headers.Length; i++)
             {
-                fields[f] = fields[f].TrimStart(' ', _surround);
-                fields[f] = fields[f].TrimEnd(_surround);
+                if (headers[i].Contains(attributeId))
+                {
+                    attribute_idnex = i;
+
+                    break;
+                }
             }
 
-            if(fields.Length > attribute_idnex)
+            var csvParser = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
+
+            for (int i = 1; i < lines.Length; i++)
             {
-                var key = fields[0];
+                var line = lines[i];
 
-                if(dictionary.ContainsKey(key)) { continue; }
+                string[] fields = csvParser.Split(line);
 
-                var value = fields[attribute_idnex];
+                for (int f = 0; f < fields.Length; f++)
+                {
+                    fields[f] = fields[f].TrimStart(' ', _surround);
+                    fields[f] = fields[f].TrimEnd(_surround);
+                }
 
-                dictionary.Add(key, value);
+                if (fields.Length > attribute_idnex)
+                {
+                    var key = fields[0];
+
+                    if (dictionary.ContainsKey(key)) { continue; }
+
+                    var value = fields[attribute_idnex];
+
+                    dictionary.Add(key, value);
+                }
             }
+
+            return dictionary;
         }
-
-        return dictionary;
     }
 }
