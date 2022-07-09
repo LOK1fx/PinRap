@@ -1,3 +1,4 @@
+using LOK1game.Editor;
 using UnityEditor;
 using UnityEngine;
 using UnityToolbarExtender;
@@ -54,7 +55,9 @@ public static class ToolbarExtensions
     {
         if(GUILayout.Button(new GUIContent(PLAY_AS_CLIENT_TEXT, PLAY_AS_CLIENT_TOOLTIP)))
         {
-            EditorApplication.ExecuteMenuItem("Edit/Play");
+            EditorConfig.SetGameLaunchOption(ELaunchGameOption.AsClient);
+
+            Play();
         }
     }
 
@@ -62,7 +65,9 @@ public static class ToolbarExtensions
     {
         if (GUILayout.Button(new GUIContent(PLAY_AS_SERVER_TEXT, PLAY_AS_SERVER_TOOLTIP)))
         {
-            EditorApplication.ExecuteMenuItem("Edit/Play");
+            EditorConfig.SetGameLaunchOption(ELaunchGameOption.AsServer);
+
+            Play();
         }
     }
 
@@ -70,8 +75,15 @@ public static class ToolbarExtensions
     {
         if (GUILayout.Button(new GUIContent(PLAY_AS_HOST_TEXT, PLAY_AS_HOST_TOOLTIP)))
         {
-            EditorApplication.ExecuteMenuItem("Edit/Play");
+            EditorConfig.SetGameLaunchOption(ELaunchGameOption.AsHost);
+
+            Play();
         }
+    }
+
+    private static void Play()
+    {
+        EditorApplication.ExecuteMenuItem("Edit/Play");
     }
 
     private static void DrawNavAppButton()

@@ -1,4 +1,4 @@
 {
-	"PlayMode": "PlayAsClient",
-	"SpawnSetting": "Standard",
+  "LaunchGameOption": 0,
+  "SpawnType": 0
 }

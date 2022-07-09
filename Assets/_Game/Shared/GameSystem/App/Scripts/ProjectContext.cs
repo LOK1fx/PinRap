@@ -1,4 +1,5 @@
 ﻿using LOK1game.Game;
+using LOK1game.Editor;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,10 @@ namespace LOK1game
 
         public override void Intialize()
         {
+            var config = EditorConfig.GetConfig();
+
+            Debug.Log($"Game started: {config.LaunchGameOption.ToString()}");
+
             GameStateManager = new GameStateManager();
             _gameModeManager = new GameModeManager();
 
