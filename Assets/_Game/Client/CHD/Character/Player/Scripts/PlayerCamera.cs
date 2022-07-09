@@ -1,5 +1,4 @@
 using UnityEngine;
-using Cinemachine;
 
 namespace LOK1game.Player
 {

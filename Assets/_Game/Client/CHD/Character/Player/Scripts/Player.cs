@@ -1,5 +1,3 @@
-using LOK1game.Tools;
-using System;
 using System.Collections;
 using UnityEngine;
 using LOK1game.Weapon;

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using LOK1game.Game;
 
 namespace LOK1game
 {
@@ -41,14 +42,14 @@ namespace LOK1game
             _currentSecond += Time.deltaTime;
         }
 
-        private void OnGameStateChanged(Game.EGameState newGameState)
+        private void OnGameStateChanged(EGameState newGameState)
         {
             switch (newGameState)
             {
-                case Game.EGameState.Gameplay:
+                case EGameState.Gameplay:
                     ResumePlayback();
                     break;
-                case Game.EGameState.Paused:
+                case EGameState.Paused:
                     OnGameStatePaused();
                     break;
             }

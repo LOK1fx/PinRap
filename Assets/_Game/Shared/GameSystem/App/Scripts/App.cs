@@ -1,5 +1,5 @@
-using UnityEngine;
 using System;
+using UnityEngine;
 
 namespace LOK1game
 {
@@ -30,6 +30,11 @@ namespace LOK1game
         }
 
         #endregion
+
+        public static void Quit(int exitCode = 0)
+        {
+            Application.Quit(exitCode);
+        }
 
         private void InitializeComponents()
         {
