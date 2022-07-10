@@ -1,4 +1,5 @@
 using LOK1game.Editor;
+using LOK1game.Game;
 using UnityEditor;
 using UnityEngine;
 using UnityToolbarExtender;
@@ -14,14 +15,14 @@ public static class ToolbarExtensions
     private const string NAV_LEVEL_DB_TEXT = "Navigate the Levels DB";
     private const string NAV_LEVEL_DB_TOOLTIP = "Navigate the levels database";
 
-    private const string PLAY_AS_CLIENT_TEXT = "Play as client";
-    private const string PLAY_AS_CLIENT_TOOLTIP = "Start a game as a client";
+    private const string PLAY_AS_CLIENT_TEXT = "Set Client";
+    private const string PLAY_AS_CLIENT_TOOLTIP = "Set launch option to play as client";
 
-    private const string PLAY_AS_SERVER_TEXT = "Play as server";
-    private const string PLAY_AS_SERVER_TOOLTIP = "Start a game as a server";
+    private const string PLAY_AS_SERVER_TEXT = "Set Server";
+    private const string PLAY_AS_SERVER_TOOLTIP = "Set launch option to play as server";
 
-    private const string PLAY_AS_HOST_TEXT = "Play as host";
-    private const string PLAY_AS_HOST_TOOLTIP = "Start a game as a client with server on it";
+    private const string PLAY_AS_HOST_TEXT = "Set Host";
+    private const string PLAY_AS_HOST_TOOLTIP = "Set launch option to play as Host(Player with server on it)";
 
     #endregion
 
@@ -68,7 +69,7 @@ public static class ToolbarExtensions
         {
             EditorConfig.SetGameLaunchOption(ELaunchGameOption.AsClient);
 
-            Play();
+            _currentGameOptions = ELaunchGameOption.AsClient;
         }
     }
 
@@ -78,7 +79,7 @@ public static class ToolbarExtensions
         {
             EditorConfig.SetGameLaunchOption(ELaunchGameOption.AsServer);
 
-            Play();
+            _currentGameOptions = ELaunchGameOption.AsServer;
         }
     }
 
@@ -88,7 +89,7 @@ public static class ToolbarExtensions
         {
             EditorConfig.SetGameLaunchOption(ELaunchGameOption.AsHost);
 
-            Play();
+            _currentGameOptions = ELaunchGameOption.AsHost;
         }
     }
 

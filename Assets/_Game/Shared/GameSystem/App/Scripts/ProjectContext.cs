@@ -13,6 +13,7 @@ namespace LOK1game
 
         public GameModeManager GameModeManager => _gameModeManager;
         public GameStateManager GameStateManager { get; private set; }
+        public GameSession GameSession { get; private set; }
 
         [Header("GameModes")]
         [SerializeField] private GameModeManager _gameModeManager;
@@ -21,12 +22,13 @@ namespace LOK1game
 
         public override void Intialize()
         {
-            var config = EditorConfig.GetConfig();
-
-            Debug.Log($"Game started: {config.LaunchGameOption.ToString()}");
-
             GameStateManager = new GameStateManager();
             _gameModeManager = new GameModeManager();
+
+            if(!PlayerConfig.IsIntialized)
+                PlayerConfig.Intialize();
+
+            SetupGameSession(PlayerConfig.GetLaunchConfig());
 
             foreach (var gamemode in _gameModes)
             {
@@ -36,6 +38,43 @@ namespace LOK1game
             _gameModeManager.SetGameMode(_standardGameModeId);
 
             OnInitialized?.Invoke();
+        }
+
+        private void SetupGameSession(LaunchConfig config)
+        {
+            Debug.Log(config.LaunchGameOption);
+
+            bool localGame;
+            bool server;
+            bool host;
+
+            switch (config.LaunchGameOption)
+            {
+                case ELaunchGameOption.AsClient:
+                    localGame = true;
+                    host = false;
+                    server = false;
+                    break;
+                case ELaunchGameOption.AsServer:
+                    localGame = false;
+                    host = false;
+                    server = true;
+                    break;
+                case ELaunchGameOption.AsHost:
+                    localGame = true;
+                    host = true;
+                    server = false;
+                    break;
+                default:
+                    localGame = true;
+                    host = false;
+                    server = false;
+                    break;
+            }
+
+            GameSession = new PinRapGameSession(localGame, server, host);
+
+            Debug.Log(GameSession.ToString());
         }
     }
 }

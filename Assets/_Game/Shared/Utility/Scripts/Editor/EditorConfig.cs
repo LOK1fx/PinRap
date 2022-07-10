@@ -2,35 +2,26 @@ using UnityEngine;
 using Newtonsoft.Json;
 using UnityEditor;
 using System.IO;
+using LOK1game.Game;
 
 namespace LOK1game.Editor
 {
-    public enum ELaunchGameOption
-    {
-        AsClient,
-        AsServer,
-        AsHost,
-    }
-
-    public enum ESpawnType
-    {
-        Standard,
-        FromCameraPostion,
-    }
-
+#if UNITY_EDITOR
     [InitializeOnLoad()]
+
+#endif
     public static class EditorConfig
     {
         private const string PATH = "Configs/Editor";
         private const string FILE_NAME = "EditorLaunchConfig.json";
 
-        private static Config _config;
+        private static LaunchConfig _config;
 
         static EditorConfig()
         {
             var json = File.ReadAllText($"{Application.dataPath}/{PATH}/{FILE_NAME}");
 
-            _config = JsonConvert.DeserializeObject<Config>(json);
+            _config = JsonConvert.DeserializeObject<LaunchConfig>(json);
         }
 
         public static void SetGameLaunchOption(ELaunchGameOption option)
@@ -47,11 +38,11 @@ namespace LOK1game.Editor
             Save();
         }
 
-        public static Config GetConfig()
+        public static LaunchConfig GetConfig()
         {
             var json = File.ReadAllText($"{Application.dataPath}/{PATH}/{FILE_NAME}");
 
-            return JsonConvert.DeserializeObject<Config>(json);
+            return JsonConvert.DeserializeObject<LaunchConfig>(json);
         }
 
         public static void Save()
@@ -59,13 +50,6 @@ namespace LOK1game.Editor
             var json = JsonConvert.SerializeObject(_config, Formatting.Indented);
 
             File.WriteAllText($"{Application.dataPath}/{PATH}/{FILE_NAME}", json);
-        }
-
-        [System.Serializable]
-        public class Config
-        {
-            public ELaunchGameOption LaunchGameOption = ELaunchGameOption.AsClient;
-            public ESpawnType SpawnType = ESpawnType.Standard;
         }
     }
 }
