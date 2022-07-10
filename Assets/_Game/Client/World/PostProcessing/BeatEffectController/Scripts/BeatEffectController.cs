@@ -23,7 +23,11 @@ namespace LOK1game
             _volume.weight = Mathf.Lerp(_volume.weight, 0f, Time.deltaTime * _coolSpeed);
         }
 
-        [ContextMenu("Beat")]
+        private void LateUpdate()
+        {
+            _volume.weight = Mathf.Clamp01(_volume.weight); //fixs the strange grey screen that appears some times
+        }
+
         public void InstantiateBeat(EBeatEffectStrength strength)
         {
             _volume.weight = 1f / (int)strength;
