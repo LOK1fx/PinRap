@@ -19,9 +19,12 @@ namespace LOK1game.Game
             if (IsIntialized)
                 throw new Exception("PlayerConfig is already initialized!");
 
-            GenerateLaunchConfig();
-
             _launchConfig = LoadJson<LaunchConfig>();
+        }
+
+        public static void SetLaunchConfig(LaunchConfig config)
+        {
+            _launchConfig = config;
         }
 
         public static LaunchConfig GetLaunchConfig()
@@ -41,13 +44,13 @@ namespace LOK1game.Game
             var path = $"{Application.dataPath}/{PATH}";
             var fullPath = $"{path}/{LAUNCH_CONFIG_NAME}";
 
-            if(!File.Exists(fullPath))
+            if (!File.Exists(fullPath))
             {
                 Directory.CreateDirectory(path);
 
                 var file = File.Create(fullPath);
                 file.Dispose();
-            } 
+            }
 
             var defaultConfig = new LaunchConfig();
             var json = JsonConvert.SerializeObject(defaultConfig, Formatting.Indented);
@@ -57,24 +60,33 @@ namespace LOK1game.Game
 
         private static T LoadJson<T>()
         {
-            var path = $"{Application.dataPath}/{PATH}";
-            var fullPath = $"{path}/{LAUNCH_CONFIG_NAME}";
-            string json;
-
-            if (File.Exists(fullPath))
+            try
             {
-                json = File.ReadAllText(fullPath);
-            }  
-            else
+                var path = $"{Application.dataPath}/{PATH}";
+                var fullPath = $"{path}/{LAUNCH_CONFIG_NAME}";
+                string json;
+
+                if (File.Exists(fullPath))
+                {
+                    json = File.ReadAllText(fullPath);
+                }
+                else
+                {
+                    GenerateLaunchConfig();
+
+                    return LoadJson<T>();
+                }
+
+                Debug.Log(fullPath);
+
+                return JsonConvert.DeserializeObject<T>(json);
+            }
+            catch
             {
                 GenerateLaunchConfig();
 
                 return LoadJson<T>();
             }
-
-            Debug.Log(fullPath);
-
-            return JsonConvert.DeserializeObject<T>(json);
         }
     }
 }

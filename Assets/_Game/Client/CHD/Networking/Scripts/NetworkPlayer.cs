@@ -8,7 +8,7 @@ using LOK1game.Game.Events;
 
 namespace LOK1game.New.Networking
 {
-    public class NetworkPlayer : MonoBehaviour, IDamagable
+    public class NetworkPlayer : Pawn, IDamagable
     {
         #region Events
 
@@ -22,7 +22,6 @@ namespace LOK1game.New.Networking
 
         public ushort Id { get; private set; }
         public string Username { get; private set; }
-        public bool IsLocal { get; private set; }
         public int Hp { get; private set; }
 
         [SerializeField] private Transform _camTransform;
@@ -61,12 +60,12 @@ namespace LOK1game.New.Networking
             if(id == NetworkManager.Instance.Client.Id)
             {
                 player = GetPlayerPrefab(NetworkGameLogic.Instance.LocalPlayerPrefab, position);
-                player.IsLocal = true;
+                player.SetLocal(true);
             }
             else
             {
                 player = GetPlayerPrefab(NetworkGameLogic.Instance.WorldPlayerPrefab, position);
-                player.IsLocal = false;
+                player.SetLocal(false);
             }
 
             DontDestroyOnLoad(player.gameObject);
@@ -129,10 +128,6 @@ namespace LOK1game.New.Networking
                 OnDestroyed?.Invoke(Id);
                 List.Remove(Id);
                 Destroy(gameObject);
-            }
-            else
-            {
-                Coroutines.StartRoutine(_player.DeathRoutine());
             }
         }
 
@@ -225,6 +220,16 @@ namespace LOK1game.New.Networking
             var player = List[id];
 
             player._playerController.OnLand(velocity, player.IsLocal);
+        }
+
+        public override void OnInput(object sender)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void OnPocces(Controller sender)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

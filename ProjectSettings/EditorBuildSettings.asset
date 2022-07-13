@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Client/Scenes/PinRapGameplay.unity
     guid: f4980a5ae6a2f914b8ec1fb15512152e
+  - enabled: 1
+    path: Assets/_Game/Client/Scenes/PinRapGameplayCore.unity
+    guid: 429cc3b42950abb4e99de7c20fe86370
+  - enabled: 1
+    path: Assets/_Game/Client/Scenes/PinRapSandbox.unity
+    guid: cf074480421f2cf43a9f04314c899a58
   m_configObjects: {}

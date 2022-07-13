@@ -7,10 +7,16 @@ namespace LOK1game
     [RequireComponent(typeof(AudioSource))]
     public class MusicTimeline : Singleton<MusicTimeline>
     {
-        private const float MAX_AUDIO_SOURCE_VOLUME = 1f;
+        #region Events
 
-        public event Action<MusicNode> OnBeat;
-        public event Action<MusicNode> OnEndBeat;
+        public event Action OnMusicStart;
+        public event Action OnMusicEnd;
+        public event BeatDelegate OnBeat;
+        public event BeatDelegate OnEndBeat;
+
+        public delegate void BeatDelegate(MusicNode node);
+
+        #endregion
 
         public bool IsPlaying { get; private set; }
         public bool PlaybackResumed { get; private set; }
@@ -18,6 +24,9 @@ namespace LOK1game
         private MusicData _music;
         private float _currentSecond = 0;
         private int _position;
+        private bool _isOnBeat;
+
+        private const float MAX_AUDIO_SOURCE_VOLUME = 1f;
 
         private AudioSource _source;
 
@@ -35,7 +44,7 @@ namespace LOK1game
             if (!IsPlaying || _music == null) { return; }
 
             if (_position < _music.Nodes.Count)
-                TryBeatNextNode(OnBeatNode);
+                TryBeatNextNode(OnBeatNode, OutBeatNode);
             else
                 StopPlayback();
 
@@ -57,16 +66,37 @@ namespace LOK1game
 
         private void OnBeatNode(MusicNode node)
         {
+            _isOnBeat = true;
+
             OnBeat?.Invoke(node);
+        }
 
-            //if (Input.GetKeyDown(KeyCode.Space))
-            //{
-            //    ClientApp.ClientContext.BeatController.InstantiateBeat(node.Data.Strength);
+        private void OutBeatNode(MusicNode node)
+        {
+            _isOnBeat = false;
 
-            //    node.Play();
+            _position++;
 
-            //    _position++;
-            //}
+            OnEndBeat?.Invoke(node);
+        }
+
+        public bool TryBeat(out MusicNode beatedNode)
+        {
+            if (_isOnBeat == false)
+            {
+                beatedNode = null;
+
+                return false;
+            }
+
+            var node = _music.Nodes[_position];
+
+            node.Play();
+            beatedNode = node;
+
+            _position++;
+
+            return true;
         }
 
         public void StartPlayback(MusicData music, float second = 0)
@@ -83,9 +113,11 @@ namespace LOK1game
             _source.Play();
             _currentSecond = second;
             _source.time = second;
+
+            OnMusicStart?.Invoke();
         }
 
-        public void OnGameStatePaused()
+        private void OnGameStatePaused()
         {
             IsPlaying = false;
             PlaybackResumed = false;
@@ -123,15 +155,23 @@ namespace LOK1game
         public void StopPlayback()
         {
             IsPlaying = false;
+
+            OnMusicEnd?.Invoke();
         }
 
-        public bool TryBeatNextNode(Action<MusicNode> callback)
+        public bool TryBeatNextNode(BeatDelegate inRangeCallback, BeatDelegate outRangeCallback)
         {
-            if (IsNodeInRange(_music.Nodes[_position]))
+            if (IsNodeInRange(GetCurrentNode()))
             {
-                callback?.Invoke(_music.Nodes[_position]);
+                inRangeCallback?.Invoke(GetCurrentNode());
 
                 return true;
+            }
+            else if(IsNodeOutRange(GetCurrentNode()))
+            {
+                outRangeCallback?.Invoke(GetCurrentNode());
+
+                return false;
             }
 
             return false;
@@ -151,6 +191,14 @@ namespace LOK1game
                 return true;
 
             return false;
+        }
+
+        private MusicNode GetCurrentNode()
+        {
+            if (_music == null)
+                return null;
+
+            return _music.Nodes[_position];
         }
     }
 }

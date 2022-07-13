@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actors:
-  - {fileID: 548446806}
+  - {fileID: 0}
 --- !u!114 &7662659393912315664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c026824c6827649b6d2ac43395cbb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerType: 1
   _playerDeathCameraPrefab: {fileID: 8738168328727241441, guid: 6601ce55be50a8749bd456d0f7ee9c15, type: 3}
   _deathLength: 5
   _eyeHeight: 1.65
@@ -405,9 +406,6 @@ MonoBehaviour:
   _armsOffsetOnActions: 0.075
   _armsOffsetOnStartMovement: 0.01
   _armsOffset: {fileID: 950936198}
-  _armsBob: {fileID: 548446806}
-  _crouchArmsBobMultiplier: 0.1
-  _airArmsBobMultiplier: 0.04
 --- !u!114 &3019256043151992828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,7 +652,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2639441562329254615}
-  - component: {fileID: 548446806}
   m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -678,25 +675,6 @@ Transform:
   m_Father: {fileID: 5233325290159437623}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &548446806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2639441562329254614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9901e74df2197543bcd30a2fed1a39d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bobMultiplier: 0.7
-  rig: {fileID: 2639441562329254615}
-  rotator: {fileID: 0}
-  maxFrontBobMovement: 0.01
-  frontBobbingSpeed: 1
-  sideBobbingSpeed: 0.089
-  sideBobbingAmount: 0.02539
 --- !u!1 &5696475958546226470
 GameObject:
   m_ObjectHideFlags: 0

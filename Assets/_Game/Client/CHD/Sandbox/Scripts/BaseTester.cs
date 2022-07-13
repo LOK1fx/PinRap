@@ -2,21 +2,21 @@ using UnityEngine;
 
 public abstract class BaseTester : MonoBehaviour
 {
-    [SerializeField] private KeyCode TestKey1;
-    [SerializeField] private KeyCode TestKey2;
-    [SerializeField] private KeyCode TestKey3;
+    [SerializeField] private KeyCode _testKey1;
+    [SerializeField] private KeyCode _testKey2;
+    [SerializeField] private KeyCode _testKey3;
 
     private void LateUpdate()
     {
-        if(Input.GetKeyDown(TestKey1))
+        if(Input.GetKeyDown(_testKey1))
         {
             Test1();
         }
-        if (Input.GetKeyDown(TestKey2))
+        if (Input.GetKeyDown(_testKey2))
         {
             Test2();
         }
-        if (Input.GetKeyDown(TestKey3))
+        if (Input.GetKeyDown(_testKey3))
         {
             Test3();
         }

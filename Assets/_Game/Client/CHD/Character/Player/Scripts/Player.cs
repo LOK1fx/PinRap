@@ -162,18 +162,5 @@ namespace LOK1game.Player
         {
             
         }
-
-        public IEnumerator DeathRoutine()
-        {
-            var camera = Instantiate(_playerDeathCameraPrefab, transform.position, Movement.DirectionTransform.rotation);
-
-            gameObject.SetActive(false);
-
-            yield return new WaitForSeconds(_deathLength);
-
-            gameObject.SetActive(true);
-
-            Destroy(camera);
-        }
     }
 }
