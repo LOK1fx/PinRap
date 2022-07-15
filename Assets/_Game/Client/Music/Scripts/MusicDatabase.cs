@@ -5,6 +5,7 @@ using LOK1game.Tools;
 
 namespace LOK1game
 {
+    [CreateAssetMenu()]
     public class MusicDatabase : ScriptableObject
     {
         public List<MusicData> MusicDatas => _musicDatas;

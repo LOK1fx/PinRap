@@ -4,13 +4,7 @@ namespace LOK1game
 {
     public class BeatArrow : MonoBehaviour
     {
-        public Vector3 Position
-        {
-            get
-            {
-                return transform.position;
-            }
-        }
+        public Vector3 Position => transform.position;
 
         [SerializeField] private float _moveSpeed;
 
@@ -18,7 +12,7 @@ namespace LOK1game
 
         private void Update()
         {
-            transform.position = Vector3.MoveTowards(Position, _destination, Time.deltaTime * _moveSpeed);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, _destination, Time.deltaTime * _moveSpeed);
         }
 
         public void Setup(Vector3 destination)

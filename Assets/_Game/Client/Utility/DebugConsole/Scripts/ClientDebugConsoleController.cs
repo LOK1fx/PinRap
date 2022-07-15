@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LOK1game;
+using LOK1game.UI;
 
 namespace LOK1game.DebugTools
 {
@@ -16,6 +17,10 @@ namespace LOK1game.DebugTools
         private static DebugConsoleCommand _stopMusicTimelinePlaybackCommand;
         private static DebugConsoleCommand _instantiateBeatEffectCommand;
         private static DebugConsoleCommand _instantiateBeatCommand;
+        private static DebugConsoleCommand _spawnBeatArrowLeft;
+        private static DebugConsoleCommand _spawnBeatArrowDown;
+        private static DebugConsoleCommand _spawnBeatArrowUp;
+        private static DebugConsoleCommand _spawnBeatArrowRight;
         
         #endregion
         
@@ -23,6 +28,27 @@ namespace LOK1game.DebugTools
         private string _input = "";
 
         private void Awake()
+        {
+            InitializeCommands();
+            UpdateCommandsList();
+        }
+
+        private void UpdateCommandsList()
+        {
+            _commands = new List<DebugConsoleCommandBase>()
+            {
+                _startMusicTimelinePlaybackCommand,
+                _stopMusicTimelinePlaybackCommand,
+                _instantiateBeatEffectCommand,
+                _instantiateBeatCommand,
+                _spawnBeatArrowLeft,
+                _spawnBeatArrowDown,
+                _spawnBeatArrowUp,
+                _spawnBeatArrowRight,
+            };
+        }
+
+        private void InitializeCommands()
         {
             _startMusicTimelinePlaybackCommand = new DebugConsoleCommand("cl_music_timeline_start", "",
                 "cl_music_timeline_start",
@@ -51,30 +77,50 @@ namespace LOK1game.DebugTools
                 {
                     ClientApp.ClientContext.BeatController.InstantiateBeat(EBeatEffectStrength.Medium);
                 });
-
-            _commands = new List<DebugConsoleCommandBase>()
-            {
-                _startMusicTimelinePlaybackCommand,
-                _stopMusicTimelinePlaybackCommand,
-                _instantiateBeatEffectCommand,
-                _instantiateBeatCommand,
-            };
+            _spawnBeatArrowLeft = new DebugConsoleCommand("cl_spawn_arrow_left", "",
+                "cl_spawn_arrow_left",
+                () =>
+                {
+                    if(PlayerHud.Instance != null)
+                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Left);
+                });
+            _spawnBeatArrowDown = new DebugConsoleCommand("cl_spawn_arrow_down", "",
+                "cl_spawn_arrow_down",
+                () =>
+                {
+                    if(PlayerHud.Instance != null)
+                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Down);
+                });
+            _spawnBeatArrowUp = new DebugConsoleCommand("cl_spawn_arrow_up", "",
+                "cl_spawn_arrow_up",
+                () =>
+                {
+                    if(PlayerHud.Instance != null)
+                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Up);
+                });
+            _spawnBeatArrowRight = new DebugConsoleCommand("cl_spawn_arrow_right", "",
+                "cl_spawn_arrow_right",
+                () =>
+                {
+                    if(PlayerHud.Instance != null)
+                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Right);
+                });
         }
 
         private void Update()
         {
             if(Input.GetButtonDown("ToggleDebugConsole"))
                 ToggleConsole();
-            if(Input.GetKeyDown(KeyCode.Return))
+            if(Input.GetButtonDown("Submit"))
                 Submit();
         }
 
-        public void ToggleConsole()
+        private void ToggleConsole()
         {
             _showConsole = !_showConsole;
         }
 
-        public void Submit()
+        private void Submit()
         {
             if(_showConsole == false) { return; }
             

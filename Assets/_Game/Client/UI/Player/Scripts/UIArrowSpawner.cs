@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using LOK1game.DebugTools;
+using UnityEngine;
 
 namespace LOK1game.UI
 {
@@ -47,10 +48,13 @@ namespace LOK1game.UI
         private void CreateArrow(BeatArrow prefab)
         {
             var position = GetPositionForArrowType(_currentArrowType);
-            var arrow = Instantiate(prefab, position, Quaternion.identity);
-
-            position.y = 0;
-            arrow.Setup(position);
+            var arrow = Instantiate(prefab, transform);
+            var destinationPosition = new Vector3(position.x, 0f, 0f);
+            
+            arrow.transform.position = position;
+            arrow.Setup(destinationPosition);
+            
+            Debug.Log(destinationPosition);
         }
 
         private Vector3 GetPositionForArrowType(EArrowType type)

@@ -1,5 +1,12 @@
 public static class Constants
 {
+    public static class General
+    {
+        public const float TIME_MINUTE = 60f;
+        public const float TIME_HOUR = 3600f;
+        public const float GRAVITY_SCALE = 9.8f;
+    }
+    
     public static class Tags
     {
         public const string MAIN_CAMERA = "MainCamera";

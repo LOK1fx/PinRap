@@ -36,11 +36,10 @@ namespace LOK1game
         }
     }
 
-
     public enum EBeatEffectStrength : uint
     {
-        Weak = 1,
+        Strong = 1,
         Medium,
-        Strong,
+        Weak,
     }
 }
