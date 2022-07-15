@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sizeChangeSpeed: 12
-  _sizeChangingMultiplier: 0.25
+  _sizeChangingMultiplier: {x: 0.1, y: 0.3, z: 1}
 --- !u!1 &2571986752258747277
 GameObject:
   m_ObjectHideFlags: 0

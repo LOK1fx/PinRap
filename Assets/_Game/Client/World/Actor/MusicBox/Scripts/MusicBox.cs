@@ -5,7 +5,7 @@ namespace LOK1game.World
     public class MusicBox : MonoBehaviour, IBeatReaction
     {
         [SerializeField] private float _sizeChangeSpeed = 8f;
-        [SerializeField] private float _sizeChangingMultiplier = 0.5f;
+        [SerializeField] private Vector3 _sizeChangingMultiplier = Vector3.one * 0.5f;
 
         private Vector3 _defaultSize;
         private bool _paused;
@@ -27,21 +27,16 @@ namespace LOK1game.World
 
         public void OnBeat(EBeatEffectStrength strength)
         {
-            transform.localScale += (Vector3.one * (1f / (int)strength) * _sizeChangingMultiplier);
+            var desiredScale = Vector3.one * (1f / (int)strength);
+            
+            transform.localScale += Vector3.Scale(desiredScale, _sizeChangingMultiplier);
 
             Debug.Log("Beat");
         }
 
         private void OnGameStateChanged(Game.EGameState newGameState)
         {
-            if (newGameState == Game.EGameState.Paused)
-            {
-                _paused = true;
-            }
-            else
-            {
-                _paused = false;
-            }
+            _paused = newGameState == Game.EGameState.Paused;
         }
 
         private void OnDestroy()

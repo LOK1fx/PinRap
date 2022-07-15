@@ -2,37 +2,27 @@ using UnityEngine;
 
 namespace LOK1game
 {
-    /// <summary>
-    /// TODO: Split bpm counter into different script
-    /// </summary>
+    [RequireComponent(typeof(BeatsPerMinuteCounter))]
     public class PermomentBeat : MonoBehaviour
     {
-        public int BPM => _beatsPerMinute;
-        
-        public int BeatCountFull { get; private set; }
-
         [SerializeField] private EBeatEffectStrength _beatEffectStrength = EBeatEffectStrength.Weak;
-        [SerializeField, Range(2, 240)] private int _beatsPerMinute = 60;
 
-        private float _beatInterval;
-        private float _beatTimer;
-        
-        private void Update()
+        private BeatsPerMinuteCounter _bpmCounter;
+
+        private void Awake()
         {
-            BeatDetection();
+            _bpmCounter = GetComponent<BeatsPerMinuteCounter>();
+            _bpmCounter.OnBeat += OnBeat;
         }
 
-        private void BeatDetection()
+        private void OnBeat()
         {
-            _beatInterval = Constants.General.TIME_MINUTE / _beatsPerMinute;
-            _beatTimer += Time.deltaTime;
+            ClientApp.ClientContext.BeatController.InstantiateBeat(_beatEffectStrength);
+        }
 
-            if (_beatTimer >= _beatInterval)
-            {
-                _beatTimer -= _beatInterval;
-                
-                ClientApp.ClientContext.BeatController.InstantiateBeat(_beatEffectStrength);
-            }
+        private void OnDestroy()
+        {
+            _bpmCounter.OnBeat -= OnBeat;
         }
     }
 }

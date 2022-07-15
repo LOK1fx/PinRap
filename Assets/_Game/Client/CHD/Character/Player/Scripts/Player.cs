@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using LOK1game.Weapon;
 
@@ -8,17 +7,12 @@ namespace LOK1game.Player
     public class Player : Pawn
     {
         public PlayerCamera Camera { get; private set; }
-        public PlayerWeapon Weapon { get; private set; }
-        public PlayerWeaponInventory WeaponInventory { get; private set; }
+        private PlayerWeapon Weapon { get; set; }
+        private PlayerWeaponInventory WeaponInventory { get; set; }
         public PlayerMovement Movement { get; private set; }
         public PlayerState State { get; private set; }
 
         [Space]
-        [SerializeField] private GameObject _playerDeathCameraPrefab;
-        [SerializeField] private float _deathLength = 5f;
-
-        private PlayerArmsBobbing _armsBobbing;
-
         [SerializeField] private float _eyeHeight = 1.5f;
         [SerializeField] private float _crouchEyeHeight = 1.1f;
 
@@ -29,9 +23,7 @@ namespace LOK1game.Player
             WeaponInventory = GetComponent<PlayerWeaponInventory>();
             Movement = GetComponent<PlayerMovement>();
             State = GetComponent<PlayerState>();
-
-            _armsBobbing = GetComponent<PlayerArmsBobbing>();
-
+            
             SubscribeToEvents();
 
             GetComponent<PlayerInputManager>().PawnInputs.Add(this);
