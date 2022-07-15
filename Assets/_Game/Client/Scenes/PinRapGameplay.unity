@@ -403,9 +403,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b92cc3125128c3c4a9b49459df7d36d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TestKey1: 102
-  TestKey2: 121
-  TestKey3: 101
+  _testKey1: 102
+  _testKey2: 121
+  _testKey3: 101
 --- !u!1001 &1105435114
 PrefabInstance:
   m_ObjectHideFlags: 0

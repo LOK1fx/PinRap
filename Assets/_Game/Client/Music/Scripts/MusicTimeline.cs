@@ -200,5 +200,10 @@ namespace LOK1game
 
             return _music.Nodes[_position];
         }
+
+        public float GetCurrentSecond()
+        {
+            return _currentSecond;
+        }
     }
 }
