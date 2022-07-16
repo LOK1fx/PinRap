@@ -4,7 +4,7 @@ namespace LOK1game
 {
     public class BeatArrow : MonoBehaviour
     {
-        public float moveSpeed;
+        [SerializeField] private float moveSpeed;
 
         private void Update()
         {
