@@ -10,15 +10,14 @@ namespace LOK1game.Game
         public override IEnumerator OnStart()
         {
             State = EGameModeState.Starting;
-
-            var camera = Instantiate(CameraPrefab);
-            var ui = Instantiate(UiPrefab);
+            
+            SpawnGameModeObject(CameraPrefab);
+            SpawnGameModeObject(UiPrefab);
+            SpawnGameModeObject(PlayerController.gameObject, "[", "]");
+            SpawnPlayerAtRandomSpawnPoint();
 
             if(BeatEffectController.Instance == null)
                 Instantiate(_beatController);
-
-            RegisterGameModeObject(camera);
-            RegisterGameModeObject(ui);
 
             State = EGameModeState.Started;
 

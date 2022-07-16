@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 public enum EGameModeState : ushort
 {
@@ -24,13 +26,13 @@ namespace LOK1game.Game
         public GameObject UiPrefab => _uiPrefab;
         public GameObject CameraPrefab => _cameraPrefab;
         public Actor PlayerPrefab => _playerPrefab;
-        public GameObject PlayerController => _playerController;
+        public PlayerController PlayerController => _playerController;
 
         [SerializeField] private EGameModeId _id = EGameModeId.None;
         [SerializeField] private GameObject _uiPrefab;
         [SerializeField] private GameObject _cameraPrefab;
         [SerializeField] private Actor _playerPrefab;
-        [SerializeField] private GameObject _playerController;
+        [SerializeField] private PlayerController _playerController;
 
         private bool _isGameModeObjectListInitialized;
 
@@ -38,7 +40,31 @@ namespace LOK1game.Game
         public abstract IEnumerator OnEnd();
         public abstract IEnumerator OnStart();
 
-        protected void RegisterGameModeObject(GameObject gameObject)
+        protected T SpawnGameModeObject<T>(T gameObject, string prefix = "", string postfix = "") where T : Object
+        {
+            return SpawnGameModeObject<T>(gameObject, gameObject.name, prefix, postfix);
+        }
+
+        protected T SpawnGameModeObject<T>(T gameObject, string objectName, string prefix = "", string postfix = "") where T: Object
+        {
+            var newGameObject = Instantiate(gameObject);
+
+            newGameObject.name = $"{prefix}{objectName}{postfix}";
+            
+            RegisterGameModeObject(newGameObject);
+
+            return newGameObject;
+        }
+
+        protected void SpawnPlayerAtRandomSpawnPoint()
+        {
+            var spawnPoints = FindObjectsOfType<CharacterSpawnPoint>();
+            var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+
+            RegisterGameModeObject(spawnPoint.SpawnActor(PlayerPrefab));
+        }
+        
+        protected void RegisterGameModeObject<T>(T gameObject) where T: Object
         {
             if (!_isGameModeObjectListInitialized)
             {
@@ -47,7 +73,7 @@ namespace LOK1game.Game
                 _isGameModeObjectListInitialized = true;
             }
 
-            GameModeSpawnedObjects.Add(gameObject);
+            GameModeSpawnedObjects.Add(gameObject as GameObject);
 
             DontDestroyOnLoad(gameObject);
         }

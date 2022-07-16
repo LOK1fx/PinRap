@@ -1,17 +1,28 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace LOK1game.World
 {
     public abstract class GameWorld : MonoBehaviour
     {
+        public static GameWorld Current { get; private set; }
+        
+
         [SerializeField] private EGameModeId _standardGameModeOverride;
 
         protected void Awake()
         {
-            App.ProjectContext.OnInitialized += OnProjectContextInitalized;
+            Current = this;
+            
+            App.ProjectContext.OnInitialized += OnProjectContextInitialized;
         }
 
-        protected void OnProjectContextInitalized()
+        private void OnDestroy()
+        {
+            Current = null;
+        }
+
+        private void OnProjectContextInitialized()
         {
             var gameModeManager = App.ProjectContext.GameModeManager;
 

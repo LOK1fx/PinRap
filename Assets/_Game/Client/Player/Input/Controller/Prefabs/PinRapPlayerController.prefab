@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4934352782509974142
+--- !u!1 &1544261664279044062
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4266934193261798321}
-  - component: {fileID: 1188805904487936202}
+  - component: {fileID: 4485133262444870638}
+  - component: {fileID: 7722028374807149879}
   m_Layer: 0
-  m_Name: GM_Default
+  m_Name: PinRapPlayerController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4266934193261798321
+--- !u!4 &4485133262444870638
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4934352782509974142}
+  m_GameObject: {fileID: 1544261664279044062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,21 +32,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1188805904487936202
+--- !u!114 &7722028374807149879
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4934352782509974142}
+  m_GameObject: {fileID: 1544261664279044062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dc8d4d543860664d8b47008702dd55c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3164739b11ea1644894d7b831cfedc13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 1
-  _uiPrefab: {fileID: 477668509425952702, guid: 83b19753f1207b44795a6603cf5ec2d4, type: 3}
-  _cameraPrefab: {fileID: 779169692165051414, guid: 0f75bdcdb4a7a1a44ab469660a9c9b90, type: 3}
-  _playerPrefab: {fileID: 792642414734133622, guid: 6c1f20f65e7f4114bae6ce1957feaa58, type: 3}
-  _playerController: {fileID: 7722028374807149879, guid: a5965195e4a828d4e9ed48c5f2891397, type: 3}
-  _beatController: {fileID: 8906598372095904902, guid: dda640e0a82368b4cac1ab1d24292260, type: 3}
