@@ -56,15 +56,15 @@ namespace LOK1game.Game
             return newGameObject;
         }
 
-        protected void SpawnPlayerAtRandomSpawnPoint()
+        protected CharacterSpawnPoint GetRandomSpawnPoint() 
         {
             var spawnPoints = FindObjectsOfType<CharacterSpawnPoint>();
             var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
-            RegisterGameModeObject(spawnPoint.SpawnActor(PlayerPrefab));
+            return spawnPoint;
         }
         
-        protected void RegisterGameModeObject<T>(T gameObject) where T: Object
+        protected T RegisterGameModeObject<T>(T gameObject) where T: Object
         {
             if (!_isGameModeObjectListInitialized)
             {
@@ -74,15 +74,16 @@ namespace LOK1game.Game
             }
 
             GameModeSpawnedObjects.Add(gameObject as GameObject);
+            DontDestroyOnLoad(gameObject as GameObject);
 
-            DontDestroyOnLoad(gameObject);
+            return gameObject;
         }
 
         protected IEnumerator DestroyAllGameModeObjects()
         {
             foreach (var obj in GameModeSpawnedObjects)
             {
-                Destroy(obj);
+                Destroy(obj as GameObject);
 
                 yield return new WaitForEndOfFrame();
             }

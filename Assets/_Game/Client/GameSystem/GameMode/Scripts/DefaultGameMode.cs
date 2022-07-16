@@ -10,11 +10,19 @@ namespace LOK1game.Game
         public override IEnumerator OnStart()
         {
             State = EGameModeState.Starting;
-            
+
+            var playerController = Instantiate(PlayerController);
+
+            playerController.name = $"[{nameof(PlayerController)}]";
+
             SpawnGameModeObject(CameraPrefab);
             SpawnGameModeObject(UiPrefab);
-            SpawnGameModeObject(PlayerController.gameObject, "[", "]");
-            SpawnPlayerAtRandomSpawnPoint();
+
+            //So strange code
+            var player = SpawnGameModeObject(PlayerPrefab.gameObject);
+            
+            player.transform.position = GetRandomSpawnPoint().transform.position;
+            playerController.SetControlledPawn(player.GetComponent<Pawn>());
 
             if(BeatEffectController.Instance == null)
                 Instantiate(_beatController);

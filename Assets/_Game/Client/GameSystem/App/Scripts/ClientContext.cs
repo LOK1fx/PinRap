@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using LOK1game.Game;
 
 namespace LOK1game
 {

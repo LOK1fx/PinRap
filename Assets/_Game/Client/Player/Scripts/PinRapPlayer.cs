@@ -3,13 +3,23 @@ using UnityEngine;
 namespace LOK1game
 {
     [RequireComponent(typeof(PinRapPlayerInput))]
-    public class PinRapPlayer : Actor
+    public class PinRapPlayer : Pawn
     {
-        public PinRapPlayerInput Input { get; private set; }
+        private PinRapPlayerInput _input;
 
         private void Awake()
         {
-            Input = GetComponent<PinRapPlayerInput>();
+            _input = GetComponent<PinRapPlayerInput>();
+        }
+
+        public override void OnInput(object sender)
+        {
+            _input.OnInput(sender);
+        }
+
+        public override void OnPocces(Controller sender)
+        {
+            _input.OnPocces(sender);
         }
     }
 }
