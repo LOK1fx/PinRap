@@ -21,7 +21,7 @@ namespace LOK1game.Game
             //So strange code
             var player = SpawnGameModeObject(PlayerPrefab.gameObject);
             
-            player.transform.position = GetRandomSpawnPoint().transform.position;
+            player.transform.position = GetRandomSpawnPointPosition();
             playerController.SetControlledPawn(player.GetComponent<Pawn>());
 
             if(BeatEffectController.Instance == null)

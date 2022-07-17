@@ -56,12 +56,16 @@ namespace LOK1game.Game
             return newGameObject;
         }
 
-        protected CharacterSpawnPoint GetRandomSpawnPoint() 
+        protected Vector3 GetRandomSpawnPointPosition() 
         {
             var spawnPoints = FindObjectsOfType<CharacterSpawnPoint>();
+
+            if (spawnPoints.Length < 1)
+                return Vector3.zero;
+            
             var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
-            return spawnPoint;
+            return spawnPoint.transform.position;
         }
         
         protected T RegisterGameModeObject<T>(T gameObject) where T: Object
