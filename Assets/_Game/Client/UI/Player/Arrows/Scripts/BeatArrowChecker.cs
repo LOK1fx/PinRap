@@ -1,17 +1,29 @@
+using System.Data;
 using UnityEngine;
 
 namespace LOK1game
 {
     public class BeatArrowChecker : MonoBehaviour
     {
-        internal Vector3 DestroyPosition;
-        internal Transform CurrentUIArrow;
-
-        public bool CheckDestroyOrNot()
+        [SerializeField] private float _destroyHeight;
+        [SerializeField] private float _uiArrowBoundSize = 0.3f;
+        
+        private Transform _currentTargetUIArrowTransform;
+        
+        public void SetTargetUIArrow(Transform target)
         {
-            // Игрок нажал успешно и стрелка удалилась или игрок не успел нажать и стрелка уже улетела и удалилась
-            return Vector2.Distance(CurrentUIArrow.position, transform.position) < 0.3 
-                   || DestroyPosition.y < transform.position.y;
+            _currentTargetUIArrowTransform = target;
+        }
+
+        private void LateUpdate()
+        {
+            if(transform.localPosition.y > _destroyHeight)
+                Destroy(gameObject);
+        }
+        
+        public bool IsInTargetUIArrowBound()
+        {
+            return Vector2.Distance(transform.position, _currentTargetUIArrowTransform.position) < _uiArrowBoundSize;
         }
     }
 }

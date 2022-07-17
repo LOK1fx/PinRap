@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c5a9f0f045e7f459ff0b05ab55c004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 120
+  _moveSpeed: 20
 --- !u!114 &2658845814946423838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,5 +140,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4131b3b64d77943408f1e658259d1750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyPosition: {x: 0, y: 0, z: 0}
-  currentUIArrow: {fileID: 0}
+  _destroyHeight: 250
+  _uiArrowBoundSize: 0.3

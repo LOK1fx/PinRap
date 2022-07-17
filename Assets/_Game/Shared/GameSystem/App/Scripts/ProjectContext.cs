@@ -25,8 +25,8 @@ namespace LOK1game
             GameStateManager = new GameStateManager();
             _gameModeManager = new GameModeManager();
 
-            if(!PlayerConfig.IsIntialized)
-                PlayerConfig.Intialize();
+            if(!PlayerConfig.IsInitialized)
+                PlayerConfig.Initialize();
 
             SetupGameSession(PlayerConfig.GetLaunchConfig());
 
