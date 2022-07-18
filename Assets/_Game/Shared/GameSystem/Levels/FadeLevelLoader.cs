@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace LOK1game
 {
-    public class FadeLevelLoader
+    public class FadeLevelLoader : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
 
