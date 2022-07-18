@@ -18,9 +18,9 @@ EditorBuildSettings:
     path: Assets/_Game/Shared/GameSystem/LongLifeScene/Scenes/Persistent.unity
     guid: f298d936c5414fd40a72dcdb8df66cd7
   - enabled: 1
-    path: Assets/_Game/Shared/GameSystem/Levels/Data/Second.unity
-    guid: fb401598e9d55904f8830f4d46051685
-  - enabled: 1
     path: Assets/_Game/Shared/GameSystem/Levels/Data/First.unity
     guid: 39d511eb244e7fb4f9f4d267af54d437
+  - enabled: 1
+    path: Assets/_Game/Shared/GameSystem/Levels/Data/Second.unity
+    guid: fb401598e9d55904f8830f4d46051685
   m_configObjects: {}
