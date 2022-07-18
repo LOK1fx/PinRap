@@ -5,4 +5,5 @@
     CrystalCapture,
     PVE,
     Sandbox_MouseMode,
+    MainMenu
 }

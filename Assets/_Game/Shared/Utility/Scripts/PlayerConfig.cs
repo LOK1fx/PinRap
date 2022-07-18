@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.IO;
-using Newtonsoft.Json;
+using Unity.Plastic.Newtonsoft.Json;
 
 namespace LOK1game.Game
 {

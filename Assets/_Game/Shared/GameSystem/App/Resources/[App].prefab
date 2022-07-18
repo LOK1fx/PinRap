@@ -49,6 +49,7 @@ MonoBehaviour:
     _standardGameModeId: 1
     _gameModes:
     - {fileID: 1188805904487936202, guid: 67274e6d5fbae2f428a778f5bd2b0a51, type: 3}
+    - {fileID: 890591497948499889, guid: db2547425dd77cb44812e1c4bbc32981, type: 3}
 --- !u!114 &8584247938052821669
 MonoBehaviour:
   m_ObjectHideFlags: 0
