@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public static class SilentlyLoadLevel
 {
-    public static void LoadScenes(LevelData LevelData)
+    public static void LoadLevel(LevelData levelData)
     {
-        SceneManager.LoadScene(LevelData.MainScene);
-        for (int i = 0; i < LevelData.AdditiveScenes.Count; i++)
+        SceneManager.LoadSceneAsync(levelData.MainScene);
+
+        foreach (var index in levelData.AdditiveScenes)
         {
-            SceneManager.LoadScene(LevelData.AdditiveScenes[i], LoadSceneMode.Additive);
-        }       
+            SceneManager.LoadSceneAsync(index, LoadSceneMode.Additive);
+        }
     }
 }
