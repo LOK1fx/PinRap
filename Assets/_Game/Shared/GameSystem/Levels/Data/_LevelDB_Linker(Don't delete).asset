@@ -15,4 +15,5 @@ MonoBehaviour:
   LevelImage: {fileID: 0}
   BuildIndex: -1
   Name: 
+  ScenesInLevelIndex: 
   IsCompleted: 0
