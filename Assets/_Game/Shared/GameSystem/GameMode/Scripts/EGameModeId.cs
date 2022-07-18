@@ -3,7 +3,7 @@
     None,
     Default,
     CrystalCapture,
-    PVE,
-    Sandbox_MouseMode,
+    Pve,
+    SandboxMouseMode,
     MainMenu
 }
