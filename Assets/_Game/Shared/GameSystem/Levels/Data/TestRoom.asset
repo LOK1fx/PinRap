@@ -15,5 +15,6 @@ MonoBehaviour:
   LevelImage: {fileID: 21300000, guid: a1d126da2bebb634aa3fa01c4994f75e, type: 3}
   BuildIndex: 1
   Name: TestLevel
-  ScenesInLevelIndex: 0400000005000000
+  MainScene: 1
+  AdditiveScenes: 010000000100000001000000
   IsCompleted: 0

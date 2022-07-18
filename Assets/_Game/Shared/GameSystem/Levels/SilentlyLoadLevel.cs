@@ -7,9 +7,10 @@ public static class SilentlyLoadLevel
 {
     public static void LoadScenes(LevelData LevelData)
     {
-        for (int i = 0; i < LevelData.ScenesInLevelIndex.Count; i++)
+        SceneManager.LoadScene(LevelData.MainScene);
+        for (int i = 0; i < LevelData.AdditiveScenes.Count; i++)
         {
-            SceneManager.LoadScene(LevelData.ScenesInLevelIndex[i], LoadSceneMode.Additive);
-        }
+            SceneManager.LoadScene(LevelData.AdditiveScenes[i], LoadSceneMode.Additive);
+        }       
     }
 }
