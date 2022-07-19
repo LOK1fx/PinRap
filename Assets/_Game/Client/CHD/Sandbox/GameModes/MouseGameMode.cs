@@ -5,6 +5,8 @@ namespace LOK1game.Sandbox
 {
     public class MouseGameMode : BaseGameMode
     {
+        public override EGameModeId Id => EGameModeId.Sandbox_MouseMode; //If that id missed, just replace to None or delete this game mode
+
         public override IEnumerator OnStart()
         {
             State = EGameModeState.Starting;

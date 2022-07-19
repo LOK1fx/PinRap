@@ -7,6 +7,8 @@ namespace LOK1game.Game
     {
         [SerializeField] private BeatEffectController _beatController;
 
+        public override EGameModeId Id => EGameModeId.Default;
+
         public override IEnumerator OnStart()
         {
             State = EGameModeState.Starting;
