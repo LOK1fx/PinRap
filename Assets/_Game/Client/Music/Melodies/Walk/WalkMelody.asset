@@ -15,20 +15,28 @@ MonoBehaviour:
   _musicVolumeOutOfFocus: 0.25
   _nodes:
   - StartSecond: 3.2
-    Data: {fileID: 11400000, guid: 7ad758f72753c904e9e18b757131e27b, type: 2}
+    BeatEffectStrength: 3
+    ArrowType: 0
   - StartSecond: 3.7
-    Data: {fileID: 11400000, guid: 7ad758f72753c904e9e18b757131e27b, type: 2}
+    BeatEffectStrength: 3
+    ArrowType: 1
   - StartSecond: 5
-    Data: {fileID: 11400000, guid: 7ad758f72753c904e9e18b757131e27b, type: 2}
+    BeatEffectStrength: 3
+    ArrowType: 2
   - StartSecond: 6
-    Data: {fileID: 11400000, guid: 7ad758f72753c904e9e18b757131e27b, type: 2}
+    BeatEffectStrength: 3
+    ArrowType: 3
   - StartSecond: 7
-    Data: {fileID: 11400000, guid: 7ad758f72753c904e9e18b757131e27b, type: 2}
+    BeatEffectStrength: 3
+    ArrowType: 0
   - StartSecond: 8
-    Data: {fileID: 11400000, guid: 7ad758f72753c904e9e18b757131e27b, type: 2}
+    BeatEffectStrength: 3
+    ArrowType: 0
   - StartSecond: 9
-    Data: {fileID: 11400000, guid: 7ad758f72753c904e9e18b757131e27b, type: 2}
+    BeatEffectStrength: 3
+    ArrowType: 0
   - StartSecond: 51
-    Data: {fileID: 11400000, guid: 7ad758f72753c904e9e18b757131e27b, type: 2}
+    BeatEffectStrength: 3
+    ArrowType: 0
   _music: {fileID: 8300000, guid: cbd7519cb4e2e294c94ef725ac3f0f4a, type: 3}
   _secondError: 0.15

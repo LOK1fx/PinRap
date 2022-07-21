@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using LOK1game.UI;
 using UnityEngine;
 
 namespace LOK1game
@@ -22,7 +23,8 @@ namespace LOK1game
     public class MusicNode
     {
         public float StartSecond;
-        public MusicNodeData Data;
+        public EBeatEffectStrength BeatEffectStrength;
+        public EArrowType ArrowType;
 
         private bool _isPlayed;
 
