@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e1044dfbd179d945ac9a67a4674d3e6, type: 3}
   m_Name: MainMusicDatabase
   m_EditorClassIdentifier: 
-  _musicDatas:
+  _allMusicData:
   - {fileID: 11400000, guid: 475424ef2403eaa40ab5fd6f7ec9268f, type: 2}
   - {fileID: 11400000, guid: 1c8755311f4d2cc4d8e30f3c27e31514, type: 2}

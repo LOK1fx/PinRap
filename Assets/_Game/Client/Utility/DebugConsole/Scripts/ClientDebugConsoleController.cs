@@ -55,7 +55,7 @@ namespace LOK1game.DebugTools
                 () =>
                 {
                     if(MusicTimeline.Instance != null)
-                        MusicTimeline.Instance.StartPlayback(ClientApp.ClientContext.MusicDatabase.MusicDatas[0]);
+                        MusicTimeline.Instance.StartPlayback(ClientApp.ClientContext.MusicDatabase.AllMusicData[0]);
                 });
             _stopMusicTimelinePlaybackCommand = new DebugConsoleCommand("cl_music_timeline_stop", "",
                 "cl_music_timeline_stop",
