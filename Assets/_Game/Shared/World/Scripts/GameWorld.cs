@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using LOK1game.Game.Events;
 using UnityEngine;
 
 namespace LOK1game.World
@@ -14,17 +15,19 @@ namespace LOK1game.World
         {
             Current = this;
             
-            App.ProjectContext.OnInitialized += OnProjectContextInitialized;
+            EventManager.AddListener<OnProjectContextInitializedEvent>(OnProjectContextInitialized);
         }
 
         private void OnDestroy()
         {
             Current = null;
+            
+            EventManager.RemoveListener<OnProjectContextInitializedEvent>(OnProjectContextInitialized);
         }
 
-        private void OnProjectContextInitialized()
+        private void OnProjectContextInitialized(OnProjectContextInitializedEvent evt)
         {
-            var gameModeManager = App.ProjectContext.GameModeManager;
+            var gameModeManager = evt.ProjectContext.GameModeManager;
 
             if (gameModeManager.CurrentGameModeId == _standardGameModeOverride
                 && gameModeManager.CurrentGameModeId != EGameModeId.None || _standardGameModeOverride == EGameModeId.None)
@@ -35,6 +38,6 @@ namespace LOK1game.World
             gameModeManager.SetGameMode(_standardGameModeOverride);
         }
 
-        public abstract void Intialize();
+        public abstract void Initialize();
     }
 }

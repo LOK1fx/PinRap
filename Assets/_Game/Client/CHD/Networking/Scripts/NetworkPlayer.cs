@@ -170,15 +170,6 @@ namespace LOK1game.New.Networking
             var damage = new Damage(message.GetInt());
 
             List[id].Hp -= damage.Value;
-
-            var evt = Events.OnPlayerHit;
-
-            evt.PlayerId = id;
-            evt.Damage = damage.Value;
-            evt.HitPosition = List[id].transform.position + Vector3.up;
-            evt.Crit = false;
-
-            EventManager.Broadcast(evt);
         }
 
         [MessageHandler((ushort)EServerToClientId.PlayerDeath)]

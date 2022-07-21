@@ -29,13 +29,6 @@ namespace LOK1game.World
                 var score = Mathf.RoundToInt(damage.Value * _farmScoreMultiplier);
 
                 Debug.Log($"Crystal farm. Farm score - {score}");
-
-                var evt = Events.OnFarmCrystalCHD;
-
-                evt.HitPosition = damage.HitPoint;
-                evt.Score = score;
-
-                EventManager.Broadcast(evt);
             }
 
             var effect = Instantiate(_hitEffectPrefab, damage.HitPoint, Quaternion.identity);

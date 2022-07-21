@@ -2,6 +2,6 @@
 {
     public abstract class Context
     {
-        public abstract void Intialize();
+        public abstract void Initialize();
     }
 }
