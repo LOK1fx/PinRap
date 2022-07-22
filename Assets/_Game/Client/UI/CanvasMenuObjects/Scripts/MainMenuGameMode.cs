@@ -1,7 +1,7 @@
 using System.Collections;
 using LOK1game.Game;
 
-namespace _Game.Client.UI.CanvasMenuObjects.Scripts
+namespace CanvasScripts
 {
     public class MainMenuGameMode : BaseGameMode
     {
@@ -9,7 +9,7 @@ namespace _Game.Client.UI.CanvasMenuObjects.Scripts
         {
             State = EGameModeState.Starting;
             
-            DestroyAllGameModeObjects();
+            StartCoroutine(DestroyAllGameModeObjects());
             
             State = EGameModeState.Started;
             

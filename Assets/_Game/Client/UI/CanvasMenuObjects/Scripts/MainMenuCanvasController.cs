@@ -1,16 +1,17 @@
 using UnityEngine;
 
-namespace _Game.Client.UI.CanvasMenuObjects.Scripts
+namespace CanvasScripts
 {
     public class MainMenuCanvasController : MonoBehaviour
     {
         [SerializeField] private GameObject startElementsContainer;
         [SerializeField] private GameObject backButton;
-        private GameObject _activeMenu;
+        internal GameObject ActiveMenu;
 
         private void Start()
         {
-            _activeMenu = startElementsContainer;
+            FlyingTextUIController.CanvasTransform = transform;
+            ActiveMenu = startElementsContainer;
         }
 
         public void SetBackButtonActive(bool active)
@@ -21,9 +22,17 @@ namespace _Game.Client.UI.CanvasMenuObjects.Scripts
         public void NextMenuEvent(GameObject nextMenu)
         {
             backButton.SetActive(true);
-            _activeMenu.SetActive(false);
+            ActiveMenu.SetActive(false);
             nextMenu.SetActive(true);
-            _activeMenu = nextMenu;
+            ActiveMenu = nextMenu;
+        }
+        
+        public void NextMenuEvent()
+        {
+            backButton.SetActive(false);
+            ActiveMenu.SetActive(false);
+            startElementsContainer.SetActive(true);
+            ActiveMenu = startElementsContainer;
         }
     }
 }
