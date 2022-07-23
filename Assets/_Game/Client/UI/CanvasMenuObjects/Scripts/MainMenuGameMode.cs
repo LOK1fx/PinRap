@@ -1,15 +1,17 @@
 using System.Collections;
 using LOK1game.Game;
 
-namespace CanvasScripts
+namespace LOK1game
 {
     public class MainMenuGameMode : BaseGameMode
     {
+        public override EGameModeId Id => EGameModeId.MainMenu;
+
         public override IEnumerator OnStart()
         {
             State = EGameModeState.Starting;
-            
-            StartCoroutine(DestroyAllGameModeObjects());
+
+            SpawnGameModeObject(UiPrefab);
             
             State = EGameModeState.Started;
             
@@ -18,8 +20,7 @@ namespace CanvasScripts
     
         public override IEnumerator OnEnd()
         {
-            
-            yield return null;
+            yield return DestroyAllGameModeObjects();
         }
     }
 }

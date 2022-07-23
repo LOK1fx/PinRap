@@ -1,10 +1,11 @@
+using LOK1game.Tools;
 using UnityEngine;
 
 namespace LOK1game.Game
 {
     public abstract class GameSession
     {
-        public GameSession(bool local, bool host, bool server)
+        protected GameSession(bool local, bool host, bool server)
         {
             IsLocal = local;
             IsHost = host;
@@ -16,9 +17,22 @@ namespace LOK1game.Game
         public bool IsHost { get; }
         public bool IsServer { get; }
 
-        public abstract void Start();
-        public abstract void Update();
+        protected abstract void OnInitialized();
+        protected abstract void OnEnd();
+        protected abstract void OnUpdate();
 
+        public void Initialize()
+        {
+            CustomUpdate.AddUpdateCallback(OnUpdate);
+            
+            OnInitialized();
+        }
+
+        public void End()
+        {
+            CustomUpdate.RemoveUpdateCallback(OnUpdate);
+        }
+        
         public void UpdateTimer()
         {
             if(IsServer && !IsHost) { return; }

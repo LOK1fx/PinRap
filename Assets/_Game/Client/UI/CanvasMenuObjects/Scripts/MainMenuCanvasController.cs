@@ -4,35 +4,36 @@ namespace CanvasScripts
 {
     public class MainMenuCanvasController : MonoBehaviour
     {
-        [SerializeField] private GameObject startElementsContainer;
-        [SerializeField] private GameObject backButton;
-        internal GameObject ActiveMenu;
+        [SerializeField] private GameObject _startElementsContainer;
+        [SerializeField] private GameObject _backButton;
+        
+        private GameObject _activeMenu;
 
         private void Start()
         {
             FlyingTextUIController.CanvasTransform = transform;
-            ActiveMenu = startElementsContainer;
+            _activeMenu = _startElementsContainer;
         }
 
         public void SetBackButtonActive(bool active)
         {
-            backButton.SetActive(active);
+            _backButton.SetActive(active);
         }
 
         public void NextMenuEvent(GameObject nextMenu)
         {
-            backButton.SetActive(true);
-            ActiveMenu.SetActive(false);
+            _backButton.SetActive(true);
+            _activeMenu.SetActive(false);
             nextMenu.SetActive(true);
-            ActiveMenu = nextMenu;
+            _activeMenu = nextMenu;
         }
         
         public void NextMenuEvent()
         {
-            backButton.SetActive(false);
-            ActiveMenu.SetActive(false);
-            startElementsContainer.SetActive(true);
-            ActiveMenu = startElementsContainer;
+            _backButton.SetActive(false);
+            _activeMenu.SetActive(false);
+            _startElementsContainer.SetActive(true);
+            _activeMenu = _startElementsContainer;
         }
     }
 }

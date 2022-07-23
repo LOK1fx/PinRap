@@ -1,3 +1,4 @@
+using LOK1game.Game;
 using UnityEngine;
 
 namespace LOK1game
@@ -14,6 +15,8 @@ namespace LOK1game
 
         public override void OnInput(object sender)
         {
+            if(ProjectContext.GetGameStateManager().CurrentGameState == EGameState.Paused) { return; }
+            
             _input.OnInput(sender);
         }
 

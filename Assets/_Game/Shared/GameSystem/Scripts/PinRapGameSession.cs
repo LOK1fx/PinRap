@@ -6,14 +6,16 @@ namespace LOK1game.Game
         {
         }
 
-        public override void Start()
+        protected override void OnInitialized()
         {
-            
         }
 
-        public override void Update()
+        protected override void OnEnd()
         {
-            
+        }
+
+        protected override void OnUpdate()
+        {
         }
     }
 }

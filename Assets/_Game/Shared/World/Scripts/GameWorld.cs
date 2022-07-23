@@ -28,6 +28,8 @@ namespace LOK1game.World
         private void OnProjectContextInitialized(OnProjectContextInitializedEvent evt)
         {
             var gameModeManager = evt.ProjectContext.GameModeManager;
+            
+            Debug.Log("OnProjectContext initialized");
 
             if (gameModeManager.CurrentGameModeId == _standardGameModeOverride
                 && gameModeManager.CurrentGameModeId != EGameModeId.None || _standardGameModeOverride == EGameModeId.None)
