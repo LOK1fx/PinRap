@@ -1,10 +1,12 @@
+using System;
 using LOK1game.Game.Events;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace LOK1game.Test
+namespace LOK1game.CHD.Test
 {
+    [Obsolete]
     [RequireComponent(typeof(Health))]
     public class TestEnemy : Actor, IDamagable
     {
@@ -70,14 +72,6 @@ namespace LOK1game.Test
             _health.ReduceHealth(damage.Value);
 
             Debug.Log($"{gameObject.name}: Take the hit - {damage.Value}d");
-
-            var evt = Events.OnPlayerHit;
-
-            evt.PlayerId = 999;
-            evt.Damage = damage.Value;
-            evt.HitPosition = damage.HitPoint;
-
-            EventManager.Broadcast(evt);
 
             SetMeshesMaterial(_hurtedMaterial);
             _currentResetMatTimer = _resetHurtTime;

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace LOK1game.UI
 {
@@ -13,25 +14,28 @@ namespace LOK1game.UI
     
     public class UIArrowSpawner : MonoBehaviour
     {
-        [SerializeField] private Transform leftArrowUITransform;
-        [SerializeField] private Transform rightArrowUITransform;
-        [SerializeField] private Transform upArrowUITransform;
-        [SerializeField] private Transform downArrowUITransform;
-        [SerializeField] private BeatArrow leftArrowPrefab;
-        [SerializeField] private BeatArrow downArrowPrefab;
-        [SerializeField] private BeatArrow upArrowPrefab;
-        [SerializeField] private BeatArrow rightArrowPrefab;
+        //FormerlySerializedAs attribute added to prevent links missed
+        [FormerlySerializedAs("leftArrowUITransform")] [SerializeField] private Transform _leftArrowUITransform;
+        [FormerlySerializedAs("rightArrowUITransform")] [SerializeField] private Transform _rightArrowUITransform;
+        [FormerlySerializedAs("upArrowUITransform")] [SerializeField] private Transform _upArrowUITransform;
+        [FormerlySerializedAs("downArrowUITransform")] [SerializeField] private Transform _downArrowUITransform;
+        [FormerlySerializedAs("leftArrowPrefab")] [SerializeField] private BeatArrow _leftArrowPrefab;
+        [FormerlySerializedAs("downArrowPrefab")] [SerializeField] private BeatArrow _downArrowPrefab;
+        [FormerlySerializedAs("upArrowPrefab")] [SerializeField] private BeatArrow _upArrowPrefab;
+        [FormerlySerializedAs("rightArrowPrefab")] [SerializeField] private BeatArrow _rightArrowPrefab;
 
         [Space]
         [SerializeField] private Transform arrowsSpawnPoint;
-        [SerializeField] private Transform arrowsDestroyPoint;
 
         public void Spawn(EArrowType type)
         {
             if (type == EArrowType.None) return;
-            var uiArrowTransform = GetUIArrowAndPrefab(type, out var arrowPrefab);
+            
+            var uiArrowTransform = GetUIArrowTransform(type);
+            var arrowPrefab = GetArrowPrefab(type);
             var nextPosition = new Vector3(uiArrowTransform.position.x, arrowsSpawnPoint.position.y,
                 uiArrowTransform.position.z); 
+            
             CreateArrow(arrowPrefab, nextPosition, uiArrowTransform);
         }
 
@@ -39,43 +43,31 @@ namespace LOK1game.UI
         {
             var arrow = Instantiate(prefab, transform);
             arrow.transform.position = spawnPosition;
-            var component = arrow.GetComponent<BeatArrowChecker>();
-            component.DestroyPosition = arrowsDestroyPoint.position;
-            component.CurrentUIArrow = targetUIArrow;
+            arrow.Checker.SetTargetUIArrow(targetUIArrow);
         }
 
-        private Transform GetUIArrow(EArrowType type)
+        private BeatArrow GetArrowPrefab(EArrowType type)
         {
             return type switch
             {
-                EArrowType.Down => downArrowUITransform,
-                EArrowType.Up => upArrowUITransform,
-                EArrowType.Right => rightArrowUITransform,
-                EArrowType.Left => leftArrowUITransform,
+                EArrowType.Down => _downArrowPrefab,
+                EArrowType.Up => _upArrowPrefab,
+                EArrowType.Right => _rightArrowPrefab,
+                EArrowType.Left => _leftArrowPrefab,
                 _ => null
             };
         }
         
-        private Transform GetUIArrowAndPrefab(EArrowType type, out BeatArrow arrowPrefab)
+        private Transform GetUIArrowTransform(EArrowType type)
         {
-            switch (type)
+            return type switch
             {
-                case EArrowType.Down:
-                    arrowPrefab = downArrowPrefab;
-                    return downArrowUITransform;
-                case EArrowType.Up:
-                    arrowPrefab = upArrowPrefab;
-                    return upArrowUITransform;
-                case EArrowType.Right:
-                    arrowPrefab = rightArrowPrefab;
-                    return rightArrowUITransform;
-                case EArrowType.Left:
-                    arrowPrefab = leftArrowPrefab;
-                    return leftArrowUITransform;
-                default:
-                    arrowPrefab = null;
-                    return null;
-            }
+                EArrowType.Down => _downArrowUITransform,
+                EArrowType.Up => _upArrowUITransform,
+                EArrowType.Right => _rightArrowUITransform,
+                EArrowType.Left => _leftArrowUITransform,
+                _ => null
+            };
         }
     }
 }

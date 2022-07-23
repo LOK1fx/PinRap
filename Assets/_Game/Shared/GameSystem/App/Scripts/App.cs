@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using LOK1game.Tools;
 using UnityEngine;
 
 namespace LOK1game
@@ -26,20 +28,23 @@ namespace LOK1game
             app.name = _appGameObjectName;
             app.InitializeComponents();
 
-            DontDestroyOnLoad(app);
+            PersistentScene.Load();
+            
+            DontDestroyOnLoad(app.gameObject);
         }
 
         #endregion
 
         public static void Quit(int exitCode = 0)
         {
+            PersistentScene.Unload();
             Application.Quit(exitCode);
         }
 
         private void InitializeComponents()
         {
             ProjectContext = _projectContext;
-            ProjectContext.Intialize();
+            ProjectContext.Initialize();
         }
     }
 }

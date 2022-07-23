@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40f93c54e05401448b3294162b350a0, type: 3}
+  m_Name: WalkMelody
+  m_EditorClassIdentifier: 
+  _arrowsSpeedGraph:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _arrowsBaseSpeed: 10
+  _secondError: 0.15
+  _musicVolumeOutOfFocus: 0.25
+  _nodes:
+  - StartSecond: 3.2
+    BeatEffectStrength: 3
+    ArrowType: 0
+  - StartSecond: 3.7
+    BeatEffectStrength: 3
+    ArrowType: 1
+  - StartSecond: 5
+    BeatEffectStrength: 3
+    ArrowType: 2
+  - StartSecond: 6
+    BeatEffectStrength: 3
+    ArrowType: 3
+  - StartSecond: 7
+    BeatEffectStrength: 3
+    ArrowType: 0
+  - StartSecond: 8
+    BeatEffectStrength: 3
+    ArrowType: 0
+  - StartSecond: 9
+    BeatEffectStrength: 3
+    ArrowType: 0
+  - StartSecond: 51
+    BeatEffectStrength: 3
+    ArrowType: 0
+  _music: {fileID: 8300000, guid: cbd7519cb4e2e294c94ef725ac3f0f4a, type: 3}

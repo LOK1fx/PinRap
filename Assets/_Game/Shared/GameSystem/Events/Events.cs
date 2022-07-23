@@ -1,31 +1,29 @@
-using UnityEngine;
-
 namespace LOK1game.Game.Events
 {
     public static class Events
     {
-        public static OnGameStateChangedEvent OnGameStateChanged = new OnGameStateChangedEvent();
-        public static OnPlayerHitCHDEvent OnPlayerHit = new OnPlayerHitCHDEvent();
-        public static OnFarmCrystalCHDEvent OnFarmCrystalCHD = new OnFarmCrystalCHDEvent();
+        
     }
 
     public class OnGameStateChangedEvent : GameEvent
     {
-        public EGameState PreviousState;
-        public EGameState NewGameState;
+        public readonly EGameState PreviousState;
+        public readonly EGameState NewState;
+
+        public OnGameStateChangedEvent(EGameState previousState, EGameState newState)
+        {
+            PreviousState = previousState;
+            NewState = newState;
+        }
     }
 
-    public class OnPlayerHitCHDEvent : GameEvent
+    public class OnProjectContextInitializedEvent : SystemEvent
     {
-        public ushort PlayerId;
-        public Vector3 HitPosition;
-        public bool Crit;
-        public int Damage;
-    }
+        public readonly ProjectContext ProjectContext;
 
-    public class OnFarmCrystalCHDEvent : GameEvent
-    {
-        public int Score;
-        public Vector3 HitPosition;
+        public OnProjectContextInitializedEvent(ProjectContext projectContext)
+        {
+            ProjectContext = projectContext;
+        }
     }
 }

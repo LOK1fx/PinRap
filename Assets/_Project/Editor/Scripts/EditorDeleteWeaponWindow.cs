@@ -1,13 +1,15 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 
 namespace LOK1game.Editor
 {
+    [Obsolete]
     public class EditorDeleteWeaponWindow : BaseLOK1gameEditorWindow
     {
         private string _weaponName;
 
-        [MenuItem(MENU_ITEM_NAME + "/Delete weapon")]
+        [MenuItem(MENU_ITEM_NAME + "/CHD/Delete weapon")]
         public static void ShowWindow()
         {
             GetWindow<EditorDeleteWeaponWindow>("Delete weapon");

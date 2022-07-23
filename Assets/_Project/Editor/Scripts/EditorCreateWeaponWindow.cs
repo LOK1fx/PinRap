@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEditor;
 
@@ -10,6 +11,7 @@ namespace LOK1game.Editor
         GroundCrystal,
     }
 
+    [Obsolete]
     public class EditorCreateWeaponWindow : BaseLOK1gameEditorWindow
     {
         private string _weaponName = "new Weapon";
@@ -19,7 +21,7 @@ namespace LOK1game.Editor
         private EWeaponBaseScript _weaponBaseScript;
         private bool _registerWeaponToWeaponManager;
 
-        [MenuItem(MENU_ITEM_NAME+"/Create new weapon")]
+        [MenuItem(MENU_ITEM_NAME+"/CHD/Create new weapon")]
         public static void ShowWindow()
         {
             GetWindow<EditorCreateWeaponWindow>("Create weapon");

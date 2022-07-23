@@ -5,7 +5,7 @@ namespace LOK1game
 {
     public class BeatController
     {
-        private List<IBeatReaction> _reactors = new List<IBeatReaction>();
+        private readonly List<IBeatReaction> _reactors = new List<IBeatReaction>();
 
         public void RegisterActor(IBeatReaction actor)
         {

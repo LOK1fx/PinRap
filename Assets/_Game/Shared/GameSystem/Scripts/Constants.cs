@@ -38,13 +38,13 @@ public static class Constants
     public static class Editor
     {
         public const string APP_PATH = GAME_SYSTEM_PATH + "/App/Resources/[App].prefab";
-        public const string LEVEL_DB_PATH = GAME_SYSTEM_PATH + "/Levels/Data/" + LEVEL_DB_LINKER_ASSET_NAME + Extensions.ASSET; //name.asset
-        public const string LEVEL_DB_LINKER_ASSET_NAME = "_LevelDB_Linker(Don't delete)";
+        public const string LEVEL_DB_PATH = GAME_SYSTEM_PATH + "/Levels/Data/" + LEVEL_DB_LINKER_ASSET_NAME + ExtensionsNames.ASSET; //name.asset
+        private const string LEVEL_DB_LINKER_ASSET_NAME = "_LevelDB_Linker(Don't delete)";
         public const int APP_FILE_INSTANCE_ID = -1; //not currently definded
 
         private const string GAME_SYSTEM_PATH = "Assets/_Game/Shared/GameSystem";
 
-        public class Extensions
+        public class ExtensionsNames
         {
             public const string ASSET = ".asset";
             public const string PREFAB = ".prefab";

@@ -10,13 +10,13 @@ namespace LOK1game.Game
         private const string PATH = "Configs/Player";
         private const string LAUNCH_CONFIG_NAME = "PlayerLaunchConfig.json";
 
-        public static bool IsIntialized { get; private set; }
+        public static bool IsInitialized { get; private set; }
 
         private static LaunchConfig _launchConfig;
 
-        public static void Intialize()
+        public static void Initialize()
         {
-            if (IsIntialized)
+            if (IsInitialized)
                 throw new Exception("PlayerConfig is already initialized!");
 
             _launchConfig = LoadJson<LaunchConfig>();

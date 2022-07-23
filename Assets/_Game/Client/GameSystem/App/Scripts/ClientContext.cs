@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using LOK1game.Game;
 
 namespace LOK1game
 {
@@ -17,7 +16,7 @@ namespace LOK1game
 
         [SerializeField] private PauseController _pauseController;
 
-        public override void Intialize()
+        public override void Initialize()
         {
             MusicDatabase = Resources.Load<MusicDatabase>(MUSIC_DATABASE_PATH);
             

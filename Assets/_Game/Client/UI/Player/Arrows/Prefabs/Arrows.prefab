@@ -459,13 +459,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f86cc053e921a8409b528b410c5f0cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _leftArrowUITransform: {fileID: 3068428784201720947}
+  _rightArrowUITransform: {fileID: 1186039662517760083}
+  _upArrowUITransform: {fileID: 1398138708881506796}
+  _downArrowUITransform: {fileID: 1558164422258463012}
   _leftArrowPrefab: {fileID: 6113554626168272619, guid: 9a2525277b7cc1c4690d9d1d5d362033, type: 3}
   _downArrowPrefab: {fileID: 6113554626168272619, guid: a223e2fed944ad348bd59dafd263b804, type: 3}
   _upArrowPrefab: {fileID: 6113554626168272619, guid: c7c0278ad5a6ea4499128522666b72c9, type: 3}
   _rightArrowPrefab: {fileID: 6113554626168272619, guid: 9d87314f5d5c43d4b9f9a94e1b2bfc31, type: 3}
-  _arrowsSpawnPoint: {fileID: 1438969999077731097}
-  _arrowsSpaceOffset: {x: 165, y: 0, z: 0}
-  _gizmoBoxScale: 145
+  arrowsSpawnPoint: {fileID: 1438969999077731097}
 --- !u!225 &7573348146662967649
 CanvasGroup:
   m_ObjectHideFlags: 0

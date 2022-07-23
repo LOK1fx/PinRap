@@ -1,7 +1,7 @@
 ﻿using LOK1game.Game;
-using LOK1game.Editor;
 using System;
 using System.Collections.Generic;
+using LOK1game.Game.Events;
 using UnityEngine;
 
 namespace LOK1game
@@ -9,35 +9,40 @@ namespace LOK1game
     [Serializable]
     public sealed class ProjectContext : Context
     {
-        public event Action OnInitialized;
-
         public GameModeManager GameModeManager => _gameModeManager;
         public GameStateManager GameStateManager { get; private set; }
         public GameSession GameSession { get; private set; }
+
+        public ExperienceManager ExperienceManager { get; private set; }
 
         [Header("GameModes")]
         [SerializeField] private GameModeManager _gameModeManager;
         [SerializeField] private EGameModeId _standardGameModeId;
         [SerializeField] private List<BaseGameMode> _gameModes = new List<BaseGameMode>();
 
-        public override void Intialize()
+        public override void Initialize()
         {
             GameStateManager = new GameStateManager();
+            ExperienceManager = new ExperienceManager();
             _gameModeManager = new GameModeManager();
 
-            if(!PlayerConfig.IsIntialized)
-                PlayerConfig.Intialize();
+            if(!PlayerConfig.IsInitialized)
+                PlayerConfig.Initialize();
 
             SetupGameSession(PlayerConfig.GetLaunchConfig());
 
-            foreach (var gamemode in _gameModes)
+            foreach (var gameMode in _gameModes)
             {
-                _gameModeManager.AddGameMode(gamemode.Id, gamemode);
+                _gameModeManager.AddGameMode(gameMode.Id, gameMode);
             }
 
             _gameModeManager.SetGameMode(_standardGameModeId);
 
-            OnInitialized?.Invoke();
+            var evt = new OnProjectContextInitializedEvent(this);
+            
+            EventManager.Broadcast(evt);
+
+            //evt.Dispose();
         }
 
         private void SetupGameSession(LaunchConfig config)

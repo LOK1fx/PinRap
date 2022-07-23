@@ -688,7 +688,6 @@ GameObject:
   - component: {fileID: 647909287}
   - component: {fileID: 647909288}
   - component: {fileID: 647909286}
-  - component: {fileID: 647909285}
   - component: {fileID: 647909284}
   m_Layer: 0
   m_Name: MusicTimeline
@@ -793,22 +792,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &647909285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647909283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d51b424582ede541944a7e6d2eb808e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _testKey1: 112
-  _testKey2: 115
-  _testKey3: 0
-  _songToPlay: {fileID: 11400000, guid: 475424ef2403eaa40ab5fd6f7ec9268f, type: 2}
 --- !u!114 &647909286
 MonoBehaviour:
   m_ObjectHideFlags: 0

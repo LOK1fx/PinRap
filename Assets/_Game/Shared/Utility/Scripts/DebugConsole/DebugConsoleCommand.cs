@@ -1,26 +1,18 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using LOK1game.Tools;
 
 namespace LOK1game.DebugTools
 {
     public abstract class DebugConsoleCommandBase
     {
-        public string Id => _id;
-        public string Description => _description;
-        public string Format => _format;
-        
-        private string _id;
-        private string _description;
-        private string _format;
+        public string Id { get; }
+        public string Description { get; }
+        public string Format { get; }
 
-        public DebugConsoleCommandBase(string id, string description, string format)
+        protected DebugConsoleCommandBase(string id, string description, string format)
         {
-            _id = id;
-            _description = description;
-            _format = format;
+            Id = id;
+            Description = description;
+            Format = format;
         }
 
         public abstract void Invoke();
@@ -28,7 +20,7 @@ namespace LOK1game.DebugTools
 
     public class DebugConsoleCommand : DebugConsoleCommandBase
     {
-        private Action _callback;
+        private readonly Action _callback;
         
         public DebugConsoleCommand(string id, string description, string format, Action command) : base(id, description,
             format)

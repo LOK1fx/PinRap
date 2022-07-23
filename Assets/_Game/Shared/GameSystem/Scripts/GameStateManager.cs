@@ -20,14 +20,12 @@ namespace LOK1game.Game
             if (gameState == CurrentGameState)
                 return;
 
-            var evt = Events.Events.OnGameStateChanged;
-            evt.PreviousState = CurrentGameState;
-            evt.NewGameState = gameState;
+            var evt = new OnGameStateChangedEvent(CurrentGameState, gameState);
+            
+            EventManager.Broadcast(evt);
 
             CurrentGameState = gameState;
-
             OnGameStateChanged?.Invoke(CurrentGameState);
-            EventManager.Broadcast(evt);
         }
     }
 }
