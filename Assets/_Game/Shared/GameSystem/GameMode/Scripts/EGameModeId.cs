@@ -2,5 +2,8 @@
 {
     None,
     Default,
-    MainMenu,
+    CrystalCapture,
+    PVE,
+    Sandbox_MouseMode,
+    MainMenu
 }
