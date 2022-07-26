@@ -12,9 +12,10 @@ namespace LOK1game
         public GameModeManager GameModeManager => _gameModeManager;
         public GameStateManager GameStateManager { get; private set; }
         public GameSession GameSession { get; private set; }
-
         public ExperienceManager ExperienceManager { get; private set; }
 
+        public EGameModeId StandardGameModeId => _standardGameModeId;
+        
         [Header("GameModes")]
         [SerializeField] private GameModeManager _gameModeManager;
         [SerializeField] private EGameModeId _standardGameModeId;
@@ -59,8 +60,6 @@ namespace LOK1game
             {
                 _gameModeManager.AddGameMode(gameMode.Id, gameMode);
             }
-
-            _gameModeManager.SetGameMode(_standardGameModeId);
 
             var evt = new OnProjectContextInitializedEvent(this);
             
