@@ -15,12 +15,17 @@ namespace LOK1game.DebugTools
 
         private static DebugConsoleCommand _startMusicTimelinePlaybackCommand;
         private static DebugConsoleCommand _stopMusicTimelinePlaybackCommand;
+        
         private static DebugConsoleCommand _instantiateBeatEffectCommand;
         private static DebugConsoleCommand _instantiateBeatCommand;
+        
         private static DebugConsoleCommand _spawnBeatArrowLeft;
         private static DebugConsoleCommand _spawnBeatArrowDown;
         private static DebugConsoleCommand _spawnBeatArrowUp;
         private static DebugConsoleCommand _spawnBeatArrowRight;
+
+        private static DebugConsoleCommand _addPointsToBar;
+        private static DebugConsoleCommand _removePointsFromBar;
         
         #endregion
         
@@ -45,6 +50,8 @@ namespace LOK1game.DebugTools
                 _spawnBeatArrowDown,
                 _spawnBeatArrowUp,
                 _spawnBeatArrowRight,
+                _addPointsToBar,
+                _removePointsFromBar,
             };
         }
 
@@ -104,6 +111,20 @@ namespace LOK1game.DebugTools
                 {
                     if(PlayerHud.Instance != null)
                         PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Right, EBeatEffectStrength.Medium);
+                });
+            _addPointsToBar = new DebugConsoleCommand("cl_add_points", "",
+                "cl_add_points",
+                () =>
+                {
+                    if(PlayerHud.Instance != null)
+                        PlayerHud.Instance.DominationBar.AddPoints(10);
+                });
+            _removePointsFromBar = new DebugConsoleCommand("cl_remove_points", "",
+                "cl_remove_points",
+                () =>
+                {
+                    if(PlayerHud.Instance != null)
+                        PlayerHud.Instance.DominationBar.RemovePoints(10);
                 });
         }
 
