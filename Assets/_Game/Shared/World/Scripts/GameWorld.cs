@@ -7,13 +7,15 @@ namespace LOK1game.World
     public abstract class GameWorld : MonoBehaviour
     {
         public static GameWorld Current { get; private set; }
+        public EGameModeId StandardGameModeOverride => _standardGameModeOverride;
         
-
         [SerializeField] private EGameModeId _standardGameModeOverride;
 
         protected void Awake()
         {
             Current = this;
+            
+            Initialize();
             
             EventManager.AddListener<OnProjectContextInitializedEvent>(OnProjectContextInitialized);
         }
@@ -40,6 +42,6 @@ namespace LOK1game.World
             gameModeManager.SetGameMode(_standardGameModeOverride);
         }
 
-        public abstract void Initialize();
+        protected abstract void Initialize();
     }
 }

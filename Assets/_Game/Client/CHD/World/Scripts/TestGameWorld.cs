@@ -6,7 +6,7 @@ namespace LOK1game.World
     {
         [SerializeField] private EGameModeId _id;
 
-        public override void Initialize()
+        protected override void Initialize()
         {
             
         }
