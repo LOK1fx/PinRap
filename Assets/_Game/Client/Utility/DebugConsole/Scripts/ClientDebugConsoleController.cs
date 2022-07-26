@@ -130,10 +130,14 @@ namespace LOK1game.DebugTools
 
         private void Update()
         {
+#if LOK1GAME_STANDALONE
+    #if UNITY_EDITOR
             if(Input.GetButtonDown("ToggleDebugConsole"))
                 ToggleConsole();
             if(Input.GetButtonDown("Submit"))
                 Submit();
+    #endif
+#endif
         }
 
         private void ToggleConsole()
