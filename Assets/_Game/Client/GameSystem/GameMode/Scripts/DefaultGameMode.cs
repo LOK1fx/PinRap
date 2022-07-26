@@ -6,25 +6,23 @@ namespace LOK1game.Game
     public sealed class DefaultGameMode : BaseGameMode
     {
         [SerializeField] private BeatEffectController _beatController;
+        [SerializeField] private PauseController _pauseController;
 
         public override EGameModeId Id => EGameModeId.Default;
 
         public override IEnumerator OnStart()
         {
             State = EGameModeState.Starting;
-
-            var playerController = Instantiate(PlayerController);
-
-            playerController.name = $"[{nameof(PlayerController)}]";
-
+            
             SpawnGameModeObject(CameraPrefab);
             SpawnGameModeObject(UiPrefab);
+            SpawnGameModeObject(_pauseController.gameObject);
 
             //So strange code
             var player = SpawnGameModeObject(PlayerPrefab.gameObject);
-            
             player.transform.position = GetRandomSpawnPointPosition();
-            playerController.SetControlledPawn(player.GetComponent<Pawn>());
+
+            CreatePlayerController(player.GetComponent<Pawn>());
 
             if(BeatEffectController.Instance == null)
                 Instantiate(_beatController);

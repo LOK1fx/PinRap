@@ -1,9 +1,7 @@
 ﻿public enum EGameModeId : ushort
 {
-    None,
-    Default,
-    CrystalCapture,
-    PVE,
-    Sandbox_MouseMode,
-    MainMenu
+    None = 0,
+    Default = 1,
+    MainMenu = 20,
+    PinRapMapEditor = 100,
 }

@@ -26,7 +26,7 @@ namespace LOK1game.Tools
 
         private void LateUpdate()
         {
-            if(Mode == ETransformCopierMode.Inactive && Target == null) { return; }
+            if(Mode == ETransformCopierMode.Inactive || Target == null) { return; }
 
             switch (Mode)
             {

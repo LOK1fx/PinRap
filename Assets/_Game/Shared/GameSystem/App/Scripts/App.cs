@@ -1,6 +1,5 @@
 using System;
-using System.Collections;
-using LOK1game.Tools;
+using LOK1game.Game.Events;
 using UnityEngine;
 
 namespace LOK1game
@@ -11,21 +10,21 @@ namespace LOK1game
 
         [SerializeField] private ProjectContext _projectContext = new ProjectContext();
 
-        private const string _appGameObjectName = "[App]";
+        private const string APP_GAME_OBJECT_NAME = "[App]";
 
         #region Boot
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Bootstrap()
         {
-            var app = Instantiate(Resources.Load<App>(_appGameObjectName));
+            var app = Instantiate(Resources.Load<App>(APP_GAME_OBJECT_NAME));
 
             if (app == null)
             {
                 throw new ApplicationException();
             }
 
-            app.name = _appGameObjectName;
+            app.name = APP_GAME_OBJECT_NAME;
             app.InitializeComponents();
 
             PersistentScene.Load();
@@ -37,7 +36,9 @@ namespace LOK1game
 
         public static void Quit(int exitCode = 0)
         {
+            EventManager.Clear();
             PersistentScene.Unload();
+            
             Application.Quit(exitCode);
         }
 

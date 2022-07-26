@@ -86,7 +86,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6274482745602326576}
   - component: {fileID: 6348543067804223055}
-  - component: {fileID: 2658845814946423838}
   m_Layer: 5
   m_Name: BeatArrowBase
   m_TagString: Untagged
@@ -128,17 +127,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 20
---- !u!114 &2658845814946423838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3702366578915555566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4131b3b64d77943408f1e658259d1750, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _destroyHeight: 250
-  _uiArrowBoundSize: 0.3

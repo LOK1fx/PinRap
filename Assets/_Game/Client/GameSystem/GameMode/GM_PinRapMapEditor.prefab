@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4639241045541449728
+--- !u!1 &939556097089799617
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7861280782129153964}
-  - component: {fileID: 890591497948499889}
+  - component: {fileID: 5163783809377929430}
+  - component: {fileID: 7028407890630340798}
   m_Layer: 0
-  m_Name: MainMenuGameMode
+  m_Name: GM_PinRapMapEditor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7861280782129153964
+--- !u!4 &5163783809377929430
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4639241045541449728}
+  m_GameObject: {fileID: 939556097089799617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,20 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &890591497948499889
+--- !u!114 &7028407890630340798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4639241045541449728}
+  m_GameObject: {fileID: 939556097089799617}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71c3c33e23cb9134c837285294598191, type: 3}
+  m_Script: {fileID: 11500000, guid: 2455590fd39fdee448eb39a04b4daa82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 5
-  _uiPrefab: {fileID: 0}
-  _cameraPrefab: {fileID: 0}
-  _playerPrefab: {fileID: 0}
-  _playerController: {fileID: 0}
+  _uiPrefab: {fileID: 8467455374149012962, guid: 190fb0a15691a7a4e8439fd19b0cfabb, type: 3}
+  _cameraPrefab: {fileID: 779169692165051414, guid: 0f75bdcdb4a7a1a44ab469660a9c9b90, type: 3}
+  _playerPrefab: {fileID: 1880599286698738302, guid: e8f3cdca01a8c08408387639559d9c54, type: 3}
+  _playerController: {fileID: 7722028374807149879, guid: a5965195e4a828d4e9ed48c5f2891397, type: 3}

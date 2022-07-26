@@ -1,4 +1,6 @@
-﻿namespace LOK1game.Game
+﻿using System;
+
+namespace LOK1game.Game
 {
     public enum ELaunchGameOption
     {
@@ -10,7 +12,7 @@
     public enum ESpawnType
     {
         Standard,
-        FromCameraPostion,
+        FromCameraPosition,
     }
 
     [System.Serializable]

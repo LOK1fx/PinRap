@@ -20,6 +20,30 @@ namespace LOK1game
         [SerializeField] private EGameModeId _standardGameModeId;
         [SerializeField] private List<BaseGameMode> _gameModes = new List<BaseGameMode>();
 
+        #region Facade //Удобность и доступность всех компонентов
+
+        public static GameModeManager GetGameModeManager()
+        {
+            return App.ProjectContext.GameModeManager;
+        }
+
+        public static GameStateManager GetGameStateManager()
+        {
+            return App.ProjectContext.GameStateManager;
+        }
+
+        public static GameSession GetGameSession()
+        {
+            return App.ProjectContext.GameSession;
+        }
+
+        public static ExperienceManager GetExperienceManager()
+        {
+            return App.ProjectContext.ExperienceManager;
+        }
+
+        #endregion
+
         public override void Initialize()
         {
             GameStateManager = new GameStateManager();

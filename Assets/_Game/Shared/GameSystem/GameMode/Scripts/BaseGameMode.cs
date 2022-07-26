@@ -15,7 +15,10 @@ public enum EGameModeState : ushort
 
 namespace LOK1game.Game
 {
-
+    /// <summary>
+    /// Базовый игровой режим со всеми нужными полями для создания
+    /// игрового режима
+    /// </summary>
     [Serializable]
     public abstract class BaseGameMode : MonoBehaviour, IGameMode
     {
@@ -38,7 +41,15 @@ namespace LOK1game.Game
 
         public abstract IEnumerator OnEnd();
         public abstract IEnumerator OnStart();
-
+        
+        /// <summary>
+        /// Создает объект, который сразу будет привязан к этому игровому режиму.
+        /// </summary>
+        /// <param name="gameObject">Объект который будет создан(префаб)</param>
+        /// <param name="prefix">Префикс перед названием объекта {prefix}{objectName}{postfix}</param>
+        /// <param name="postfix">Постфикс после названия объекта {prefix}{objectName}{postfix}</param>
+        /// <typeparam name="T">Тип объекта</typeparam>
+        /// <returns>Созданый объект</returns>
         protected T SpawnGameModeObject<T>(T gameObject, string prefix = "", string postfix = "") where T : Object
         {
             return SpawnGameModeObject<T>(gameObject, gameObject.name, prefix, postfix);
@@ -55,6 +66,16 @@ namespace LOK1game.Game
             return newGameObject;
         }
 
+        protected PlayerController CreatePlayerController(IPawn controlledPawn)
+        {
+            var playerController = Instantiate(PlayerController);
+
+            playerController.name = $"[{nameof(PlayerController)}]";
+            playerController.SetControlledPawn(controlledPawn);
+
+            return playerController;
+        }
+
         protected Vector3 GetRandomSpawnPointPosition() 
         {
             var spawnPoints = FindObjectsOfType<CharacterSpawnPoint>();
@@ -67,6 +88,12 @@ namespace LOK1game.Game
             return spawnPoint.transform.position;
         }
         
+        /// <summary>
+        /// Привязывает к режиму объект
+        /// </summary>
+        /// <param name="gameObject">Объект</param>
+        /// <typeparam name="T">Тип объекта</typeparam>
+        /// <returns>Данный объект, прошедший привязку</returns>
         protected T RegisterGameModeObject<T>(T gameObject) where T: Object
         {
             if (!_isGameModeObjectListInitialized)
@@ -82,6 +109,10 @@ namespace LOK1game.Game
             return gameObject;
         }
 
+        /// <summary>
+        /// Удаляет все привязанные к режиму объекты
+        /// </summary>
+        /// <returns></returns>
         protected IEnumerator DestroyAllGameModeObjects()
         {
             foreach (var obj in GameModeSpawnedObjects)

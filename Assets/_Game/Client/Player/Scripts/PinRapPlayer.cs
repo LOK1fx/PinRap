@@ -1,3 +1,5 @@
+using LOK1game.Game;
+using LOK1game.UI;
 using UnityEngine;
 
 namespace LOK1game
@@ -10,10 +12,63 @@ namespace LOK1game
         private void Awake()
         {
             _input = GetComponent<PinRapPlayerInput>();
+            
+            SubscribeToEvents();
+        }
+
+        protected override void SubscribeToEvents()
+        {
+            _input.OnLeftArrowPressed += OnOnLeftArrowPressed;
+            _input.OnDownArrowPressed += OnDownArrowPressed;
+            _input.OnUpArrowPressed += OnUpArrowPressed;
+            _input.OnRightArrowPressed += OnRightArrowPressed;
+        }
+
+        protected override void UnsubscribeFromEvents()
+        {
+            _input.OnLeftArrowPressed -= OnOnLeftArrowPressed;
+            _input.OnDownArrowPressed -= OnDownArrowPressed;
+            _input.OnUpArrowPressed -= OnUpArrowPressed;
+            _input.OnRightArrowPressed -= OnRightArrowPressed;
+        }
+
+        private void OnRightArrowPressed()
+        {
+            TryBeatArrow(GetArrowSpawner().RightArrowChecker);
+        }
+
+        private void OnUpArrowPressed()
+        {
+            TryBeatArrow(GetArrowSpawner().UpArrowChecker);
+        }
+
+        private void OnDownArrowPressed()
+        {
+            TryBeatArrow(GetArrowSpawner().DownArrowChecker);
+        }
+
+        private void OnOnLeftArrowPressed()
+        {
+            TryBeatArrow(GetArrowSpawner().LeftArrowChecker);
+        }
+
+        private void TryBeatArrow(BeatArrowChecker checker)
+        {
+            if (checker.IsArrowInbound(out var arrow))
+            {
+                arrow.Beat();
+            }
+        }
+
+        private UIArrowSpawner GetArrowSpawner()
+        {
+            return PlayerHud.Instance.PlayerArrowSpawner;
         }
 
         public override void OnInput(object sender)
         {
+            if(ProjectContext.GetGameStateManager().CurrentGameState == EGameState.Paused) { return; }
+            
             _input.OnInput(sender);
         }
 

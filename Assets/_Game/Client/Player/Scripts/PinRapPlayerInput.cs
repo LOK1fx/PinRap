@@ -15,7 +15,6 @@ namespace LOK1game
 
         #endregion
         
-        
         //Temp keys, after we just make a mobile and pc input provider
         [SerializeField] private KeyCode _tryBeatLeftArrowKey = KeyCode.A;
         [SerializeField] private KeyCode _tryBeatUpArrowKey = KeyCode.W;

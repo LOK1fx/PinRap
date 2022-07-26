@@ -2,7 +2,7 @@ namespace LOK1game.World
 {
     public class DefaultGameWorld : GameWorld
     {
-        public override void Initialize()
+        protected override void Initialize()
         {
             
         }
