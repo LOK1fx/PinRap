@@ -34,24 +34,35 @@ namespace LOK1game
 
         private void OnRightArrowPressed()
         {
-            PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Right);
+            TryBeatArrow(GetArrowSpawner().RightArrowChecker);
         }
 
         private void OnUpArrowPressed()
         {
-            PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Up);
-            
-            Debug.Log(App.ProjectContext.GameSession.PlayTime);
+            TryBeatArrow(GetArrowSpawner().UpArrowChecker);
         }
 
         private void OnDownArrowPressed()
         {
-            PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Down);
+            TryBeatArrow(GetArrowSpawner().DownArrowChecker);
         }
 
         private void OnOnLeftArrowPressed()
         {
-            PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Left);
+            TryBeatArrow(GetArrowSpawner().LeftArrowChecker);
+        }
+
+        private void TryBeatArrow(BeatArrowChecker checker)
+        {
+            if (checker.IsArrowInbound(out var arrow))
+            {
+                arrow.Beat();
+            }
+        }
+
+        private UIArrowSpawner GetArrowSpawner()
+        {
+            return PlayerHud.Instance.PlayerArrowSpawner;
         }
 
         public override void OnInput(object sender)

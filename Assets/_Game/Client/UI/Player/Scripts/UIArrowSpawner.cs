@@ -14,6 +14,11 @@ namespace LOK1game.UI
     
     public class UIArrowSpawner : MonoBehaviour
     {
+        public BeatArrowChecker LeftArrowChecker => _leftArrowChecker;
+        public BeatArrowChecker UpArrowChecker => _upArrowChecker;
+        public BeatArrowChecker DownArrowChecker => _downArrowChecker;
+        public BeatArrowChecker RightArrowChecker => _rightArrowChecker;
+        
         //FormerlySerializedAs attribute added to prevent links missed
         [FormerlySerializedAs("leftArrowUITransform")] [SerializeField] private Transform _leftArrowUITransform;
         [FormerlySerializedAs("rightArrowUITransform")] [SerializeField] private Transform _rightArrowUITransform;
@@ -25,9 +30,15 @@ namespace LOK1game.UI
         [FormerlySerializedAs("rightArrowPrefab")] [SerializeField] private BeatArrow _rightArrowPrefab;
 
         [Space]
+        [SerializeField] private BeatArrowChecker _leftArrowChecker;
+        [SerializeField] private BeatArrowChecker _upArrowChecker;
+        [SerializeField] private BeatArrowChecker _downArrowChecker;
+        [SerializeField] private BeatArrowChecker _rightArrowChecker;
+
+        [Space]
         [SerializeField] private Transform arrowsSpawnPoint;
 
-        public void Spawn(EArrowType type)
+        public void Spawn(EArrowType type, EBeatEffectStrength beatEffectStrength = EBeatEffectStrength.None)
         {
             if (type == EArrowType.None) return;
             
@@ -36,14 +47,25 @@ namespace LOK1game.UI
             var nextPosition = new Vector3(uiArrowTransform.position.x, arrowsSpawnPoint.position.y,
                 uiArrowTransform.position.z); 
             
-            CreateArrow(arrowPrefab, nextPosition, uiArrowTransform);
+            CreateArrow(arrowPrefab, nextPosition, GetChecker(type), beatEffectStrength);
         }
 
-        private void CreateArrow(BeatArrow prefab, Vector3 spawnPosition, Transform targetUIArrow)
+        private void CreateArrow(BeatArrow prefab, Vector3 spawnPosition, BeatArrowChecker checker, EBeatEffectStrength strength)
         {
             var arrow = Instantiate(prefab, transform);
+            
             arrow.transform.position = spawnPosition;
-            arrow.Checker.SetTargetUIArrow(targetUIArrow);
+            arrow.Setup(strength);
+            arrow.SetObserver(checker);
+            arrow.OnDestroy += ArrowOnDestroyed;
+            
+            checker.AddArrowToVision(arrow);
+        }
+
+        private void ArrowOnDestroyed(BeatArrow arrow)
+        {
+            arrow.OnDestroy -= ArrowOnDestroyed;
+            arrow.Observer.RemoveArrowFromVision(arrow);
         }
 
         private BeatArrow GetArrowPrefab(EArrowType type)
@@ -54,6 +76,18 @@ namespace LOK1game.UI
                 EArrowType.Up => _upArrowPrefab,
                 EArrowType.Right => _rightArrowPrefab,
                 EArrowType.Left => _leftArrowPrefab,
+                _ => null
+            };
+        }
+
+        private BeatArrowChecker GetChecker(EArrowType type)
+        {
+            return type switch
+            {
+                EArrowType.Down => _downArrowChecker,
+                EArrowType.Up => _upArrowChecker,
+                EArrowType.Right => _rightArrowChecker,
+                EArrowType.Left => _leftArrowChecker,
                 _ => null
             };
         }
