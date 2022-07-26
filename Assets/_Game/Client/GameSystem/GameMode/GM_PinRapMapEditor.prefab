@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2455590fd39fdee448eb39a04b4daa82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiPrefab: {fileID: 477668509425952702, guid: 83b19753f1207b44795a6603cf5ec2d4, type: 3}
+  _uiPrefab: {fileID: 8467455374149012962, guid: 190fb0a15691a7a4e8439fd19b0cfabb, type: 3}
   _cameraPrefab: {fileID: 779169692165051414, guid: 0f75bdcdb4a7a1a44ab469660a9c9b90, type: 3}
   _playerPrefab: {fileID: 1880599286698738302, guid: e8f3cdca01a8c08408387639559d9c54, type: 3}
   _playerController: {fileID: 7722028374807149879, guid: a5965195e4a828d4e9ed48c5f2891397, type: 3}
