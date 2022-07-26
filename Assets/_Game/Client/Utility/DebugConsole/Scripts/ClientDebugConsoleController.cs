@@ -82,28 +82,28 @@ namespace LOK1game.DebugTools
                 () =>
                 {
                     if(PlayerHud.Instance != null)
-                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Left);
+                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Left, EBeatEffectStrength.Medium);
                 });
             _spawnBeatArrowDown = new DebugConsoleCommand("cl_spawn_arrow_down", "",
                 "cl_spawn_arrow_down",
                 () =>
                 {
                     if(PlayerHud.Instance != null)
-                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Down);
+                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Down, EBeatEffectStrength.Medium);
                 });
             _spawnBeatArrowUp = new DebugConsoleCommand("cl_spawn_arrow_up", "",
                 "cl_spawn_arrow_up",
                 () =>
                 {
                     if(PlayerHud.Instance != null)
-                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Up);
+                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Up, EBeatEffectStrength.Medium);
                 });
             _spawnBeatArrowRight = new DebugConsoleCommand("cl_spawn_arrow_right", "",
                 "cl_spawn_arrow_right",
                 () =>
                 {
                     if(PlayerHud.Instance != null)
-                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Right);
+                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Right, EBeatEffectStrength.Medium);
                 });
         }
 

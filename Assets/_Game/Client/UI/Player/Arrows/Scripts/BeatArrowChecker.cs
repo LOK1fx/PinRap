@@ -15,7 +15,9 @@ namespace LOK1game
             {
                 var arrowPosition = arrow.transform.position;
 
-                if (Vector2.Distance(arrowPosition, transform.position) <= _uiArrowBoundSize)
+                var distance = Vector2.Distance(arrowPosition, transform.position);
+
+                if (distance <= _uiArrowBoundSize)
                 {
                     boundArrow = arrow;
 
