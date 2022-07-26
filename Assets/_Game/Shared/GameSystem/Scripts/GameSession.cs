@@ -23,17 +23,23 @@ namespace LOK1game.Game
 
         public void Initialize()
         {
-            CustomUpdate.AddUpdateCallback(OnUpdate);
+            CustomUpdate.AddUpdateCallback(Update);
             
             OnInitialized();
         }
 
         public void End()
         {
-            CustomUpdate.RemoveUpdateCallback(OnUpdate);
+            CustomUpdate.RemoveUpdateCallback(Update);
         }
-        
-        public void UpdateTimer()
+
+        private void Update()
+        {
+            UpdateTimer();
+            OnUpdate();
+        }
+
+        private void UpdateTimer()
         {
             if(IsServer && !IsHost) { return; }
 
