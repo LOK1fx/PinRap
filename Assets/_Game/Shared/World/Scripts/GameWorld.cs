@@ -14,17 +14,24 @@ namespace LOK1game.World
         protected void Awake()
         {
             Current = this;
+
+            var gameModeManager = ProjectContext.GetGameModeManager();
+
+            if (_standardGameModeOverride != EGameModeId.None)
+            {
+                gameModeManager.SetGameMode(_standardGameModeOverride);
+            }
+            else
+            {
+                gameModeManager.SetGameMode(App.ProjectContext.StandardGameModeId);
+            }
             
             Initialize();
-            
-            EventManager.AddListener<OnProjectContextInitializedEvent>(OnProjectContextInitialized);
         }
 
         private void OnDestroy()
         {
             Current = null;
-            
-            EventManager.RemoveListener<OnProjectContextInitializedEvent>(OnProjectContextInitialized);
         }
 
         private void OnProjectContextInitialized(OnProjectContextInitializedEvent evt)
