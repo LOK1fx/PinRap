@@ -5,6 +5,9 @@ namespace CanvasScripts
 {
     public class MainMenuGameMode : BaseGameMode
     {
+
+        public override EGameModeId Id => EGameModeId.MainMenu;
+
         public override IEnumerator OnStart()
         {
             State = EGameModeState.Starting;
@@ -18,8 +21,11 @@ namespace CanvasScripts
     
         public override IEnumerator OnEnd()
         {
-            
-            yield return null;
+            State = EGameModeState.Ending;
+
+            yield return DestroyAllGameModeObjects();
+
+            State = EGameModeState.Ended;
         }
     }
 }
