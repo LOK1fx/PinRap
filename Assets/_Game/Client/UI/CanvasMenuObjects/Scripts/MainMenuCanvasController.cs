@@ -7,12 +7,12 @@ namespace CanvasScripts
         [SerializeField] private GameObject _startElementsContainer;
         [SerializeField] private GameObject _backButton;
         
-        private GameObject _activeMenu;
+        internal GameObject ActiveMenu;
 
         private void Start()
         {
             FlyingTextUIController.CanvasTransform = transform;
-            _activeMenu = _startElementsContainer;
+            ActiveMenu = _startElementsContainer;
         }
 
         public void SetBackButtonActive(bool active)
@@ -23,17 +23,24 @@ namespace CanvasScripts
         public void NextMenuEvent(GameObject nextMenu)
         {
             _backButton.SetActive(true);
-            _activeMenu.SetActive(false);
+            ActiveMenu.SetActive(false);
             nextMenu.SetActive(true);
-            _activeMenu = nextMenu;
+            ActiveMenu = nextMenu;
         }
         
         public void NextMenuEvent()
         {
             _backButton.SetActive(false);
-            _activeMenu.SetActive(false);
+            ActiveMenu.SetActive(false);
             _startElementsContainer.SetActive(true);
-            _activeMenu = _startElementsContainer;
+            ActiveMenu = _startElementsContainer;
         }
+
+#if UNITY_EDITOR
+        public void SpawnFlyingTextTest()
+        {
+            FlyingTextUIController.Instance.SpawnFlyingTextAndAfterDelete("Account is being created!");
+        }
+#endif
     }
 }

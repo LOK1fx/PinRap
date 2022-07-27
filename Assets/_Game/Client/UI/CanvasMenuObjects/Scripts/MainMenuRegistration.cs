@@ -1,4 +1,5 @@
-﻿using PlayerData.Manager;
+﻿using _Game.Client.Firebase;
+using PlayerData.Manager;
 using UnityEngine;
 
 namespace CanvasScripts
@@ -26,10 +27,10 @@ namespace CanvasScripts
 
         public void CreateUser()
         {
-            FlyingTextUIController.SpawnFlyingTextAndAfterDelete("Account is being created!");
+            var text = FlyingTextUIController.Instance.SpawnFlyingTextAndAfterDelete("Account is being created!");
             mainMenuCanvasController.NextMenuEvent();
-            PlayerDataManager.CreateUser(_username, _emailAddress, _password, true);
-            FlyingTextUIController.ActiveText.text = "Account created successfully!";
+            FirebaseManager.CreateUser(_username, _emailAddress, _password, true);
+            text.text = "Account created successfully!";
         }
     }
 }
