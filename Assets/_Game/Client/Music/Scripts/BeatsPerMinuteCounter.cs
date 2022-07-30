@@ -21,6 +21,8 @@ namespace LOK1game
 
         public void SetBPM(int value)
         {
+            _beatTimer = 0;
+            
             _beatsPerMinute = value;
         }
 

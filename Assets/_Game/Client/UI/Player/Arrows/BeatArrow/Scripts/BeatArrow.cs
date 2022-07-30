@@ -1,4 +1,5 @@
 using System;
+using LOK1game.Game;
 using LOK1game.UI;
 using UnityEngine;
 
@@ -18,9 +19,29 @@ namespace LOK1game
         [SerializeField] private float _moveSpeed;
         
         private EBeatEffectStrength _beatEffectStrength = EBeatEffectStrength.Weak;
+        private bool _isPaused;
+
+        private void Awake()
+        {
+            App.ProjectContext.GameStateManager.OnGameStateChanged += OnGameStateChanged;
+        }
+
+        private void OnGameStateChanged(EGameState newGameState)
+        {
+            if (newGameState == EGameState.Paused)
+            {
+                _isPaused = true;
+            }
+            else
+            {
+                _isPaused = false;
+            }
+        }
 
         private void Update()
         {
+            if(_isPaused) { return; }
+            
             transform.localPosition += Vector3.up * (_moveSpeed * MOVE_SPEED_MULTIPLIER * Time.deltaTime);
         }
         
@@ -46,9 +67,10 @@ namespace LOK1game
             Observer = checker;
         }
 
-        public void Setup(EBeatEffectStrength effectStrength, EArrowType type)
+        public void Setup(EBeatEffectStrength effectStrength, EArrowType type, float moveSpeed)
         {
             _beatEffectStrength = effectStrength;
+            _moveSpeed = moveSpeed;
             Type = type;
         }
     }

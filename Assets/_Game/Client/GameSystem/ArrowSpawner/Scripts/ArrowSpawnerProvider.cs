@@ -8,6 +8,7 @@ namespace LOK1game
     {
         private MusicTimeline _musicTimeline;
         private int _lastPosition = -1;
+        private MusicData _musicData;
 
         private void Awake()
         {
@@ -18,21 +19,39 @@ namespace LOK1game
         {
             _musicTimeline.OnBeat += OnBeat;
             _musicTimeline.OnEndBeat += OnEndBeat;
+            _musicTimeline.OnMusicStart += OnMusicStarted;
+            _musicTimeline.OnMusicEnd += OmMusicEnded;
         }
-        
+
+        private void OmMusicEnded()
+        {
+            _musicData = null;
+        }
+
+        private void OnMusicStarted()
+        {
+            _musicData = _musicTimeline.MusicDataInstance;
+        }
+
         private void OnBeat(MusicNode node)
         {
             if(_musicTimeline.GetCurrentPosition() == _lastPosition) { return; }
-
+            
             var hud = PlayerHud.Instance;
+            var data = new ArrowData()
+            {
+                Speed = _musicData.ArrowsBaseSpeed,
+                Strength = node.BeatEffectStrength,
+                Type = node.ArrowType,
+            };
             
             if (node.Enemy)
             {
-                hud.EnemyArrowSpawner.Spawn(node.ArrowType, node.BeatEffectStrength);
+                hud.EnemyArrowSpawner.Spawn(data);
             }
             else
             {
-                hud.PlayerArrowSpawner.Spawn(node.ArrowType, EBeatEffectStrength.None);
+                hud.PlayerArrowSpawner.Spawn(data);
             }
 
             _lastPosition = _musicTimeline.GetCurrentPosition();
@@ -47,6 +66,8 @@ namespace LOK1game
         {
             _musicTimeline.OnBeat -= OnBeat;
             _musicTimeline.OnEndBeat -= OnEndBeat;
+            _musicTimeline.OnMusicStart -= OnMusicStarted;
+            _musicTimeline.OnMusicEnd -= OmMusicEnded;
         }
     }
 }

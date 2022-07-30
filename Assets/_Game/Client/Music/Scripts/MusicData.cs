@@ -11,16 +11,17 @@ namespace LOK1game
         public AnimationCurve ArrowsSpeedGraph => _arrowsSpeedGraph;
         public float ArrowsBaseSpeed => _arrowsBaseSpeed;
         public float SecondError => _secondError;
+        public List<CameraChangeEvent> CameraChangeFocusMarkers => _cameraChangeFocusMarkers;
         public int BPM => _bpm;
         public AudioClip MusicClip => _music;
         public float MusicVolumeOutOfFocus => _musicVolumeOutOfFocus;
         public List<MusicNode> Nodes => _nodes;
-
-
+        
         [Header("Main")]
         [SerializeField] private AnimationCurve _arrowsSpeedGraph = AnimationCurve.Constant(0f, 1f, 1f);
         [SerializeField, Range(0f, 100f)] private float _arrowsBaseSpeed = 10f;
         [SerializeField] private float _secondError = 0.15f;
+        [SerializeField] private List<CameraChangeEvent> _cameraChangeFocusMarkers;
 
         [Header("Music")]
         [SerializeField] private int _bpm;

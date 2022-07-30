@@ -42,7 +42,12 @@ namespace LOK1game.UI
         [Space]
         [SerializeField] private Transform arrowsSpawnPoint;
 
-        public void Spawn(EArrowType type, EBeatEffectStrength beatEffectStrength = EBeatEffectStrength.None)
+        public void Spawn(ArrowData data)
+        {
+            Spawn(data.Type, data.Speed, data.Strength);
+        }
+        
+        public void Spawn(EArrowType type, float moveSpeed = 20f, EBeatEffectStrength beatEffectStrength = EBeatEffectStrength.None)
         {
             if (type == EArrowType.None) return;
             
@@ -51,16 +56,17 @@ namespace LOK1game.UI
             var nextPosition = new Vector3(uiArrowTransform.position.x, arrowsSpawnPoint.position.y,
                 uiArrowTransform.position.z); 
             
-            CreateArrow(arrowPrefab, nextPosition, GetChecker(type), beatEffectStrength, type);
+            CreateArrow(arrowPrefab, nextPosition, GetChecker(type), beatEffectStrength, type, moveSpeed);
         }
 
         //TODO: Rework this shit
-        private void CreateArrow(BeatArrow prefab, Vector3 spawnPosition, BeatArrowChecker checker, EBeatEffectStrength strength, EArrowType type)
+        private void CreateArrow(BeatArrow prefab, Vector3 spawnPosition, BeatArrowChecker checker,
+            EBeatEffectStrength strength, EArrowType type, float moveSpeed)
         {
             var arrow = Instantiate(prefab, transform);
             
             arrow.transform.position = spawnPosition;
-            arrow.Setup(strength, type);
+            arrow.Setup(strength, type, moveSpeed);
             arrow.SetObserver(checker);
             arrow.OnDestroy += ArrowOnDestroyed;
             

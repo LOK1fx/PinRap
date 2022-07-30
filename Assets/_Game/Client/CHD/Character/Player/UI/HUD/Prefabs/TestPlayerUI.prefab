@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3056221be08d364794c27c3039f29e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _songToPlay: {fileID: 11400000, guid: 1c8755311f4d2cc4d8e30f3c27e31514, type: 2}
+  _songToPlay: {fileID: 11400000, guid: 475424ef2403eaa40ab5fd6f7ec9268f, type: 2}
 --- !u!222 &2665314613239155211
 CanvasRenderer:
   m_ObjectHideFlags: 0

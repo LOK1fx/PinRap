@@ -311,6 +311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 586976274802103923}
   - component: {fileID: 8475334379418181594}
+  - component: {fileID: 1996127839398905081}
   m_Layer: 0
   m_Name: CamerasSet
   m_TagString: Untagged
@@ -353,6 +354,18 @@ MonoBehaviour:
   _playerCamera: {fileID: 586976274068270197}
   _enemyCamera: {fileID: 586976274395268414}
   _centerCamera: {fileID: 586976274972104417}
+--- !u!114 &1996127839398905081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586976274802103922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf39d8aa24e5ce47a71ee64b19ef90c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &586976274953195344
 GameObject:
   m_ObjectHideFlags: 0

@@ -101,56 +101,56 @@ namespace LOK1game.DebugTools
                 () =>
                 {
                     if(PlayerHud.Instance != null)
-                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Left, EBeatEffectStrength.Medium);
+                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Left);
                 });
             _spawnPlayerBeatArrowDown = new DebugConsoleCommand("cl_spawn_arrow_down_player", "",
                 "cl_spawn_arrow_down",
                 () =>
                 {
                     if(PlayerHud.Instance != null)
-                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Down, EBeatEffectStrength.Medium);
+                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Down);
                 });
             _spawnPlayerBeatArrowUp = new DebugConsoleCommand("cl_spawn_arrow_up_player", "",
                 "cl_spawn_arrow_up",
                 () =>
                 {
                     if(PlayerHud.Instance != null)
-                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Up, EBeatEffectStrength.Medium);
+                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Up);
                 });
             _spawnPlayerBeatArrowRight = new DebugConsoleCommand("cl_spawn_arrow_right_player", "",
                 "cl_spawn_arrow_right",
                 () =>
                 {
                     if(PlayerHud.Instance != null)
-                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Right, EBeatEffectStrength.Medium);
+                        PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Right);
                 });
             _spawnEnemyBeatArrowLeft = new DebugConsoleCommand("cl_spawn_arrow_left_enemy", "",
                 "cl_spawn_arrow_right",
                 () =>
                 {
                     if(PlayerHud.Instance != null)
-                        PlayerHud.Instance.EnemyArrowSpawner.Spawn(EArrowType.Left, EBeatEffectStrength.Medium);
+                        PlayerHud.Instance.EnemyArrowSpawner.Spawn(EArrowType.Left);
                 });
             _spawnEnemyBeatArrowDown = new DebugConsoleCommand("cl_spawn_arrow_down_enemy", "",
                 "cl_spawn_arrow_right",
                 () =>
                 {
                     if(PlayerHud.Instance != null)
-                        PlayerHud.Instance.EnemyArrowSpawner.Spawn(EArrowType.Down, EBeatEffectStrength.Medium);
+                        PlayerHud.Instance.EnemyArrowSpawner.Spawn(EArrowType.Down);
                 });
             _spawnEnemyBeatArrowUp = new DebugConsoleCommand("cl_spawn_arrow_up_enemy", "",
                 "cl_spawn_arrow_right",
                 () =>
                 {
                     if(PlayerHud.Instance != null)
-                        PlayerHud.Instance.EnemyArrowSpawner.Spawn(EArrowType.Up, EBeatEffectStrength.Medium);
+                        PlayerHud.Instance.EnemyArrowSpawner.Spawn(EArrowType.Up);
                 });
             _spawnEnemyBeatArrowRight = new DebugConsoleCommand("cl_spawn_arrow_right_enemy", "",
                 "cl_spawn_arrow_right",
                 () =>
                 {
                     if(PlayerHud.Instance != null)
-                        PlayerHud.Instance.EnemyArrowSpawner.Spawn(EArrowType.Right, EBeatEffectStrength.Medium);
+                        PlayerHud.Instance.EnemyArrowSpawner.Spawn(EArrowType.Right);
                 });
             _addPointsToBar = new DebugConsoleCommand("cl_add_points", "",
                 "cl_add_points",
