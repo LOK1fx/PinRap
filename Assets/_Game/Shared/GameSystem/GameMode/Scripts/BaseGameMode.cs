@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
@@ -76,14 +77,22 @@ namespace LOK1game.Game
             return playerController;
         }
 
-        protected Vector3 GetRandomSpawnPointPosition() 
+        protected Vector3 GetRandomSpawnPointPosition()
         {
-            var spawnPoints = FindObjectsOfType<CharacterSpawnPoint>();
+            return GetRandomSpawnPointPosition(true);
+        }
+        
+        protected Vector3 GetRandomSpawnPointPosition(bool playerFlag) 
+        {
+            var spawnPoints = FindObjectsOfType<CharacterSpawnPoint>().ToList();
 
-            if (spawnPoints.Length < 1)
+            if (playerFlag)
+                spawnPoints.RemoveAll(point => point.AllowPlayer == false);
+            
+            if (spawnPoints.Count < 1)
                 return Vector3.zero;
             
-            var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
 
             return spawnPoint.transform.position;
         }

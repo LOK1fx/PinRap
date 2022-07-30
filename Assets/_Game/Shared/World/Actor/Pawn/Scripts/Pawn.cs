@@ -10,12 +10,25 @@ namespace LOK1game
 
         [SerializeField] private EPlayerType _playerType;
 
+        private Controller _controller;
+
         public void SetLocal(bool local)
         {
             IsLocal = local;
         }
 
+        public Controller Controller => _controller;
         public abstract void OnInput(object sender);
-        public abstract void OnPocces(Controller sender);
+        
+
+        public virtual void OnPocces(Controller sender)
+        {
+            _controller = sender;
+        }
+
+        public virtual void OnUnpocces()
+        {
+            _controller = null;
+        }
     }
 }

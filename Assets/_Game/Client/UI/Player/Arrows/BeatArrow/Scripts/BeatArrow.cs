@@ -1,4 +1,5 @@
 using System;
+using LOK1game.UI;
 using UnityEngine;
 
 namespace LOK1game
@@ -10,6 +11,8 @@ namespace LOK1game
         public event Action<BeatArrow> OnDestroy;
         
         public BeatArrowChecker Observer { get; private set; }
+        public EBeatEffectStrength BeatEffectStrength => _beatEffectStrength;
+        public EArrowType Type { get; private set; }
         
         [SerializeField] private float _destroyHeight;
         [SerializeField] private float _moveSpeed;
@@ -33,10 +36,8 @@ namespace LOK1game
 
         public void Beat()
         {
-            if(_beatEffectStrength != EBeatEffectStrength.None)
-                ClientApp.ClientContext.BeatController.InstantiateBeat(_beatEffectStrength);
-            
             OnDestroy?.Invoke(this);
+            
             Destroy(gameObject);
         }
 
@@ -45,9 +46,10 @@ namespace LOK1game
             Observer = checker;
         }
 
-        public void Setup(EBeatEffectStrength effectStrength)
+        public void Setup(EBeatEffectStrength effectStrength, EArrowType type)
         {
             _beatEffectStrength = effectStrength;
+            Type = type;
         }
     }
 }

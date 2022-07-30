@@ -16,6 +16,8 @@ namespace LOK1game.Player
 
         #endregion
 
+        public Controller Controller { get; private set; }
+        
         [SerializeField] private PlayerHand[] _playerHands = new PlayerHand[2];
         public PlayerHand[] PlayerHands => _playerHands;
 
@@ -25,7 +27,6 @@ namespace LOK1game.Player
         [SerializeField] private Animator _armsAnimator;
 
         private RuntimeAnimatorController _defaultAnimatorController;
-
         private Player _player;
 
         private void Start()
@@ -42,7 +43,7 @@ namespace LOK1game.Player
 
             GetComponent<PlayerInputManager>().PawnInputs.Add(this);
         }
-
+        
         public void OnInput(object sender)
         {
             if(Input.GetKeyDown(KeyCode.Mouse1))
@@ -188,7 +189,12 @@ namespace LOK1game.Player
 
         public void OnPocces(Controller sender)
         {
-            throw new NotImplementedException();
+            Controller = sender;
+        }
+
+        public void OnUnpocces()
+        {
+            Controller = null;
         }
     }
 }

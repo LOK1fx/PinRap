@@ -5,12 +5,13 @@ namespace LOK1game
     [RequireComponent(typeof(Player.Player))]
     public class PlayerArmsBobbing : Actor, IPawn
     {
+        public Controller Controller { get; private set; }
+        
         private Player.Player _player;
 
         [Header("Arms bobing")]
         [SerializeField] private float _armsOffsetOnActions = 0.05f;
         [SerializeField] private float _armsOffsetOnStartMovement = 0.05f;
-
         [SerializeField] private ArmsOffset _armsOffset;
 
         private void Start()
@@ -109,7 +110,12 @@ namespace LOK1game
 
         public void OnPocces(Controller sender)
         {
-            throw new System.NotImplementedException();
+            Controller = sender;
+        }
+        
+        public void OnUnpocces()
+        {
+            Controller = null;
         }
     }
 }

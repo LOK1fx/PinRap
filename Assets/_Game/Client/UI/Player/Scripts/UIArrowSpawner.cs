@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace LOK1game.UI
@@ -14,6 +15,8 @@ namespace LOK1game.UI
     
     public class UIArrowSpawner : MonoBehaviour
     {
+        public event Action<BeatArrow> ArrowSpawned;
+
         public BeatArrowChecker LeftArrowChecker => _leftArrowChecker;
         public BeatArrowChecker UpArrowChecker => _upArrowChecker;
         public BeatArrowChecker DownArrowChecker => _downArrowChecker;
@@ -24,6 +27,7 @@ namespace LOK1game.UI
         [FormerlySerializedAs("rightArrowUITransform")] [SerializeField] private Transform _rightArrowUITransform;
         [FormerlySerializedAs("upArrowUITransform")] [SerializeField] private Transform _upArrowUITransform;
         [FormerlySerializedAs("downArrowUITransform")] [SerializeField] private Transform _downArrowUITransform;
+        
         [FormerlySerializedAs("leftArrowPrefab")] [SerializeField] private BeatArrow _leftArrowPrefab;
         [FormerlySerializedAs("downArrowPrefab")] [SerializeField] private BeatArrow _downArrowPrefab;
         [FormerlySerializedAs("upArrowPrefab")] [SerializeField] private BeatArrow _upArrowPrefab;
@@ -47,19 +51,22 @@ namespace LOK1game.UI
             var nextPosition = new Vector3(uiArrowTransform.position.x, arrowsSpawnPoint.position.y,
                 uiArrowTransform.position.z); 
             
-            CreateArrow(arrowPrefab, nextPosition, GetChecker(type), beatEffectStrength);
+            CreateArrow(arrowPrefab, nextPosition, GetChecker(type), beatEffectStrength, type);
         }
 
-        private void CreateArrow(BeatArrow prefab, Vector3 spawnPosition, BeatArrowChecker checker, EBeatEffectStrength strength)
+        //TODO: Rework this shit
+        private void CreateArrow(BeatArrow prefab, Vector3 spawnPosition, BeatArrowChecker checker, EBeatEffectStrength strength, EArrowType type)
         {
             var arrow = Instantiate(prefab, transform);
             
             arrow.transform.position = spawnPosition;
-            arrow.Setup(strength);
+            arrow.Setup(strength, type);
             arrow.SetObserver(checker);
             arrow.OnDestroy += ArrowOnDestroyed;
             
             checker.AddArrowToVision(arrow);
+            
+            ArrowSpawned?.Invoke(arrow);
         }
 
         private void ArrowOnDestroyed(BeatArrow arrow)

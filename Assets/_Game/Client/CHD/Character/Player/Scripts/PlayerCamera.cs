@@ -4,8 +4,10 @@ namespace LOK1game.Player
 {
     public class PlayerCamera : Actor, IPawn
     {
+        public Controller Controller { get; private set; }
+        
         public float Tilt;
-
+        
         [SerializeField] private float _sensivity = 8f;
         [SerializeField] private Transform _cameraTransform;
 
@@ -143,7 +145,12 @@ namespace LOK1game.Player
 
         public void OnPocces(Controller sender)
         {
-            throw new System.NotImplementedException();
+            Controller = sender;
+        }
+        
+        public void OnUnpocces()
+        {
+            Controller = null;
         }
     }
 }

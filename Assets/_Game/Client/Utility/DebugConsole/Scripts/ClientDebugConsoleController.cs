@@ -26,7 +26,9 @@ namespace LOK1game.DebugTools
 
         private static DebugConsoleCommand _addPointsToBar;
         private static DebugConsoleCommand _removePointsFromBar;
-        
+
+        private static DebugConsoleCommand _spawnPopupText;
+
         #endregion
         
         private bool _showConsole;
@@ -52,6 +54,7 @@ namespace LOK1game.DebugTools
                 _spawnBeatArrowRight,
                 _addPointsToBar,
                 _removePointsFromBar,
+                _spawnPopupText,
             };
         }
 
@@ -125,6 +128,14 @@ namespace LOK1game.DebugTools
                 {
                     if(PlayerHud.Instance != null)
                         PlayerHud.Instance.DominationBar.RemovePoints(10);
+                });
+            _spawnPopupText = new DebugConsoleCommand("cl_spawn_popup", "",
+                "cl_spawn_popup",
+                () =>
+                {
+                    var textParam = new PopupTextParams("200", 5f, Color.white);
+
+                    PopupText.Spawn<PopupText3D>(Vector3.zero, textParam);
                 });
         }
 

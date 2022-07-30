@@ -57,6 +57,9 @@ namespace LOK1game
             if (checker.IsArrowInbound(out var arrow))
             {
                 arrow.Beat();
+                
+                if(arrow.BeatEffectStrength != EBeatEffectStrength.None)
+                    ClientApp.ClientContext.BeatController.InstantiateBeat(arrow.BeatEffectStrength);
             }
         }
 

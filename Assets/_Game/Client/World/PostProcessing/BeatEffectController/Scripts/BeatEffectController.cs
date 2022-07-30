@@ -30,6 +30,8 @@ namespace LOK1game
 
         public void InstantiateBeat(EBeatEffectStrength strength)
         {
+            if(strength == EBeatEffectStrength.None) { return; }
+            
             _volume.weight = 1f / (int)strength;
 
             Debug.Log(_volume.weight);

@@ -9,8 +9,20 @@ namespace LOK1game
         
         public IPawn ControlledPawn { get; private set; }
 
+        protected abstract void Awake();
         protected abstract void Update();
+        
+        public static T Create<T>(IPawn pawn = null) where T : Controller
+        {
+            var controllerObject = new GameObject("[Controller]");
+            var controller = controllerObject.AddComponent<T>();
+            
+            if(pawn != null)
+                controller.SetControlledPawn(pawn);
 
+            return controller;
+        }
+        
         public void SetControlledPawn(IPawn pawn)
         {
             ControlledPawn = pawn;

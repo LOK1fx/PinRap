@@ -24,6 +24,8 @@ namespace LOK1game
 
         public void InstantiateBeat(EBeatEffectStrength strength)
         {
+            if(strength == EBeatEffectStrength.None) { return; }
+            
             if(App.ProjectContext.GameStateManager.CurrentGameState != Game.EGameState.Paused)
             {
                 foreach (var actor in _reactors)
