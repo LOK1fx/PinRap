@@ -6,12 +6,21 @@ namespace LOK1game
     public class BPMWorldSetter : MonoBehaviour
     {
         private BeatsPerMinuteCounter _counter;
+        private MusicTimeline _timeline;
 
         private void Start()
         {
             _counter = GetComponent<BeatsPerMinuteCounter>();
 
-            //_counter.CurrentBPM = GameWorld.Current.GetBPM(); //too strange to be alive
+            _timeline = MusicTimeline.Instance;
+            _timeline.OnMusicStart += OnMusicStarted;
+        }
+
+        private void OnMusicStarted()
+        {
+            var musicData = _timeline.MusicDataInstance;
+
+            _counter.SetBPM(musicData.BPM);
         }
     }
 }

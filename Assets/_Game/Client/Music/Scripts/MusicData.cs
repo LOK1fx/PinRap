@@ -11,6 +11,7 @@ namespace LOK1game
         public AnimationCurve ArrowsSpeedGraph => _arrowsSpeedGraph;
         public float ArrowsBaseSpeed => _arrowsBaseSpeed;
         public float SecondError => _secondError;
+        public int BPM => _bpm;
         public AudioClip MusicClip => _music;
         public float MusicVolumeOutOfFocus => _musicVolumeOutOfFocus;
         public List<MusicNode> Nodes => _nodes;
@@ -20,8 +21,9 @@ namespace LOK1game
         [SerializeField] private AnimationCurve _arrowsSpeedGraph = AnimationCurve.Constant(0f, 1f, 1f);
         [SerializeField, Range(0f, 100f)] private float _arrowsBaseSpeed = 10f;
         [SerializeField] private float _secondError = 0.15f;
-        
+
         [Header("Music")]
+        [SerializeField] private int _bpm;
         [SerializeField] private AudioClip _music;
         [SerializeField, Range(0f, 1f)] private float _musicVolumeOutOfFocus = 0.25f;
         [SerializeField] private List<MusicNode> _nodes = new List<MusicNode>();
@@ -30,6 +32,7 @@ namespace LOK1game
     [Serializable]
     public class MusicNode
     {
+        public bool Enemy;
         public float StartSecond;
         public EBeatEffectStrength BeatEffectStrength;
         public EArrowType ArrowType;
