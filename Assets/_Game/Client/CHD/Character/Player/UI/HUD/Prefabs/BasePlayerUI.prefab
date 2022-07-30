@@ -815,6 +815,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6664015695420124353, guid: 8f5d261f80b13c44fbe45fb0591dab13, type: 3}
+      propertyPath: _uiArrowBoundSize
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6669364545003199156, guid: 8f5d261f80b13c44fbe45fb0591dab13, type: 3}
+      propertyPath: _uiArrowBoundSize
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858529043502854532, guid: 8f5d261f80b13c44fbe45fb0591dab13, type: 3}
+      propertyPath: _uiArrowBoundSize
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8366828507339821380, guid: 8f5d261f80b13c44fbe45fb0591dab13, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -902,6 +914,10 @@ PrefabInstance:
     - target: {fileID: 8599312199235354760, guid: 8f5d261f80b13c44fbe45fb0591dab13, type: 3}
       propertyPath: m_Name
       value: EnemyArrows
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870800499916854257, guid: 8f5d261f80b13c44fbe45fb0591dab13, type: 3}
+      propertyPath: _uiArrowBoundSize
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f5d261f80b13c44fbe45fb0591dab13, type: 3}

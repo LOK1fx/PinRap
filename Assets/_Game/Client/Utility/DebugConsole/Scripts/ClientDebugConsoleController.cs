@@ -19,10 +19,15 @@ namespace LOK1game.DebugTools
         private static DebugConsoleCommand _instantiateBeatEffectCommand;
         private static DebugConsoleCommand _instantiateBeatCommand;
         
-        private static DebugConsoleCommand _spawnBeatArrowLeft;
-        private static DebugConsoleCommand _spawnBeatArrowDown;
-        private static DebugConsoleCommand _spawnBeatArrowUp;
-        private static DebugConsoleCommand _spawnBeatArrowRight;
+        private static DebugConsoleCommand _spawnPlayerBeatArrowLeft;
+        private static DebugConsoleCommand _spawnPlayerBeatArrowDown;
+        private static DebugConsoleCommand _spawnPlayerBeatArrowUp;
+        private static DebugConsoleCommand _spawnPlayerBeatArrowRight;
+        
+        private static DebugConsoleCommand _spawnEnemyBeatArrowLeft;
+        private static DebugConsoleCommand _spawnEnemyBeatArrowDown;
+        private static DebugConsoleCommand _spawnEnemyBeatArrowUp;
+        private static DebugConsoleCommand _spawnEnemyBeatArrowRight;
 
         private static DebugConsoleCommand _addPointsToBar;
         private static DebugConsoleCommand _removePointsFromBar;
@@ -48,10 +53,14 @@ namespace LOK1game.DebugTools
                 _stopMusicTimelinePlaybackCommand,
                 _instantiateBeatEffectCommand,
                 _instantiateBeatCommand,
-                _spawnBeatArrowLeft,
-                _spawnBeatArrowDown,
-                _spawnBeatArrowUp,
-                _spawnBeatArrowRight,
+                _spawnPlayerBeatArrowLeft, //--Player arrows
+                _spawnPlayerBeatArrowDown,
+                _spawnPlayerBeatArrowUp,
+                _spawnPlayerBeatArrowRight,//--
+                _spawnEnemyBeatArrowLeft, //--Enemy arrows
+                _spawnEnemyBeatArrowDown,
+                _spawnEnemyBeatArrowUp,
+                _spawnEnemyBeatArrowRight, //--
                 _addPointsToBar,
                 _removePointsFromBar,
                 _spawnPopupText,
@@ -87,33 +96,61 @@ namespace LOK1game.DebugTools
                 {
                     ClientApp.ClientContext.BeatController.InstantiateBeat(EBeatEffectStrength.Medium);
                 });
-            _spawnBeatArrowLeft = new DebugConsoleCommand("cl_spawn_arrow_left", "",
+            _spawnPlayerBeatArrowLeft = new DebugConsoleCommand("cl_spawn_arrow_left_player", "",
                 "cl_spawn_arrow_left",
                 () =>
                 {
                     if(PlayerHud.Instance != null)
                         PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Left, EBeatEffectStrength.Medium);
                 });
-            _spawnBeatArrowDown = new DebugConsoleCommand("cl_spawn_arrow_down", "",
+            _spawnPlayerBeatArrowDown = new DebugConsoleCommand("cl_spawn_arrow_down_player", "",
                 "cl_spawn_arrow_down",
                 () =>
                 {
                     if(PlayerHud.Instance != null)
                         PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Down, EBeatEffectStrength.Medium);
                 });
-            _spawnBeatArrowUp = new DebugConsoleCommand("cl_spawn_arrow_up", "",
+            _spawnPlayerBeatArrowUp = new DebugConsoleCommand("cl_spawn_arrow_up_player", "",
                 "cl_spawn_arrow_up",
                 () =>
                 {
                     if(PlayerHud.Instance != null)
                         PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Up, EBeatEffectStrength.Medium);
                 });
-            _spawnBeatArrowRight = new DebugConsoleCommand("cl_spawn_arrow_right", "",
+            _spawnPlayerBeatArrowRight = new DebugConsoleCommand("cl_spawn_arrow_right_player", "",
                 "cl_spawn_arrow_right",
                 () =>
                 {
                     if(PlayerHud.Instance != null)
                         PlayerHud.Instance.PlayerArrowSpawner.Spawn(EArrowType.Right, EBeatEffectStrength.Medium);
+                });
+            _spawnEnemyBeatArrowLeft = new DebugConsoleCommand("cl_spawn_arrow_left_enemy", "",
+                "cl_spawn_arrow_right",
+                () =>
+                {
+                    if(PlayerHud.Instance != null)
+                        PlayerHud.Instance.EnemyArrowSpawner.Spawn(EArrowType.Left, EBeatEffectStrength.Medium);
+                });
+            _spawnEnemyBeatArrowDown = new DebugConsoleCommand("cl_spawn_arrow_down_enemy", "",
+                "cl_spawn_arrow_right",
+                () =>
+                {
+                    if(PlayerHud.Instance != null)
+                        PlayerHud.Instance.EnemyArrowSpawner.Spawn(EArrowType.Down, EBeatEffectStrength.Medium);
+                });
+            _spawnEnemyBeatArrowUp = new DebugConsoleCommand("cl_spawn_arrow_up_enemy", "",
+                "cl_spawn_arrow_right",
+                () =>
+                {
+                    if(PlayerHud.Instance != null)
+                        PlayerHud.Instance.EnemyArrowSpawner.Spawn(EArrowType.Up, EBeatEffectStrength.Medium);
+                });
+            _spawnEnemyBeatArrowRight = new DebugConsoleCommand("cl_spawn_arrow_right_enemy", "",
+                "cl_spawn_arrow_right",
+                () =>
+                {
+                    if(PlayerHud.Instance != null)
+                        PlayerHud.Instance.EnemyArrowSpawner.Spawn(EArrowType.Right, EBeatEffectStrength.Medium);
                 });
             _addPointsToBar = new DebugConsoleCommand("cl_add_points", "",
                 "cl_add_points",

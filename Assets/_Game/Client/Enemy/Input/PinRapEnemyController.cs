@@ -17,7 +17,7 @@ namespace LOK1game
 
         protected override void Update()
         {
-            
+            ControlledPawn.OnInput(this);
         }
     }
 }

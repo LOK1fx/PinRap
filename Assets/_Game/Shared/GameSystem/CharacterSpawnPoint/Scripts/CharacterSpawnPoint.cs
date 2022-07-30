@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,6 +29,12 @@ namespace LOK1game
             _spawnedAtPoint.Add(newActor);
 
             return newActor;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(transform.position, 0.1f);
         }
     }
 }
