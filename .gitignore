@@ -42,6 +42,7 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+/[Pp]rojectSettings/RiderScriptEditorPersistedState.asset
 
 # Unity3D generated meta files
 *.pidb.meta

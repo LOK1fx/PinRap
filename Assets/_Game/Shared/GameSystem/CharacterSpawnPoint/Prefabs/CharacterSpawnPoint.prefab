@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _allowNeutral: 0
-  _allowPlayer: 0
+  _allowPlayer: 1
   _allowEnemy: 0
   _allowNPC: 0
   _allowSpectator: 0

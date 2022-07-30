@@ -204,7 +204,7 @@ MonoBehaviour:
   _allowPlayer: 0
   _allowEnemy: 0
   _allowNPC: 0
-  _allowSpectator: 0
+  _allowSpectator: 1
 --- !u!1001 &433123792
 PrefabInstance:
   m_ObjectHideFlags: 0
