@@ -30,13 +30,11 @@ namespace LOK1game
         private void Update()
         {
             if(_timeline.IsPlaying == false) { return; }
-
-            _currentSecond += Time.deltaTime;
-
+            
             if (_position < _markersInstance.Count)
             {
                 var evt = _markersInstance[_position];
-            
+
                 if (IsEventInRange(evt))
                 {
                     SetFocus(evt.Focus);
@@ -46,6 +44,8 @@ namespace LOK1game
                     _position++;
                 }
             }
+            
+            _currentSecond += Time.deltaTime;
         }
 
         private void SetFocus(CameraChangeEvent.ECharacterCameraFocus focus)
@@ -74,6 +74,11 @@ namespace LOK1game
         {
             _musicData = _timeline.MusicDataInstance;
             _markersInstance = _musicData.CameraChangeFocusMarkers;
+
+            foreach (var marker in _markersInstance)
+            {
+                marker.IsPlayed = false;
+            }
         }
         
         private void OnMusicEnded()

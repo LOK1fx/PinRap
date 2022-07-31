@@ -1027,6 +1027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1608708819}
   - component: {fileID: 1608708820}
+  - component: {fileID: 1608708821}
   m_Layer: 3
   m_Name: GlobalVolume
   m_TagString: Untagged
@@ -1066,6 +1067,20 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 100
+--- !u!114 &1608708821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608708818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3742cce24e3c0aa41804eb6374b2ae79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text: Post-processing volume
+  PositionOffset: {x: -1.2, y: 0.85, z: 0}
 --- !u!1 &1671844024
 GameObject:
   m_ObjectHideFlags: 0

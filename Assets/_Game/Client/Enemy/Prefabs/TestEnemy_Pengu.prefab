@@ -79,3 +79,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerType: 2
+  _character: {fileID: 11400000, guid: e7abbb39a1f1415469808fb08cb1c992, type: 2}

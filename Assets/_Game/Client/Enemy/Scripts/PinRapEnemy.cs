@@ -1,11 +1,19 @@
 ﻿using LOK1game.UI;
+using UnityEngine;
 
 namespace LOK1game
 {
     public class PinRapEnemy : Pawn
     {
-        private UIArrowSpawner _arrowSpawner;
+        [SerializeField] private CharacterData _character;
         
+        private UIArrowSpawner _arrowSpawner;
+
+        private void Start()
+        {
+            PlayerHud.Instance.DominationBar.SetEnemyCharacter(_character);
+        }
+
         public override void OnPocces(Controller sender)
         {
             base.OnPocces(sender);

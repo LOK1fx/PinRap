@@ -37,14 +37,17 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _arrowsBaseSpeed: 60
-  _secondError: 0.08
+  _secondError: 0.01
   _cameraChangeFocusMarkers:
   - Focus: 0
     StartSecond: 0
+    IsPlayed: 1
   - Focus: 2
-    StartSecond: 4
-  - Focus: 3
-    StartSecond: 5
+    StartSecond: 2
+    IsPlayed: 1
+  - Focus: 0
+    StartSecond: 7.5
+    IsPlayed: 1
   _bpm: 75
   _music: {fileID: 8300000, guid: cbd7519cb4e2e294c94ef725ac3f0f4a, type: 3}
   _musicVolumeOutOfFocus: 0.25
@@ -116,4 +119,8 @@ MonoBehaviour:
   - Enemy: 1
     StartSecond: 9.56
     BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 0
+    StartSecond: 58
+    BeatEffectStrength: 1
     ArrowType: 3

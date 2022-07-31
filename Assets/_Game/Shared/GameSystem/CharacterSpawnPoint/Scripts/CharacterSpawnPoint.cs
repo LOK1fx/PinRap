@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace LOK1game
@@ -35,6 +36,12 @@ namespace LOK1game
         {
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(transform.position, 0.1f);
+            
+#if UNITY_EDITOR
+            
+            Handles.Label(transform.position + Vector3.up * 0.5f, $"S:{name}");
+            
+#endif
         }
     }
 }

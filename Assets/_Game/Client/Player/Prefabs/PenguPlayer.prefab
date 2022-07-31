@@ -62,6 +62,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2925601279330792510, guid: 14c7df828e30edb40ad14422530d36f7, type: 3}
   m_PrefabInstance: {fileID: 2895183541550359994}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &792642414734133622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50683962176704900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f3e6c9c084184846adb8ff195d5f3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerType: 1
+  _character: {fileID: 11400000, guid: 3442b0ee88a20dd4a9351351eac63da3, type: 2}
 --- !u!114 &3011001083653666663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,18 +93,6 @@ MonoBehaviour:
   _tryBeatDownArrowKey: 115
   _tryBeatRightArrowKey: 100
   _instantiateBeatKey: 103
---- !u!114 &792642414734133622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50683962176704900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f3e6c9c084184846adb8ff195d5f3c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8902500218493677455
 MonoBehaviour:
   m_ObjectHideFlags: 0

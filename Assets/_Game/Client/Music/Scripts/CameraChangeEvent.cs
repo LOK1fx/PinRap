@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace LOK1game
 {
@@ -7,7 +8,7 @@ namespace LOK1game
     {
         public ECharacterCameraFocus Focus;
         public float StartSecond;
-        public bool IsPlayed;
+        [HideInInspector] public bool IsPlayed;
         
         public enum ECharacterCameraFocus
         {
