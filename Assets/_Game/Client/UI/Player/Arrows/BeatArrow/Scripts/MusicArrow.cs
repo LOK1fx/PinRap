@@ -5,13 +5,14 @@ using UnityEngine;
 
 namespace LOK1game
 {
-    public class BeatArrow : MonoBehaviour
+    public class MusicArrow : MonoBehaviour
     {
         private const float MOVE_SPEED_MULTIPLIER = 10f; //Просто для удобства, чтобы не приходилось указывать огромные числа в редакторе
 
-        public event Action<BeatArrow> OnDestroy;
+        public delegate void ArrowDestroyed(MusicArrow arrow, bool missed);
+        public event ArrowDestroyed OnDestroy;
         
-        public BeatArrowChecker Observer { get; private set; }
+        public MusicArrowChecker Observer { get; private set; }
         public EBeatEffectStrength BeatEffectStrength => _beatEffectStrength;
         public EArrowType Type { get; private set; }
         
@@ -49,7 +50,10 @@ namespace LOK1game
         {
             if (transform.localPosition.y > _destroyHeight)
             {
-                OnDestroy?.Invoke(this);
+                OnDestroy?.Invoke(this, true);
+                
+                //TODO: REWORK THIS SHIT!!!
+                PlayerHud.Instance.DominationBar.RemovePoints(1);
                 
                 Destroy(gameObject);
             }
@@ -57,12 +61,12 @@ namespace LOK1game
 
         public void Beat()
         {
-            OnDestroy?.Invoke(this);
+            OnDestroy?.Invoke(this, false);
             
             Destroy(gameObject);
         }
 
-        public void SetObserver(BeatArrowChecker checker)
+        public void SetObserver(MusicArrowChecker checker)
         {
             Observer = checker;
         }

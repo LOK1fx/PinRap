@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace LOK1game
 {
-    public class BeatArrowChecker : MonoBehaviour
+    public class MusicArrowChecker : MonoBehaviour
     {
         [SerializeField] private float _uiArrowBoundSize = 0.3f;
 
-        private readonly List<BeatArrow> _arrowsToCheck = new List<BeatArrow>();
+        private readonly List<MusicArrow> _arrowsToCheck = new List<MusicArrow>();
 
-        public bool IsArrowInbound(out BeatArrow boundArrow)
+        public bool IsArrowInbound(out MusicArrow boundArrow)
         {
             foreach (var arrow in _arrowsToCheck)
             {
@@ -31,12 +31,12 @@ namespace LOK1game
             return false;
         }
 
-        public void AddArrowToVision(BeatArrow arrow)
+        public void AddArrowToVision(MusicArrow arrow)
         {
             _arrowsToCheck.Add(arrow);
         }
 
-        public void RemoveArrowFromVision(BeatArrow arrow)
+        public void RemoveArrowFromVision(MusicArrow arrow)
         {
             _arrowsToCheck.Remove(arrow);
         }

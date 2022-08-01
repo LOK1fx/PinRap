@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Game/Client/Scenes/Intro.unity
     guid: 230e294eb8df4b846bd525fb5e696044
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Game/Client/Scenes/PinRapMainMenu.unity
     guid: 5a67052915d9bc142af34d5bfe6c7abf
   - enabled: 1

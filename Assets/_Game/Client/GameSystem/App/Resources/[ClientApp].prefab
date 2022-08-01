@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clientContext:
-    _pauseController: {fileID: 4084993803767442560, guid: c3f8644bee8b2da4c882afed4409eff6, type: 3}
+    _loadingScreenPrefab: {fileID: 3085602195621459438, guid: f66764db30ab82e48a20aeba792132eb, type: 3}
 --- !u!114 &6805064764185752577
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,12 +15,12 @@ namespace LOK1game.UI
     
     public class UIArrowSpawner : MonoBehaviour
     {
-        public event Action<BeatArrow> ArrowSpawned;
+        public event Action<MusicArrow> ArrowSpawned;
 
-        public BeatArrowChecker LeftArrowChecker => _leftArrowChecker;
-        public BeatArrowChecker UpArrowChecker => _upArrowChecker;
-        public BeatArrowChecker DownArrowChecker => _downArrowChecker;
-        public BeatArrowChecker RightArrowChecker => _rightArrowChecker;
+        public MusicArrowChecker LeftArrowChecker => _leftArrowChecker;
+        public MusicArrowChecker UpArrowChecker => _upArrowChecker;
+        public MusicArrowChecker DownArrowChecker => _downArrowChecker;
+        public MusicArrowChecker RightArrowChecker => _rightArrowChecker;
         
         //FormerlySerializedAs attribute added to prevent links missed
         [FormerlySerializedAs("leftArrowUITransform")] [SerializeField] private Transform _leftArrowUITransform;
@@ -28,16 +28,16 @@ namespace LOK1game.UI
         [FormerlySerializedAs("upArrowUITransform")] [SerializeField] private Transform _upArrowUITransform;
         [FormerlySerializedAs("downArrowUITransform")] [SerializeField] private Transform _downArrowUITransform;
         
-        [FormerlySerializedAs("leftArrowPrefab")] [SerializeField] private BeatArrow _leftArrowPrefab;
-        [FormerlySerializedAs("downArrowPrefab")] [SerializeField] private BeatArrow _downArrowPrefab;
-        [FormerlySerializedAs("upArrowPrefab")] [SerializeField] private BeatArrow _upArrowPrefab;
-        [FormerlySerializedAs("rightArrowPrefab")] [SerializeField] private BeatArrow _rightArrowPrefab;
+        [FormerlySerializedAs("leftArrowPrefab")] [SerializeField] private MusicArrow _leftArrowPrefab;
+        [FormerlySerializedAs("downArrowPrefab")] [SerializeField] private MusicArrow _downArrowPrefab;
+        [FormerlySerializedAs("upArrowPrefab")] [SerializeField] private MusicArrow _upArrowPrefab;
+        [FormerlySerializedAs("rightArrowPrefab")] [SerializeField] private MusicArrow _rightArrowPrefab;
 
         [Space]
-        [SerializeField] private BeatArrowChecker _leftArrowChecker;
-        [SerializeField] private BeatArrowChecker _upArrowChecker;
-        [SerializeField] private BeatArrowChecker _downArrowChecker;
-        [SerializeField] private BeatArrowChecker _rightArrowChecker;
+        [SerializeField] private MusicArrowChecker _leftArrowChecker;
+        [SerializeField] private MusicArrowChecker _upArrowChecker;
+        [SerializeField] private MusicArrowChecker _downArrowChecker;
+        [SerializeField] private MusicArrowChecker _rightArrowChecker;
 
         [Space]
         [SerializeField] private Transform arrowsSpawnPoint;
@@ -60,7 +60,7 @@ namespace LOK1game.UI
         }
 
         //TODO: Rework this shit
-        private void CreateArrow(BeatArrow prefab, Vector3 spawnPosition, BeatArrowChecker checker,
+        private void CreateArrow(MusicArrow prefab, Vector3 spawnPosition, MusicArrowChecker checker,
             EBeatEffectStrength strength, EArrowType type, float moveSpeed)
         {
             var arrow = Instantiate(prefab, transform);
@@ -75,13 +75,13 @@ namespace LOK1game.UI
             ArrowSpawned?.Invoke(arrow);
         }
 
-        private void ArrowOnDestroyed(BeatArrow arrow)
+        private void ArrowOnDestroyed(MusicArrow arrow, bool missed)
         {
             arrow.OnDestroy -= ArrowOnDestroyed;
             arrow.Observer.RemoveArrowFromVision(arrow);
         }
 
-        private BeatArrow GetArrowPrefab(EArrowType type)
+        private MusicArrow GetArrowPrefab(EArrowType type)
         {
             return type switch
             {
@@ -93,7 +93,7 @@ namespace LOK1game.UI
             };
         }
 
-        private BeatArrowChecker GetChecker(EArrowType type)
+        private MusicArrowChecker GetChecker(EArrowType type)
         {
             return type switch
             {
