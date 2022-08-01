@@ -44,10 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dc8d4d543860664d8b47008702dd55c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiPrefab: {fileID: 651288299904101162, guid: a282f3541beb4d442916b1f4bb073b07, type: 3}
+  _uiPrefab: {fileID: 477668509425952702, guid: 83b19753f1207b44795a6603cf5ec2d4, type: 3}
   _cameraPrefab: {fileID: 779169692165051414, guid: 0f75bdcdb4a7a1a44ab469660a9c9b90, type: 3}
   _playerPrefab: {fileID: 792642414734133622, guid: 6c1f20f65e7f4114bae6ce1957feaa58, type: 3}
   _playerController: {fileID: 7722028374807149879, guid: a5965195e4a828d4e9ed48c5f2891397, type: 3}
-  _defaultEnemyPrefab: {fileID: 3706321246115217568, guid: 0740895728515334e8f8f1f6dc5f2a31, type: 3}
   _beatController: {fileID: 8906598372095904902, guid: dda640e0a82368b4cac1ab1d24292260, type: 3}
   _pauseController: {fileID: 4084993803767442560, guid: c3f8644bee8b2da4c882afed4409eff6, type: 3}

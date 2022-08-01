@@ -7,11 +7,11 @@ using Random = UnityEngine.Random;
 
 namespace LOK1game
 {
-    public class EnemyManager
+    public static class EnemyManager
     {
-        private readonly List<PinRapEnemy> _enemies = new List<PinRapEnemy>();
+        private static readonly List<PinRapEnemy> _enemies = new List<PinRapEnemy>();
 
-        public void CreateEnemy(PinRapEnemy prefab)
+        public static void CreateEnemy(PinRapEnemy prefab)
         {
             var enemy = Object.Instantiate(prefab, GetRandomSpawnPosition(true), Quaternion.identity);
             
@@ -20,7 +20,7 @@ namespace LOK1game
             _enemies.Add(enemy);
         }
 
-        public IEnumerator DestroyAllEnemies()
+        public static IEnumerator DestroyAllEnemies()
         {
             foreach (var enemy in _enemies)
             {

@@ -1,4 +1,5 @@
 using System.Collections;
+using LOK1game.PinRap;
 using UnityEngine;
 
 namespace LOK1game.Game
@@ -6,11 +7,8 @@ namespace LOK1game.Game
     public sealed class DefaultGameMode : BaseGameMode
     {
         [Space]
-        [SerializeField] private PinRapEnemy _defaultEnemyPrefab;
         [SerializeField] private BeatEffectController _beatController;
         [SerializeField] private PauseController _pauseController;
-
-        private EnemyManager _enemyManager;
 
         public override EGameModeId Id => EGameModeId.Default;
 
@@ -18,8 +16,6 @@ namespace LOK1game.Game
         {
             State = EGameModeState.Starting;
 
-            _enemyManager = new EnemyManager();
-            
             SpawnGameModeObject(CameraPrefab);
             SpawnGameModeObject(UiPrefab);
             SpawnGameModeObject(_pauseController.gameObject);
@@ -33,8 +29,8 @@ namespace LOK1game.Game
             if(BeatEffectController.Instance == null)
                 Instantiate(_beatController);
             
-            _enemyManager.CreateEnemy(_defaultEnemyPrefab);
-
+            EnemyManager.CreateEnemy(WorldEnemy.Instance.EnemyPrefab);
+            
             State = EGameModeState.Started;
 
             yield return null;
@@ -45,7 +41,6 @@ namespace LOK1game.Game
             State = EGameModeState.Ending;
 
             yield return DestroyAllGameModeObjects();
-            yield return _enemyManager.DestroyAllEnemies();
 
             State = EGameModeState.Ended;
         }
