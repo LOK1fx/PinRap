@@ -29,7 +29,7 @@ namespace LOK1game
 
         private void Update()
         {
-            if(_timeline.IsPlaying == false) { return; }
+            if(_timeline.IsPlaying == false || _markersInstance == null) { return; }
             
             if (_position < _markersInstance.Count)
             {

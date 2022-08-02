@@ -1,4 +1,5 @@
-﻿using LOK1game.PinRap;
+﻿using System.Collections;
+using LOK1game.PinRap;
 using LOK1game.UI;
 using UnityEngine;
 
@@ -6,11 +7,24 @@ namespace LOK1game
 {
     public class PinRapEnemy : PinRapCharacter
     {
+        [SerializeField] private TextAsset _startDialogue;
+        [SerializeField] private float _startDialogueDelay = 1f;
+        
         private UIArrowSpawner _arrowSpawner;
 
         private void Start()
         {
             PlayerHud.Instance.DominationBar.SetEnemyCharacter(Data);
+
+            if(_startDialogue != null)
+                StartCoroutine(StartDialogue());
+        }
+
+        private IEnumerator StartDialogue()
+        {
+            yield return new WaitForSeconds(_startDialogueDelay);
+            
+            DialoguePanel.Instance.EnterDialogue(_startDialogue);
         }
 
         public override void OnPocces(Controller sender)

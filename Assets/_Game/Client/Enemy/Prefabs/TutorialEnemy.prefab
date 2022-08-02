@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8349091928730749255}
-  - component: {fileID: 8349091928730749254}
+  - component: {fileID: -2427900913204181420}
   m_Layer: 0
   m_Name: TutorialEnemy
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8349091928730749254
+--- !u!114 &-2427900913204181420
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerType: 1
-  _data: {fileID: 11400000, guid: e7abbb39a1f1415469808fb08cb1c992, type: 2}
+  _data: {fileID: 11400000, guid: 6974e2a4a0e183b4bb849ed7b5a035b4, type: 2}
+  _startDialogue: {fileID: 4900000, guid: 2008f15ae2569db4ab1fdedbc728f161, type: 3}
+  _startDialogueDelay: 1
 --- !u!1001 &8349091929138507080
 PrefabInstance:
   m_ObjectHideFlags: 0
