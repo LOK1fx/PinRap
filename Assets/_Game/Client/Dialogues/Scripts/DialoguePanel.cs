@@ -29,6 +29,7 @@ namespace LOK1game
         [Header("Typing effect")]
         [SerializeField] private float _typingSpeed = 0.1f;
         [SerializeField] private AudioClip _typeClip;
+        [SerializeField] private AudioClip _continuieClip;
         [SerializeField] private AudioSource _audio;
 
         private Coroutine _displayLineRoutine;
@@ -52,9 +53,15 @@ namespace LOK1game
 
         private void Update()
         {
-            if(Input.GetButtonDown("Jump") && IsPlaying)
-                if(_currentStory != null)
+            if (Input.GetButtonDown("Jump") && IsPlaying)
+            {
+                if (_currentStory != null)
+                {
+                    _audio.PlayOneShot(_continuieClip);
+
                     ContinueStory();
+                }
+            }
         }
 
         public void EnterDialogue(TextAsset inkJson, CharacterData speaker)
@@ -75,6 +82,8 @@ namespace LOK1game
             _panel.SetActive(true);
 
             ContinueStory();
+            
+            DialogueEntered?.Invoke();
         }
 
         private void ExitDialogue()
@@ -84,6 +93,8 @@ namespace LOK1game
             _panel.SetActive(false);
             _speakerCharacter.gameObject.SetActive(false);
             _audio.Stop();
+            
+            DialogueEnded?.Invoke();
         }
 
         public void ContinueStory()
@@ -94,14 +105,10 @@ namespace LOK1game
                     StopCoroutine(_displayLineRoutine);
                 
                 _displayLineRoutine = StartCoroutine(DisplayLineRoutine(_currentStory.Continue()));
-                
-                DialogueEntered?.Invoke();
             }
             else
             {
                 ExitDialogue();
-                
-                DialogueEnded?.Invoke();
             }
         }
 

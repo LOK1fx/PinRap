@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Penguinator
   _miniAvatar: {fileID: 21300000, guid: c3efb8171c4c6dd40ada1311f21f652d, type: 3}
+  _accentColor: {r: 1, g: 0, b: 0, a: 1}
   _canAppearInDialogues: 1
   _dialogueCharacterSprite: {fileID: 21300000, guid: 9148c0f21b9ded84db69008657af9a57, type: 3}

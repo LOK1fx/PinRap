@@ -11,6 +11,7 @@ namespace LOK1game.UI
         [SerializeField] private Image _playerAvatar;
         [SerializeField] private Image _enemyAvatar;
         [SerializeField] private Image _bar;
+        [SerializeField] private Image _background;
 
         [Space]
         [SerializeField] private float _avatarsStepSize = 10f;
@@ -53,6 +54,7 @@ namespace LOK1game.UI
 
         public void SetEnemyCharacter(CharacterData characterData)
         {
+            _background.color = characterData.AccentColor;
             _enemyAvatar.sprite = characterData.MiniAvatar;
         }
 

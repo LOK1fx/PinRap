@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: MirrorPengu
   m_EditorClassIdentifier: 
   _name: Mirrored Pengu
-  _miniAvatar: {fileID: 21300000, guid: bcadbda12e9400f44801d9587a3fffc6, type: 3}
+  _miniAvatar: {fileID: 21300000, guid: 442cf0dc13a832744b7d4a70a6badfe0, type: 3}
+  _accentColor: {r: 0.36320752, g: 0.61355114, b: 1, a: 1}
   _canAppearInDialogues: 1
   _dialogueCharacterSprite: {fileID: 21300000, guid: 719e08c335357894b86910ea5df2da3c, type: 3}
