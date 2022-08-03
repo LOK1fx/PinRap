@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerType: 1
-  characterData: {fileID: 11400000, guid: 3442b0ee88a20dd4a9351351eac63da3, type: 2}
+  _characterData: {fileID: 11400000, guid: 3442b0ee88a20dd4a9351351eac63da3, type: 2}
 --- !u!114 &3011001083653666663
 MonoBehaviour:
   m_ObjectHideFlags: 0
