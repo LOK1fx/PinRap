@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Penguinator
   _miniAvatar: {fileID: 21300000, guid: 19f5938170bc0864fb702c510d42ebbb, type: 3}
   _canAppearInDialogues: 1
-  dialogueCharacterSprite: {fileID: 21300000, guid: 01f9288d7d8bfa84a99ee0c6933055d2, type: 3}
+  _dialogueCharacterSprite: {fileID: 21300000, guid: 6ada3d9894a8eaa44a544665e93f52d4, type: 3}
