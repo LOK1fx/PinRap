@@ -5,10 +5,16 @@ namespace LOK1game
     [CreateAssetMenu]
     public class CharacterData : ScriptableObject
     {
-        public Sprite MiniAvatar => _miniAvatar;
         public string Name => _name;
-        
-        [SerializeField] private Sprite _miniAvatar;
+        public Sprite MiniAvatar => _miniAvatar;
+        public bool CanAppearInDialogues => _canAppearInDialogues;
+        public Sprite DialogueCharacterSprite => dialogueCharacterSprite;
+
+        [Header("BaseInfo")]
         [SerializeField] private string _name;
+        [SerializeField] private Sprite _miniAvatar;
+        [Header("Story")]
+        [SerializeField] private bool _canAppearInDialogues;
+        [SerializeField] private Sprite dialogueCharacterSprite;
     }
 }

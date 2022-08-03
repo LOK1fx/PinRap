@@ -40,6 +40,7 @@ namespace LOK1game.Game
         {
             State = EGameModeState.Ending;
 
+            App.ProjectContext.GameStateManager.SetState(EGameState.Gameplay);
             yield return DestroyAllGameModeObjects();
 
             State = EGameModeState.Ended;

@@ -8,9 +8,9 @@ namespace LOK1game.PinRap
     {
         public event Action<EArrowType> OnBeatArrow;
 
-        public CharacterData Data => _data;
+        public CharacterData CharacterData => characterData;
         
-        [SerializeField] private CharacterData _data;
+        [SerializeField] private CharacterData characterData;
 
         protected void BeatArrow(MusicArrow arrow)
         {

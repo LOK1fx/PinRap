@@ -14,7 +14,7 @@ namespace LOK1game
 
         private void Start()
         {
-            PlayerHud.Instance.DominationBar.SetEnemyCharacter(Data);
+            PlayerHud.Instance.DominationBar.SetEnemyCharacter(CharacterData);
 
             if(_startDialogue != null)
                 StartCoroutine(StartDialogue());
@@ -24,7 +24,7 @@ namespace LOK1game
         {
             yield return new WaitForSeconds(_startDialogueDelay);
             
-            DialoguePanel.Instance.EnterDialogue(_startDialogue);
+            DialoguePanel.Instance.EnterDialogue(_startDialogue, CharacterData);
         }
 
         public override void OnPocces(Controller sender)

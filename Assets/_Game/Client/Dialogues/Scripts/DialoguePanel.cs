@@ -1,7 +1,9 @@
 using System;
+using System.Collections;
 using Ink.Runtime;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 namespace LOK1game
 {
@@ -10,13 +12,18 @@ namespace LOK1game
         public event Action DialogueEntered;
         public static DialoguePanel Instance { get; private set; }
 
+        public bool IsPlaying { get; private set; }
+
+        [SerializeField] private float _typingSpeed = 0.1f;
+        
+        [Space]
         [SerializeField] private GameObject _panel;
         [SerializeField] private TextMeshProUGUI _text;
-
+        
         private Story _currentStory;
-        private bool _dialogueIsPlaying;
-
-        private PinRapPlayerController _controller;
+        
+        [Header("Character preview")]
+        [SerializeField] private Image _speakerCharacter;
 
         private void Awake()
         {
@@ -25,25 +32,38 @@ namespace LOK1game
             
             Instance = this;
             
-            _dialogueIsPlaying = false;
+            IsPlaying = false;
             _panel.SetActive(false);
-
-            if(Controller.TryGetController(out _controller))
-                _controller.ContinueDialogueButtonPressed += ContinueStory;
+            _speakerCharacter.gameObject.SetActive(false);
         }
 
         private void OnDestroy()
         {
             Instance = null;
+        }
 
-            if(_controller != null)
-                _controller.ContinueDialogueButtonPressed -= ContinueStory;
+        private void Update()
+        {
+            if(Input.GetButtonDown("Jump") && IsPlaying)
+                if(_currentStory != null)
+                    ContinueStory();
+        }
+
+        public void EnterDialogue(TextAsset inkJson, CharacterData speaker)
+        {
+            if(speaker.CanAppearInDialogues == false)
+                EnterDialogue(inkJson);
+
+            _speakerCharacter.sprite = speaker.DialogueCharacterSprite;
+            _speakerCharacter.gameObject.SetActive(true);
+
+            EnterDialogue(inkJson);
         }
 
         public void EnterDialogue(TextAsset inkJson)
         {
             _currentStory = new Story(inkJson.text);
-            _dialogueIsPlaying = true;
+            IsPlaying = true;
             _panel.SetActive(true);
 
             ContinueStory();
@@ -52,8 +72,9 @@ namespace LOK1game
         private void ExitDialogue()
         {
             _currentStory = null;
-            _dialogueIsPlaying = false;
+            IsPlaying = false;
             _panel.SetActive(false);
+            _speakerCharacter.gameObject.SetActive(false);
         }
 
         private void ContinueStory()
@@ -67,6 +88,16 @@ namespace LOK1game
             else
             {
                 ExitDialogue();
+            }
+        }
+
+        private IEnumerator DisplayLineRoutine(string text)
+        {
+            foreach (var character in text.ToCharArray())
+            {
+                _text.text += character;
+
+                yield return new WaitForSeconds(_typingSpeed);
             }
         }
     }

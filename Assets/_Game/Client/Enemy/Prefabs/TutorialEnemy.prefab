@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerType: 1
-  _data: {fileID: 11400000, guid: 6974e2a4a0e183b4bb849ed7b5a035b4, type: 2}
+  characterData: {fileID: 11400000, guid: 6974e2a4a0e183b4bb849ed7b5a035b4, type: 2}
   _startDialogue: {fileID: 4900000, guid: 2008f15ae2569db4ab1fdedbc728f161, type: 3}
   _startDialogueDelay: 1
 --- !u!1001 &8349091929138507080

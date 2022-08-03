@@ -350,6 +350,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8455396103e22594e8eb6a7bbbeee9a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startFocus: 1
+  _startFocusSetDelay: 0
   _mainCamera: {fileID: 586976274346361519}
   _playerCamera: {fileID: 586976274068270197}
   _enemyCamera: {fileID: 586976274395268414}

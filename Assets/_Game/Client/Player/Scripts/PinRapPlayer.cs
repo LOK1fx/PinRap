@@ -1,4 +1,3 @@
-using System;
 using LOK1game.Game;
 using LOK1game.PinRap;
 using LOK1game.UI;
@@ -20,7 +19,9 @@ namespace LOK1game
 
         private void Start()
         {
-            PlayerHud.Instance.DominationBar.SetPlayerCharacter(Data);
+            PlayerHud.Instance.DominationBar.SetPlayerCharacter(CharacterData);
+            
+            LocalPlayer.Initialize(this);
         }
 
         protected override void SubscribeToEvents()

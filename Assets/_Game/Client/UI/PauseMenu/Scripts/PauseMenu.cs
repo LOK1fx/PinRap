@@ -1,19 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
+using LOK1game.Game;
 using UnityEngine;
-using LOK1game.Tools;
 
-public class PauseMenu : MonoBehaviour
+namespace LOK1game
 {
-    // Start is called before the first frame update
-    private void Start()
+    public class PauseMenu : MonoBehaviour
     {
+        [SerializeField] private GameObject _root;
         
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        
+        private void Awake()
+        {
+            switch (App.ProjectContext.GameStateManager.CurrentGameState)
+            {
+                case EGameState.Gameplay:
+                    _root.SetActive(false);
+                    break;
+                case EGameState.Paused:
+                    _root.SetActive(true);
+                    break;
+            }
+        }
     }
 }
