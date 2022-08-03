@@ -274,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -299,7 +299,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 401445378713771503}
-  - component: {fileID: 8111770173551246939}
   - component: {fileID: 5464909496721482056}
   - component: {fileID: 4173727165024966519}
   - component: {fileID: 4149672608310225893}
@@ -331,19 +330,6 @@ RectTransform:
   m_AnchoredPosition: {x: 502.53293, y: -198.87473}
   m_SizeDelta: {x: 35, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8111770173551246939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573754955810039234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3056221be08d364794c27c3039f29e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _songToPlay: {fileID: 11400000, guid: b216d1b475d2cc4439abd4c2024da936, type: 2}
 --- !u!222 &5464909496721482056
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -426,6 +412,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7099029529228866299}
+        m_TargetAssemblyTypeName: LOK1game.PinRap.MusicStarter, LOK1game.Client
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 416795935811980648}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -675,6 +673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2079491659950412052}
   - component: {fileID: 7392662573987107988}
+  - component: {fileID: 7099029529228866299}
   m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
@@ -715,10 +714,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d24ad34e5b925e428e3abedf3e43191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DialogueEnded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7099029529228866299}
+        m_TargetAssemblyTypeName: LOK1game.PinRap.MusicStarter, LOK1game.Client
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _typingSpeed: 0.1
   _panel: {fileID: 416795935811980648}
   _text: {fileID: 6142828186457247808}
   _speakerCharacter: {fileID: 7199494342012299915}
+--- !u!114 &7099029529228866299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641640292254948550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e26c320033e8149ad0838fcce83b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4690875083056162543
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +757,7 @@ GameObject:
   - component: {fileID: 2587423144247377207}
   - component: {fileID: 5918799936591395708}
   - component: {fileID: 8484401538407338779}
+  - component: {fileID: 6356167973910534096}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -813,6 +840,62 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
   m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 0
+--- !u!114 &6356167973910534096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690875083056162543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 7696873227640708837}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7392662573987107988}
+        m_TargetAssemblyTypeName: LOK1game.DialoguePanel, LOK1game.Client
+        m_MethodName: ContinueStory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5526438137102347890
 GameObject:
   m_ObjectHideFlags: 0

@@ -379,10 +379,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue
       objectReference: {fileID: 0}
-    - target: {fileID: 8111770173551246939, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: _songToPlay
-      value: 
-      objectReference: {fileID: 11400000, guid: 475424ef2403eaa40ab5fd6f7ec9268f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
 --- !u!224 &960026988114412887 stripped
@@ -397,6 +393,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 477668510703978253}
     m_Modifications:
+    - target: {fileID: 607333102651243645, guid: dbf6e7c052ea980408aef6f8d1acad8c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6736063283525415955, guid: dbf6e7c052ea980408aef6f8d1acad8c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TutorialLevel
   m_EditorClassIdentifier: 
   LevelImage: {fileID: 0}
-  BuildIndex: 0
+  BuildIndex: 3
   Name: Tutorial
-  AdditiveScenes: 
+  AdditiveScenes: 09000000
   IsCompleted: 0

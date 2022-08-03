@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiPrefab: {fileID: 1158531218972624684, guid: 3ff59b9f0b18b474cab9f1872b6ab2fe, type: 3}
-  _cameraPrefab: {fileID: 0}
+  _cameraPrefab: {fileID: 779169692165051414, guid: 0f75bdcdb4a7a1a44ab469660a9c9b90, type: 3}
   _playerPrefab: {fileID: 0}
   _playerController: {fileID: 0}

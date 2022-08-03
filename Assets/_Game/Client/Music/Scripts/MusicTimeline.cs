@@ -123,7 +123,8 @@ namespace LOK1game
             IsPlaying = false;
             PlaybackResumed = false;
 
-            _source.volume = _music != null ? _music.MusicVolumeOutOfFocus : 0.25f;
+            if(_source != null)
+                _source.volume = _music != null ? _music.MusicVolumeOutOfFocus : 0.25f;
         }
 
         public void ResumePlayback()

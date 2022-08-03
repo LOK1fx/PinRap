@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3713907978946770232
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4233885361357333734, guid: 5a0cd44521984b44a8438f2b82320ce2, type: 3}
+      propertyPath: m_Name
+      value: Penguinator02_player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233885361357333735, guid: 5a0cd44521984b44a8438f2b82320ce2, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233885361357333735, guid: 5a0cd44521984b44a8438f2b82320ce2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233885361357333735, guid: 5a0cd44521984b44a8438f2b82320ce2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233885361357333735, guid: 5a0cd44521984b44a8438f2b82320ce2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233885361357333735, guid: 5a0cd44521984b44a8438f2b82320ce2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233885361357333735, guid: 5a0cd44521984b44a8438f2b82320ce2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233885361357333735, guid: 5a0cd44521984b44a8438f2b82320ce2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233885361357333735, guid: 5a0cd44521984b44a8438f2b82320ce2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233885361357333735, guid: 5a0cd44521984b44a8438f2b82320ce2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233885361357333735, guid: 5a0cd44521984b44a8438f2b82320ce2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233885361357333735, guid: 5a0cd44521984b44a8438f2b82320ce2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5a0cd44521984b44a8438f2b82320ce2, type: 3}
+--- !u!1 &669835595688858078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4233885361357333734, guid: 5a0cd44521984b44a8438f2b82320ce2, type: 3}
+  m_PrefabInstance: {fileID: 3713907978946770232}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-7068113320432649290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669835595688858078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b156a64d1ab86654fbab16357954f2f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tryBeatLeftArrowKey: 97
+  _tryBeatUpArrowKey: 119
+  _tryBeatDownArrowKey: 115
+  _tryBeatRightArrowKey: 100
+  _instantiateBeatKey: 103
+--- !u!114 &-2967992920209292231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669835595688858078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7404e0abe3b8ebb40942a0b3e9a242e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1337826048344420869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669835595688858078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f3e6c9c084184846adb8ff195d5f3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerType: 1
+  _characterData: {fileID: 11400000, guid: d295da05e71ac83418c4e213b0a1d45c, type: 2}

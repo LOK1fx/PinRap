@@ -376,6 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _standardGameModeOverride: 50
+  _musicData: {fileID: 11400000, guid: b216d1b475d2cc4439abd4c2024da936, type: 2}
 --- !u!114 &666901719
 MonoBehaviour:
   m_ObjectHideFlags: 0

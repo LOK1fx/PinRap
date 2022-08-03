@@ -3,6 +3,7 @@ using System.Collections;
 using Ink.Runtime;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace LOK1game
@@ -10,6 +11,8 @@ namespace LOK1game
     public class DialoguePanel : MonoBehaviour
     {
         public event Action DialogueEntered;
+        public UnityEvent DialogueEnded;
+        
         public static DialoguePanel Instance { get; private set; }
 
         public bool IsPlaying { get; private set; }
@@ -77,7 +80,7 @@ namespace LOK1game
             _speakerCharacter.gameObject.SetActive(false);
         }
 
-        private void ContinueStory()
+        public void ContinueStory()
         {
             if (_currentStory.canContinue)
             {
@@ -88,6 +91,8 @@ namespace LOK1game
             else
             {
                 ExitDialogue();
+                
+                DialogueEnded?.Invoke();
             }
         }
 

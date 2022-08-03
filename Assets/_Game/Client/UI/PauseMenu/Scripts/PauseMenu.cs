@@ -19,5 +19,10 @@ namespace LOK1game
                     break;
             }
         }
+
+        public void Resume()
+        {
+            App.ProjectContext.GameStateManager.SetState(EGameState.Gameplay);
+        }
     }
 }
