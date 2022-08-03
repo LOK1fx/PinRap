@@ -41,10 +41,13 @@ MonoBehaviour:
   _cameraChangeFocusMarkers:
   - Focus: 3
     StartSecond: 7
-    IsPlayed: 0
-  - Focus: 0
+    IsPlayed: 1
+  - Focus: 2
     StartSecond: 10
-    IsPlayed: 0
+    IsPlayed: 1
+  - Focus: 0
+    StartSecond: 14
+    IsPlayed: 1
   _bpm: 70
   _music: {fileID: 8300000, guid: ea531b40f133f26488aa5a9ce66d30d3, type: 3}
   _musicVolumeOutOfFocus: 0.25

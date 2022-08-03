@@ -10,15 +10,13 @@ namespace LOK1game
 {
     public class DialoguePanel : MonoBehaviour
     {
-        public event Action DialogueEntered;
+        public UnityEvent DialogueEntered;
         public UnityEvent DialogueEnded;
         
         public static DialoguePanel Instance { get; private set; }
 
         public bool IsPlaying { get; private set; }
 
-        [SerializeField] private float _typingSpeed = 0.1f;
-        
         [Space]
         [SerializeField] private GameObject _panel;
         [SerializeField] private TextMeshProUGUI _text;
@@ -27,6 +25,13 @@ namespace LOK1game
         
         [Header("Character preview")]
         [SerializeField] private Image _speakerCharacter;
+        
+        [Header("Typing effect")]
+        [SerializeField] private float _typingSpeed = 0.1f;
+        [SerializeField] private AudioClip _typeClip;
+        [SerializeField] private AudioSource _audio;
+
+        private Coroutine _displayLineRoutine;
 
         private void Awake()
         {
@@ -78,13 +83,17 @@ namespace LOK1game
             IsPlaying = false;
             _panel.SetActive(false);
             _speakerCharacter.gameObject.SetActive(false);
+            _audio.Stop();
         }
 
         public void ContinueStory()
         {
             if (_currentStory.canContinue)
             {
-                _text.text = _currentStory.Continue();
+                if (_displayLineRoutine != null)
+                    StopCoroutine(_displayLineRoutine);
+                
+                _displayLineRoutine = StartCoroutine(DisplayLineRoutine(_currentStory.Continue()));
                 
                 DialogueEntered?.Invoke();
             }
@@ -98,9 +107,12 @@ namespace LOK1game
 
         private IEnumerator DisplayLineRoutine(string text)
         {
+            _text.text = "";
+            
             foreach (var character in text.ToCharArray())
             {
                 _text.text += character;
+                _audio.PlayOneShot(_typeClip);
 
                 yield return new WaitForSeconds(_typingSpeed);
             }

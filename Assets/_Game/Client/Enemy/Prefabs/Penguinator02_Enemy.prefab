@@ -80,5 +80,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerType: 1
   _characterData: {fileID: 11400000, guid: d295da05e71ac83418c4e213b0a1d45c, type: 2}
-  _startDialogue: {fileID: 4900000, guid: f2c938a3e43dc64419e010ee825ff659, type: 3}
+  _startDialogue: {fileID: 4900000, guid: 9faecc26203e3e046afe70eb88286a19, type: 3}
   _startDialogueDelay: 1
