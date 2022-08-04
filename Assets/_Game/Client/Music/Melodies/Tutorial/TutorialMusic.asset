@@ -116,3 +116,79 @@ MonoBehaviour:
     StartSecond: 19
     BeatEffectStrength: 0
     ArrowType: 3
+  - Enemy: 1
+    StartSecond: 20
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 1
+    StartSecond: 21
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 1
+    StartSecond: 22
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 0
+    StartSecond: 23
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 0
+    StartSecond: 24
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 0
+    StartSecond: 25
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 1
+    StartSecond: 26
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 1
+    StartSecond: 26.2
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 1
+    StartSecond: 26.5
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 0
+    StartSecond: 27
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 0
+    StartSecond: 27.2
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 0
+    StartSecond: 27.5
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 1
+    StartSecond: 28
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 0
+    StartSecond: 28.2
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 1
+    StartSecond: 28.5
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 0
+    StartSecond: 28.7
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 1
+    StartSecond: 29
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 0
+    StartSecond: 29.2
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 1
+    StartSecond: 31
+    BeatEffectStrength: 0
+    ArrowType: 3

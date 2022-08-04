@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Ink.Runtime;
 using UnityEngine;
@@ -8,6 +7,7 @@ using UnityEngine.UI;
 
 namespace LOK1game
 {
+    [RequireComponent(typeof(AudioSource))]
     public class DialoguePanel : MonoBehaviour
     {
         public UnityEvent DialogueEntered;
@@ -30,17 +30,17 @@ namespace LOK1game
         [SerializeField] private float _typingSpeed = 0.1f;
         [SerializeField] private AudioClip _typeClip;
         [SerializeField] private AudioClip _continuieClip;
-        [SerializeField] private AudioSource _audio;
-
+        
+        private AudioSource _audio;
         private Coroutine _displayLineRoutine;
 
         private void Awake()
         {
             if(Instance != null)
                 Destroy(gameObject);
-            
             Instance = this;
             
+            _audio = GetComponent<AudioSource>();
             IsPlaying = false;
             _panel.SetActive(false);
             _speakerCharacter.gameObject.SetActive(false);
@@ -80,6 +80,7 @@ namespace LOK1game
             _currentStory = new Story(inkJson.text);
             IsPlaying = true;
             _panel.SetActive(true);
+            _audio.volume = 1f;
 
             ContinueStory();
             
@@ -93,6 +94,7 @@ namespace LOK1game
             _panel.SetActive(false);
             _speakerCharacter.gameObject.SetActive(false);
             _audio.Stop();
+            _audio.volume = 0f;
             
             DialogueEnded?.Invoke();
         }

@@ -5,6 +5,7 @@ namespace LOK1game.PinRap
     public static class LocalPlayer
     {
         public static Vector3 Position => _player.transform.position;
+        public static PinRapPlayerInput Input { get; private set; }
         public static PlayerController Controller { get; private set; }
 
         private static PinRapPlayer _player;
@@ -13,7 +14,8 @@ namespace LOK1game.PinRap
         {
             _player = player;
             
-            Controller = player.Controller as PlayerController;
+            Input = _player.Input;
+            Controller = _player.Controller as PlayerController;
         }
 
         public static void Kill()

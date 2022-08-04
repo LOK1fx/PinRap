@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TutorialEnemy
   m_EditorClassIdentifier: 
   _name: "\u0412\u043E\u0448\u0434\u044B\u0440\u043B\u0430\u043A"
-  _miniAvatar: {fileID: 21300000, guid: 01f9288d7d8bfa84a99ee0c6933055d2, type: 3}
+  _miniAvatar: {fileID: 21300000, guid: 12d5822f4ab538b4c8d861d9d47e1ecd, type: 3}
   _accentColor: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
   _canAppearInDialogues: 1
-  _dialogueCharacterSprite: {fileID: 21300000, guid: 719e08c335357894b86910ea5df2da3c, type: 3}
+  _dialogueCharacterSprite: {fileID: 21300000, guid: 98bf2b0ea3e90f3498f4ee74e8b1de7e, type: 3}
