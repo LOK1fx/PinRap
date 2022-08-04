@@ -61,8 +61,10 @@ namespace LOK1game
 
         public void Beat()
         {
-            OnDestroy?.Invoke(this, false);
+            if(Observer != null)
+                Observer.Visual.Beat();
             
+            OnDestroy?.Invoke(this, false);
             Destroy(gameObject);
         }
 

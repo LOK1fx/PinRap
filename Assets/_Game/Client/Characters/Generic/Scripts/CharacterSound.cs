@@ -46,6 +46,8 @@ namespace LOK1game.PinRap
 
         private void PlaySound(AudioClip clip)
         {
+            if(clip == null) { return; }
+
             _source.PlayOneShot(clip);
         }
 
