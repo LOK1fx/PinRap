@@ -37,7 +37,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _arrowsBaseSpeed: 60
-  _secondError: 0.01
+  _secondError: 0.1
   _cameraChangeFocusMarkers:
   - Focus: 0
     StartSecond: 0
@@ -89,35 +89,35 @@ MonoBehaviour:
     BeatEffectStrength: 0
     ArrowType: 1
   - Enemy: 1
-    StartSecond: 9.3
+    StartSecond: 9.31
     BeatEffectStrength: 0
     ArrowType: 0
   - Enemy: 1
-    StartSecond: 9.4
+    StartSecond: 9.42
     BeatEffectStrength: 0
     ArrowType: 1
-  - Enemy: 1
-    StartSecond: 9.5
-    BeatEffectStrength: 0
-    ArrowType: 3
-  - Enemy: 1
-    StartSecond: 9.6
-    BeatEffectStrength: 0
-    ArrowType: 0
-  - Enemy: 1
-    StartSecond: 9.53
-    BeatEffectStrength: 0
-    ArrowType: 3
   - Enemy: 1
     StartSecond: 9.54
     BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 1
+    StartSecond: 9.68
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 1
+    StartSecond: 9.79
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 1
+    StartSecond: 9.9
+    BeatEffectStrength: 0
     ArrowType: 1
   - Enemy: 1
-    StartSecond: 9.55
+    StartSecond: 10
     BeatEffectStrength: 0
     ArrowType: 2
   - Enemy: 1
-    StartSecond: 9.56
+    StartSecond: 10.2
     BeatEffectStrength: 0
     ArrowType: 3
   - Enemy: 0

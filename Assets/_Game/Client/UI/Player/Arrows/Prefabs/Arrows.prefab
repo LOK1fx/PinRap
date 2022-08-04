@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4131b3b64d77943408f1e658259d1750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiArrowBoundSize: 0.3
+  _uiArrowBoundSize: 0.45
 --- !u!222 &2687586024772626985
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4131b3b64d77943408f1e658259d1750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiArrowBoundSize: 0.3
+  _uiArrowBoundSize: 0.45
 --- !u!222 &8339494279477971767
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4131b3b64d77943408f1e658259d1750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiArrowBoundSize: 0.3
+  _uiArrowBoundSize: 0.45
 --- !u!222 &3499081639425617284
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4131b3b64d77943408f1e658259d1750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiArrowBoundSize: 0.3
+  _uiArrowBoundSize: 0.45
 --- !u!222 &2167082031403333671
 CanvasRenderer:
   m_ObjectHideFlags: 0
