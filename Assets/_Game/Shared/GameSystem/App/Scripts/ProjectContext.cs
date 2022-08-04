@@ -51,6 +51,11 @@ namespace LOK1game
             GameStateManager = new GameStateManager();
             ExperienceManager = new ExperienceManager();
             _gameModeManager = new GameModeManager();
+            
+            if (Application.isMobilePlatform)
+            {
+                Application.targetFrameRate = Screen.currentResolution.refreshRate;
+            }
 
             if(!PlayerConfig.IsInitialized)
                 PlayerConfig.Initialize();

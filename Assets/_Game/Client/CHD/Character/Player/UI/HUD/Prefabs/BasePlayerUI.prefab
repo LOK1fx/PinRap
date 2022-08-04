@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.23113209, b: 0.3943153, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -714,7 +714,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: x
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -723,8 +723,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -741,13 +741,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 67.1
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -888,7 +888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -897,10 +897,10 @@ PrefabInstance:
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 3200203322139589169}
+      objectReference: {fileID: 2983784581036884718}
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -909,14 +909,14 @@ PrefabInstance:
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 3200203322139589169}
+      objectReference: {fileID: 2983784581036884718}
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: set_alpha
+      value: Activate
       objectReference: {fileID: 0}
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -924,15 +924,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: set_alpha
+      value: Deactivate
       objectReference: {fileID: 0}
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UnityEngine.CanvasGroup, UnityEngine
+      value: LOK1game.PinRap.UI.MobileArrowInput, LOK1game.Client
       objectReference: {fileID: 0}
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.CanvasGroup, UnityEngine
+      value: LOK1game.PinRap.UI.MobileArrowInput, LOK1game.Client
       objectReference: {fileID: 0}
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_FloatArgument
@@ -1365,11 +1365,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49964353888e1c84aa316898ca870b77, type: 3}
---- !u!225 &3200203322139589169 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 105162396528572055, guid: 49964353888e1c84aa316898ca870b77, type: 3}
+--- !u!114 &2983784581036884718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 321008019008261704, guid: 49964353888e1c84aa316898ca870b77, type: 3}
   m_PrefabInstance: {fileID: 3250749365659618470}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323a031670545b64da6756b2955e2547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5615448565878863328 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6985909738132764998, guid: 49964353888e1c84aa316898ca870b77, type: 3}

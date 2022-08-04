@@ -22,14 +22,16 @@ namespace LOK1game.PinRap.UI
 #endif
         }
 
-        private void Activate()
+        public void Activate()
         {
+            if(!Application.isMobilePlatform) { return; }
+            
             _canvas.interactable = true;
             _canvas.blocksRaycasts = true;
             _canvas.alpha = 1f;
         }
 
-        private void Deactivate()
+        public void Deactivate()
         {
             _canvas.interactable = false;
             _canvas.blocksRaycasts = false;

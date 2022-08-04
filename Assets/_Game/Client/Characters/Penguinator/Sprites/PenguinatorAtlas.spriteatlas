@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PenguinatorAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 1aabb10871f637246b3ad83e089cb8b4, type: 3}
+    - {fileID: 2800000, guid: af698aa9bf496a34d8644840f095c46a, type: 3}
+    - {fileID: 2800000, guid: 6ada3d9894a8eaa44a544665e93f52d4, type: 3}
+    - {fileID: 2800000, guid: 9148c0f21b9ded84db69008657af9a57, type: 3}
+    - {fileID: 2800000, guid: 51876bfdc00ef2243bef929d5e24330a, type: 3}
+    - {fileID: 2800000, guid: c3efb8171c4c6dd40ada1311f21f652d, type: 3}
+    - {fileID: 2800000, guid: 523f5dde5d3e8b64681b744614d72f66, type: 3}
+    - {fileID: 2800000, guid: ed43884d9998f5e4e96af252f1406673, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 9148c0f21b9ded84db69008657af9a57, type: 3}
+  - {fileID: 21300000, guid: c3efb8171c4c6dd40ada1311f21f652d, type: 3}
+  - {fileID: 855201193, guid: 1aabb10871f637246b3ad83e089cb8b4, type: 3}
+  - {fileID: -893140553, guid: 1aabb10871f637246b3ad83e089cb8b4, type: 3}
+  - {fileID: 21300000, guid: 6ada3d9894a8eaa44a544665e93f52d4, type: 3}
+  - {fileID: -1940652972, guid: af698aa9bf496a34d8644840f095c46a, type: 3}
+  - {fileID: 21300000, guid: ed43884d9998f5e4e96af252f1406673, type: 3}
+  - {fileID: 21300000, guid: 51876bfdc00ef2243bef929d5e24330a, type: 3}
+  - {fileID: -1694377378, guid: 523f5dde5d3e8b64681b744614d72f66, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - PinRapEnemies_Penguinator02
+  - PinRapEnemiesAvatars_penguinator02
+  - penguinatorEyes_0
+  - penguinatorEyes_1
+  - PinRapEnemies_Penguinator
+  - penguinatorHead_0
+  - White-Flare-PNG-Pic
+  - PinRapEnemiesAvatars_penguinator01
+  - UZI gun_0
+  m_RenderDataMap: {}
+  m_Tag: PenguinatorAtlas
+  m_IsVariant: 0
