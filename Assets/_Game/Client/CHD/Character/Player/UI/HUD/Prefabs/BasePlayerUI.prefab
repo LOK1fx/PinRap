@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6f0fe01ec6b2e418547af8e9402f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
+  _speed: 4
   _targetAlpha: 1
   _startAlpha: 1
 --- !u!114 &5397989098059438838
@@ -404,6 +404,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 477668510864933717}
     m_Modifications:
+    - target: {fileID: 416795935811980648, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2079491659950412052, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -497,65 +501,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8623964812727702777}
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 3270406890005952873}
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3270406890005952873}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetTargetAlpha
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetTargetAlpha
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: LOK1game.UI.CanvasGroupAlphaEvolutor, LOK1game.Client
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LOK1game.UI.CanvasGroupAlphaEvolutor, LOK1game.Client
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
 --- !u!224 &960026988114412887 stripped

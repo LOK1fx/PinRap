@@ -76,6 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerType: 1
   _characterData: {fileID: 11400000, guid: e7abbb39a1f1415469808fb08cb1c992, type: 2}
+  _popupTextOffset: {x: 0, y: 1.9, z: 0}
 --- !u!114 &-84435740897515385
 MonoBehaviour:
   m_ObjectHideFlags: 0

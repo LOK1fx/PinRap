@@ -796,7 +796,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LOK1game.UI.CanvasGroupAlphaEvolutor, LOK1game.Client
+        m_MethodName: SetTargetAlpha
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   DialogueEnded:
     m_PersistentCalls:
       m_Calls:
@@ -812,11 +824,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LOK1game.UI.CanvasGroupAlphaEvolutor, LOK1game.Client
+        m_MethodName: SetTargetAlpha
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _panel: {fileID: 416795935811980648}
   _text: {fileID: 6142828186457247808}
   _speakerCharacter: {fileID: 7199494342012299915}
   _typingSpeed: 0.06
   _typeClip: {fileID: 8300000, guid: 237f2c2e1abbca4409aba86f636793e8, type: 3}
+  _continuieClip: {fileID: 0}
   _audio: {fileID: 0}
 --- !u!114 &7099029529228866299
 MonoBehaviour:

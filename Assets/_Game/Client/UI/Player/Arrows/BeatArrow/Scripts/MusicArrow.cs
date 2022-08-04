@@ -53,7 +53,7 @@ namespace LOK1game
                 OnDestroy?.Invoke(this, true);
                 
                 //TODO: REWORK THIS SHIT!!!
-                PlayerHud.Instance.DominationBar.RemovePoints(1);
+                PlayerHud.Instance.DominationBar.RemovePoints(5);
                 
                 Destroy(gameObject);
             }
