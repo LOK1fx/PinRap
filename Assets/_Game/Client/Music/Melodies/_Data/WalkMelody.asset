@@ -37,17 +37,23 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _arrowsBaseSpeed: 60
-  _secondError: 0.1
+  _secondError: 0.12
   _cameraChangeFocusMarkers:
   - Focus: 0
     StartSecond: 0
-    IsPlayed: 1
+    IsPlayed: 0
   - Focus: 2
     StartSecond: 2
-    IsPlayed: 1
+    IsPlayed: 0
   - Focus: 0
     StartSecond: 7.5
-    IsPlayed: 1
+    IsPlayed: 0
+  - Focus: 2
+    StartSecond: 11.2
+    IsPlayed: 0
+  - Focus: 0
+    StartSecond: 17
+    IsPlayed: 0
   _bpm: 75
   _music: {fileID: 8300000, guid: cbd7519cb4e2e294c94ef725ac3f0f4a, type: 3}
   _musicVolumeOutOfFocus: 0.25
@@ -121,6 +127,50 @@ MonoBehaviour:
     BeatEffectStrength: 0
     ArrowType: 3
   - Enemy: 0
-    StartSecond: 58
-    BeatEffectStrength: 1
+    StartSecond: 12
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 0
+    StartSecond: 12.5
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 0
+    StartSecond: 13
+    BeatEffectStrength: 0
     ArrowType: 3
+  - Enemy: 0
+    StartSecond: 14
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 0
+    StartSecond: 14.5
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 0
+    StartSecond: 15.5
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 0
+    StartSecond: 16
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 0
+    StartSecond: 17
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 0
+    StartSecond: 18
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 0
+    StartSecond: 19
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 1
+    StartSecond: 20
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 1
+    StartSecond: 21
+    BeatEffectStrength: 0
+    ArrowType: 0

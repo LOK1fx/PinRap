@@ -51,8 +51,8 @@ namespace LOK1game
         public void Kill()
         {
             _isDead = true;
-            
-            OnDie?.Invoke();
+
+            TransitionLoad.LoadScene("PinRapMainMenu");
         }
 
         protected override void UnsubscribeFromEvents()

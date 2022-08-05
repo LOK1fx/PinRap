@@ -1,0 +1,261 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40f93c54e05401448b3294162b350a0, type: 3}
+  m_Name: TutorialMusic
+  m_EditorClassIdentifier: 
+  _arrowsSpeedGraph:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _arrowsBaseSpeed: 35
+  _secondError: 0.18
+  _cameraChangeFocusMarkers:
+  - Focus: 0
+    StartSecond: 0
+    IsPlayed: 1
+  - Focus: 3
+    StartSecond: 7
+    IsPlayed: 0
+  - Focus: 2
+    StartSecond: 10
+    IsPlayed: 0
+  - Focus: 0
+    StartSecond: 14
+    IsPlayed: 0
+  _bpm: 70
+  _music: {fileID: 8300000, guid: ea531b40f133f26488aa5a9ce66d30d3, type: 3}
+  _musicVolumeOutOfFocus: 0.25
+  _nodes:
+  - Enemy: 1
+    StartSecond: 6
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 1
+    StartSecond: 7
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 1
+    StartSecond: 8
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 1
+    StartSecond: 9
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 0
+    StartSecond: 10
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 0
+    StartSecond: 11
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 0
+    StartSecond: 12
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 0
+    StartSecond: 13
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 1
+    StartSecond: 13.2
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 1
+    StartSecond: 14
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 1
+    StartSecond: 15
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 1
+    StartSecond: 16
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 1
+    StartSecond: 17
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 0
+    StartSecond: 17.2
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 0
+    StartSecond: 18
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 0
+    StartSecond: 19
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 1
+    StartSecond: 20
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 1
+    StartSecond: 21
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 1
+    StartSecond: 22
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 0
+    StartSecond: 23
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 0
+    StartSecond: 24
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 0
+    StartSecond: 25
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 1
+    StartSecond: 26
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 1
+    StartSecond: 26.2
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 1
+    StartSecond: 26.5
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 0
+    StartSecond: 27
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 0
+    StartSecond: 27.2
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 0
+    StartSecond: 27.5
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 1
+    StartSecond: 28
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 0
+    StartSecond: 28.2
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 1
+    StartSecond: 28.5
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 0
+    StartSecond: 28.8
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 1
+    StartSecond: 30
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 0
+    StartSecond: 31
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 1
+    StartSecond: 32
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 1
+    StartSecond: 33
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 1
+    StartSecond: 34
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 1
+    StartSecond: 35
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 0
+    StartSecond: 36
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 0
+    StartSecond: 37
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 0
+    StartSecond: 38
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 0
+    StartSecond: 39
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 1
+    StartSecond: 42
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 0
+    StartSecond: 43
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 1
+    StartSecond: 44
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 0
+    StartSecond: 45
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 1
+    StartSecond: 46
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 0
+    StartSecond: 47
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 1
+    StartSecond: 48
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 0
+    StartSecond: 49
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 1
+    StartSecond: 53
+    BeatEffectStrength: 0
+    ArrowType: 2

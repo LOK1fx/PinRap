@@ -297,11 +297,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 586976274972104416, guid: 121f1f975c0fef941a10e3247d3f749e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 586976274972104416, guid: 121f1f975c0fef941a10e3247d3f749e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 586976274972104417, guid: 121f1f975c0fef941a10e3247d3f749e, type: 3}
+      propertyPath: m_ComponentOwner
+      value: 
+      objectReference: {fileID: 130749549}
+    - target: {fileID: 586976274972104417, guid: 121f1f975c0fef941a10e3247d3f749e, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8475334379418181594, guid: 121f1f975c0fef941a10e3247d3f749e, type: 3}
+      propertyPath: _startFocus
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8475334379418181594, guid: 121f1f975c0fef941a10e3247d3f749e, type: 3}
+      propertyPath: _startFocusSetDelay
+      value: 3.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 121f1f975c0fef941a10e3247d3f749e, type: 3}
 --- !u!4 &130749548 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 586976274802103923, guid: 121f1f975c0fef941a10e3247d3f749e, type: 3}
+  m_PrefabInstance: {fileID: 130749547}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &130749549 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 586976275267977470, guid: 121f1f975c0fef941a10e3247d3f749e, type: 3}
   m_PrefabInstance: {fileID: 130749547}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &457005543

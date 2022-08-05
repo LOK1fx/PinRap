@@ -50,7 +50,7 @@ namespace LOK1game.PinRap.UI
 
         public void Up()
         {
-            LocalPlayer.Input.PressDown();
+            LocalPlayer.Input.PressUp();
         }
 
         public void Right()

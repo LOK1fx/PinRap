@@ -49,6 +49,7 @@ MonoBehaviour:
   _characterData: {fileID: 11400000, guid: 6974e2a4a0e183b4bb849ed7b5a035b4, type: 2}
   _startDialogue: {fileID: 4900000, guid: 17ed70628e4b7a54fac23500c12fc63c, type: 3}
   _startDialogueDelay: 1
+  _endDialogue: {fileID: 4900000, guid: ed405d7e375de704eb47b21d1b5282fc, type: 3}
 --- !u!1001 &1066331778724995222
 PrefabInstance:
   m_ObjectHideFlags: 0
