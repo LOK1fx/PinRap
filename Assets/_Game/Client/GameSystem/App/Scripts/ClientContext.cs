@@ -13,6 +13,7 @@ namespace LOK1game
         
         public BeatController BeatController { get; private set; }
         public MusicDatabase MusicDatabase { get; private set; }
+        public PostProcessingController PostProcessingController { get; private set; }
 
         [SerializeField] private TransitionLoad _loadingScreenPrefab;
         private TransitionLoad _loadingScreen;
@@ -21,6 +22,9 @@ namespace LOK1game
         {
             MusicDatabase = Resources.Load<MusicDatabase>(MUSIC_DATABASE_PATH);
             BeatController = new BeatController();
+            
+            PostProcessingController = new PostProcessingController();
+            PostProcessingController.UpdateState();
 
             _loadingScreen = Object.Instantiate(_loadingScreenPrefab);
             Object.DontDestroyOnLoad(_loadingScreen.gameObject);

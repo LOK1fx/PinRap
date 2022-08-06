@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PenguAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: de45a2d8b2cf83145b92a5ceeddecc50, type: 3}
+    - {fileID: 2800000, guid: 69ffd9d47c610a549afcfe6f97355bc9, type: 3}
+    - {fileID: 2800000, guid: 0574c8b395116fc4d92665e284aa71f2, type: 3}
+    - {fileID: 2800000, guid: 446e2303a8cea3c4cbc364ded7d41913, type: 3}
+    - {fileID: 2800000, guid: 2885bc84e2d63ce4d8c00721b311b03e, type: 3}
+    - {fileID: 2800000, guid: 8721d8b72dc199e43a80eb9207a07e22, type: 3}
+    - {fileID: 2800000, guid: 48d8892e510b1fe42b1a37316fe8b8af, type: 3}
+    - {fileID: 2800000, guid: de72069cf7043b64eab05c91dc6329dd, type: 3}
+    - {fileID: 2800000, guid: 442cf0dc13a832744b7d4a70a6badfe0, type: 3}
+    - {fileID: 2800000, guid: caa82afcab877e34c80c4f697eceec8d, type: 3}
+    - {fileID: 2800000, guid: 528137f0de1b9f14e9932f632495fc40, type: 3}
+    - {fileID: 2800000, guid: 9b35aa9985cb57647b9159f4794d0f76, type: 3}
+    - {fileID: 2800000, guid: 80a25b1201c130a4fac352ee17c154e2, type: 3}
+    - {fileID: 2800000, guid: 2ab2651d5a4d59d4e807d8340a646d10, type: 3}
+    - {fileID: 2800000, guid: 490d6dde42081a24da0ff843f8d451b9, type: 3}
+    - {fileID: 2800000, guid: 24f57788f352e8b4e8eadf0da04602ed, type: 3}
+    - {fileID: 2800000, guid: 12d5822f4ab538b4c8d861d9d47e1ecd, type: 3}
+    - {fileID: 2800000, guid: 98bf2b0ea3e90f3498f4ee74e8b1de7e, type: 3}
+    - {fileID: 2800000, guid: 946773e3b73f75249813eb8152c84eca, type: 3}
+    - {fileID: 2800000, guid: 1aabb10871f637246b3ad83e089cb8b4, type: 3}
+    - {fileID: 2800000, guid: af698aa9bf496a34d8644840f095c46a, type: 3}
+    - {fileID: 2800000, guid: 51876bfdc00ef2243bef929d5e24330a, type: 3}
+    - {fileID: 2800000, guid: c3efb8171c4c6dd40ada1311f21f652d, type: 3}
+    - {fileID: 2800000, guid: 523f5dde5d3e8b64681b744614d72f66, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 1471526916, guid: 528137f0de1b9f14e9932f632495fc40, type: 3}
+  - {fileID: -713024026, guid: 80a25b1201c130a4fac352ee17c154e2, type: 3}
+  - {fileID: -882736522, guid: 446e2303a8cea3c4cbc364ded7d41913, type: 3}
+  - {fileID: 681288067, guid: 0574c8b395116fc4d92665e284aa71f2, type: 3}
+  - {fileID: 21300000, guid: 946773e3b73f75249813eb8152c84eca, type: 3}
+  - {fileID: 21300000, guid: 2885bc84e2d63ce4d8c00721b311b03e, type: 3}
+  - {fileID: -913142803, guid: 69ffd9d47c610a549afcfe6f97355bc9, type: 3}
+  - {fileID: 21300000, guid: c3efb8171c4c6dd40ada1311f21f652d, type: 3}
+  - {fileID: 21300000, guid: 8721d8b72dc199e43a80eb9207a07e22, type: 3}
+  - {fileID: 855201193, guid: 1aabb10871f637246b3ad83e089cb8b4, type: 3}
+  - {fileID: -893140553, guid: 1aabb10871f637246b3ad83e089cb8b4, type: 3}
+  - {fileID: -1069836283, guid: 24f57788f352e8b4e8eadf0da04602ed, type: 3}
+  - {fileID: 1811154501, guid: de45a2d8b2cf83145b92a5ceeddecc50, type: 3}
+  - {fileID: 21300000, guid: 9b35aa9985cb57647b9159f4794d0f76, type: 3}
+  - {fileID: -1940652972, guid: af698aa9bf496a34d8644840f095c46a, type: 3}
+  - {fileID: 21300000, guid: de72069cf7043b64eab05c91dc6329dd, type: 3}
+  - {fileID: 21300000, guid: 442cf0dc13a832744b7d4a70a6badfe0, type: 3}
+  - {fileID: -692081499, guid: caa82afcab877e34c80c4f697eceec8d, type: 3}
+  - {fileID: 2025116960, guid: 2ab2651d5a4d59d4e807d8340a646d10, type: 3}
+  - {fileID: 21300000, guid: 51876bfdc00ef2243bef929d5e24330a, type: 3}
+  - {fileID: 21300000, guid: 98bf2b0ea3e90f3498f4ee74e8b1de7e, type: 3}
+  - {fileID: 21300000, guid: 48d8892e510b1fe42b1a37316fe8b8af, type: 3}
+  - {fileID: -1694377378, guid: 523f5dde5d3e8b64681b744614d72f66, type: 3}
+  - {fileID: -1554253513, guid: 490d6dde42081a24da0ff843f8d451b9, type: 3}
+  - {fileID: 21300000, guid: 12d5822f4ab538b4c8d861d9d47e1ecd, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - arrow_0
+  - girl's eyess_0
+  - PenguLeg_0
+  - PenguHead_0
+  - pixel
+  - PinRap_MirroredPengu_Mirror
+  - PenguEyes_0
+  - PinRapEnemiesAvatars_penguinator02
+  - PinRap_MirroredPengu_MirrorContent
+  - penguinatorEyes_0
+  - penguinatorEyes_1
+  - girl's head_0
+  - PenguBody_0
+  - PinRap_MirroredPengu_MirrorFrame
+  - penguinatorHead_0
+  - PinRapEnemies_MirroredPengu_3
+  - PinRapEnemiesAvatars_MirroredPengu
+  - micro_0
+  - girl's hair1_0
+  - PinRapEnemiesAvatars_penguinator01
+  - PinRapEnemies_Girl
+  - PinRap_MirroredPengu_MirrorMask
+  - UZI gun_0
+  - girl's hand_0
+  - PinRapEnemiesAvatars_Girl
+  m_RenderDataMap: {}
+  m_Tag: PenguAtlas
+  m_IsVariant: 0

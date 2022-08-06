@@ -28,12 +28,12 @@ namespace LOK1game.Game
 
         public GameObject UiPrefab => _uiPrefab;
         public GameObject CameraPrefab => _cameraPrefab;
-        public Actor PlayerPrefab => _playerPrefab;
+        public GameObject PlayerPrefab => _playerPrefab;
         public PlayerController PlayerController => _playerController;
 
         [SerializeField] private GameObject _uiPrefab;
         [SerializeField] private GameObject _cameraPrefab;
-        [SerializeField] private Actor _playerPrefab;
+        [SerializeField] private GameObject _playerPrefab;
         [SerializeField] private PlayerController _playerController;
 
         private bool _isGameModeObjectListInitialized;

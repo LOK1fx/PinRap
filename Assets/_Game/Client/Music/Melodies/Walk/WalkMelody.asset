@@ -36,141 +36,109 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _arrowsBaseSpeed: 60
+  _arrowsBaseSpeed: 75
   _secondError: 0.12
   _cameraChangeFocusMarkers:
   - Focus: 0
     StartSecond: 0
     IsPlayed: 0
-  - Focus: 2
-    StartSecond: 2
+  - Focus: 3
+    StartSecond: 1.6
     IsPlayed: 0
   - Focus: 0
-    StartSecond: 7.5
+    StartSecond: 7
     IsPlayed: 0
   - Focus: 2
-    StartSecond: 11.2
-    IsPlayed: 0
-  - Focus: 0
     StartSecond: 17
+    IsPlayed: 0
+  - Focus: 0
+    StartSecond: 20
     IsPlayed: 0
   _bpm: 75
   _music: {fileID: 8300000, guid: cbd7519cb4e2e294c94ef725ac3f0f4a, type: 3}
   _musicVolumeOutOfFocus: 0.25
   _nodes:
-  - Enemy: 0
-    StartSecond: 3.2
+  - Enemy: 1
+    StartSecond: 2.8
     BeatEffectStrength: 0
     ArrowType: 0
-  - Enemy: 0
-    StartSecond: 3.7
+  - Enemy: 1
+    StartSecond: 3.8
     BeatEffectStrength: 0
-    ArrowType: 1
-  - Enemy: 0
-    StartSecond: 5
-    BeatEffectStrength: 0
-    ArrowType: 2
-  - Enemy: 0
-    StartSecond: 6
+    ArrowType: 0
+  - Enemy: 1
+    StartSecond: 4.5
     BeatEffectStrength: 0
     ArrowType: 3
-  - Enemy: 0
+  - Enemy: 1
+    StartSecond: 5
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 1
+    StartSecond: 6
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 1
     StartSecond: 7
     BeatEffectStrength: 0
-    ArrowType: 0
+    ArrowType: 2
   - Enemy: 0
     StartSecond: 8
     BeatEffectStrength: 0
-    ArrowType: 0
+    ArrowType: 3
   - Enemy: 0
     StartSecond: 9
     BeatEffectStrength: 0
-    ArrowType: 0
-  - Enemy: 1
-    StartSecond: 9.1
-    BeatEffectStrength: 0
-    ArrowType: 0
-  - Enemy: 1
-    StartSecond: 9.2
-    BeatEffectStrength: 0
-    ArrowType: 1
-  - Enemy: 1
-    StartSecond: 9.31
-    BeatEffectStrength: 0
-    ArrowType: 0
-  - Enemy: 1
-    StartSecond: 9.42
-    BeatEffectStrength: 0
-    ArrowType: 1
-  - Enemy: 1
-    StartSecond: 9.54
-    BeatEffectStrength: 0
     ArrowType: 3
-  - Enemy: 1
-    StartSecond: 9.68
-    BeatEffectStrength: 0
-    ArrowType: 0
-  - Enemy: 1
-    StartSecond: 9.79
-    BeatEffectStrength: 0
-    ArrowType: 3
-  - Enemy: 1
-    StartSecond: 9.9
-    BeatEffectStrength: 0
-    ArrowType: 1
-  - Enemy: 1
+  - Enemy: 0
     StartSecond: 10
     BeatEffectStrength: 0
-    ArrowType: 2
-  - Enemy: 1
-    StartSecond: 10.2
+    ArrowType: 0
+  - Enemy: 0
+    StartSecond: 11
     BeatEffectStrength: 0
-    ArrowType: 3
+    ArrowType: 0
   - Enemy: 0
     StartSecond: 12
     BeatEffectStrength: 0
-    ArrowType: 0
-  - Enemy: 0
-    StartSecond: 12.5
-    BeatEffectStrength: 0
-    ArrowType: 0
+    ArrowType: 1
   - Enemy: 0
     StartSecond: 13
     BeatEffectStrength: 0
-    ArrowType: 3
+    ArrowType: 1
   - Enemy: 0
     StartSecond: 14
     BeatEffectStrength: 0
-    ArrowType: 2
-  - Enemy: 0
-    StartSecond: 14.5
-    BeatEffectStrength: 0
     ArrowType: 1
   - Enemy: 0
-    StartSecond: 15.5
+    StartSecond: 17.5
     BeatEffectStrength: 0
-    ArrowType: 1
+    ArrowType: 0
   - Enemy: 0
-    StartSecond: 16
-    BeatEffectStrength: 0
-    ArrowType: 2
-  - Enemy: 0
-    StartSecond: 17
+    StartSecond: 17.75
     BeatEffectStrength: 0
     ArrowType: 3
   - Enemy: 0
-    StartSecond: 18
+    StartSecond: 18.2
     BeatEffectStrength: 0
-    ArrowType: 3
+    ArrowType: 1
+  - Enemy: 0
+    StartSecond: 18.7
+    BeatEffectStrength: 0
+    ArrowType: 2
   - Enemy: 0
     StartSecond: 19
     BeatEffectStrength: 0
-    ArrowType: 0
-  - Enemy: 1
-    StartSecond: 20
+    ArrowType: 2
+  - Enemy: 0
+    StartSecond: 19.3
     BeatEffectStrength: 0
-    ArrowType: 0
-  - Enemy: 1
-    StartSecond: 21
+    ArrowType: 2
+  - Enemy: 0
+    StartSecond: 19.8
     BeatEffectStrength: 0
-    ArrowType: 0
+    ArrowType: 1
+  - Enemy: 0
+    StartSecond: 22
+    BeatEffectStrength: 0
+    ArrowType: 1

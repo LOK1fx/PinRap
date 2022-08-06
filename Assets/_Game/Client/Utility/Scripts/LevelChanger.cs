@@ -8,7 +8,14 @@ namespace LOK1game
         
         public void ChangeLevel()
         {
-            TransitionLoad.LoadLevel(_levelToLoad);
+            try
+            {
+                TransitionLoad.LoadLevel(_levelToLoad);
+            }
+            catch
+            {
+                App.Quit();
+            }
         }
     }
 }

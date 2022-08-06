@@ -16,10 +16,11 @@ namespace LOK1game
         
         private bool _isDead;
 
-        private void Awake()
+        protected override void Awake()
         {
-            Input = GetComponent<PinRapPlayerInput>();
+            base.Awake();
             
+            Input = GetComponent<PinRapPlayerInput>();
             SubscribeToEvents();
         }
 
@@ -107,6 +108,8 @@ namespace LOK1game
                 var text = new PopupTextParams("-5", 3f);
                 var popup = PopupText.Spawn<PopupText3D>(transform.position, text);
                 popup.SetPosition(popupPosition);
+                
+                TakeDamage(new Damage(5));
             }
         }
 
