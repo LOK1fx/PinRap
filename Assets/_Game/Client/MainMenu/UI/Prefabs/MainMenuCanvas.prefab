@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 6465760140874174852}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!114 &3078748723362701180
@@ -3170,6 +3170,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5958559052899748093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465760140720618816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c9c7fb93d4cef840935314b0e7e3742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ativeInEditor: 1
 --- !u!224 &8719194249213705691 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7571433848745479403, guid: 77ae03aeffe20d74f9240c6a766c6d7b, type: 3}

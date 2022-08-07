@@ -363,6 +363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 702023262}
   - component: {fileID: 702023263}
+  - component: {fileID: 702023264}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
@@ -437,6 +438,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &702023264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702023261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328b4f8ec7930cc41a71a5df6dff9ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _strength: 0.1
 --- !u!1001 &880872259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5626,7 +5640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _standardGameModeOverride: 1
-  _musicData: {fileID: 11400000, guid: 475424ef2403eaa40ab5fd6f7ec9268f, type: 2}
+  _musicData: {fileID: 11400000, guid: cec35251a9dc84f41a30f61c7c09b09d, type: 2}
 --- !u!4 &1708234583
 Transform:
   m_ObjectHideFlags: 0

@@ -787,7 +787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _standardGameModeOverride: 1
-  _musicData: {fileID: 11400000, guid: 475424ef2403eaa40ab5fd6f7ec9268f, type: 2}
+  _musicData: {fileID: 11400000, guid: e6427f39d5639f449849419ca55f248c, type: 2}
 --- !u!4 &1708234583
 Transform:
   m_ObjectHideFlags: 0

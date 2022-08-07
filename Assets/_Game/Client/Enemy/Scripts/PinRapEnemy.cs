@@ -14,19 +14,24 @@ namespace LOK1game
 
         private UIArrowSpawner _arrowSpawner;
         private MusicTimeline _musicTimeline;
+        private Coroutine _currentDialogueRoutine;
 
         private void Start()
         {
             PlayerHud.Instance.DominationBar.SetEnemyCharacter(CharacterData);
 
             if (_startDialogue != null)
-                StartCoroutine(StartDialogue(_startDialogue, _startDialogueDelay));
-
-            if (_endDialogue != null)
             {
-                _musicTimeline = MusicTimeline.Instance;
-                _musicTimeline.OnMusicEnd += OnMusicEnd;
+                if(_currentDialogueRoutine != null)
+                    StopCoroutine(_currentDialogueRoutine);
+                
+                _currentDialogueRoutine = StartCoroutine(StartDialogue(_startDialogue, _startDialogueDelay));
             }
+
+            if (_endDialogue == null) return;
+            
+            _musicTimeline = MusicTimeline.Instance;
+            _musicTimeline.OnMusicEnd += OnMusicEnd;
         }
 
         private void OnDestroy()
@@ -38,8 +43,10 @@ namespace LOK1game
 
         private void OnMusicEnd()
         {
-            StartCoroutine(StartDialogue(_endDialogue,0f));
+            if(_currentDialogueRoutine != null)
+                StopCoroutine(_currentDialogueRoutine);
             
+            _currentDialogueRoutine = StartCoroutine(StartDialogue(_endDialogue,0f));
             DialoguePanel.Instance.DialogueEnded.AddListener(() => TransitionLoad.LoadScene("PinRapMainMenu"));
         }
 
