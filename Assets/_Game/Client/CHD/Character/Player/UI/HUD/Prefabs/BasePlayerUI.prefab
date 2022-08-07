@@ -879,18 +879,6 @@ PrefabInstance:
       value: Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 3270406890005952873}
@@ -899,10 +887,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2983784581036884718}
     - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
       propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3270406890005952873}
@@ -910,42 +894,6 @@ PrefabInstance:
       propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2983784581036884718}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Activate
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Deactivate
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: LOK1game.PinRap.UI.MobileArrowInput, LOK1game.Client
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: LOK1game.PinRap.UI.MobileArrowInput, LOK1game.Client
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEnded.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392662573987107988, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
-      propertyPath: DialogueEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea38e3bbc6d443342888f2f1fa6a8943, type: 3}
 --- !u!224 &960026988114412887 stripped
