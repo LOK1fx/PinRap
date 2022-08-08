@@ -41,10 +41,10 @@ MonoBehaviour:
   _cameraChangeFocusMarkers:
   - Focus: 0
     StartSecond: 0
-    IsPlayed: 0
+    IsPlayed: 1
   - Focus: 3
     StartSecond: 1.6
-    IsPlayed: 0
+    IsPlayed: 1
   - Focus: 0
     StartSecond: 7
     IsPlayed: 0
