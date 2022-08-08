@@ -47,7 +47,7 @@ MonoBehaviour:
     IsPlayed: 1
   - Focus: 0
     StartSecond: 22
-    IsPlayed: 0
+    IsPlayed: 1
   - Focus: 3
     StartSecond: 41
     IsPlayed: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   - Enemy: 1
     StartSecond: 20.5
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 3
   - Enemy: 1
     StartSecond: 21
     BeatEffectStrength: 3
@@ -177,27 +177,27 @@ MonoBehaviour:
   - Enemy: 0
     StartSecond: 22.3
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 2
   - Enemy: 0
     StartSecond: 22.8
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 1
   - Enemy: 0
     StartSecond: 23.2
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 3
   - Enemy: 0
     StartSecond: 23.7
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 3
   - Enemy: 0
     StartSecond: 23.7
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 1
   - Enemy: 0
     StartSecond: 24.3
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 2
   - Enemy: 0
     StartSecond: 24.9
     BeatEffectStrength: 3
@@ -205,15 +205,15 @@ MonoBehaviour:
   - Enemy: 0
     StartSecond: 25.9
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 3
   - Enemy: 0
     StartSecond: 26.1
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 1
   - Enemy: 0
     StartSecond: 26.7
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 2
   - Enemy: 0
     StartSecond: 27.5
     BeatEffectStrength: 3
@@ -221,7 +221,7 @@ MonoBehaviour:
   - Enemy: 0
     StartSecond: 28
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 3
   - Enemy: 0
     StartSecond: 28.6
     BeatEffectStrength: 3
@@ -229,7 +229,7 @@ MonoBehaviour:
   - Enemy: 0
     StartSecond: 29
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 1
   - Enemy: 0
     StartSecond: 29.5
     BeatEffectStrength: 3
@@ -237,23 +237,23 @@ MonoBehaviour:
   - Enemy: 0
     StartSecond: 29.5
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 1
   - Enemy: 0
     StartSecond: 29.8
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 2
   - Enemy: 0
     StartSecond: 31
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 1
   - Enemy: 0
     StartSecond: 31.4
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 2
   - Enemy: 0
     StartSecond: 31.8
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 3
   - Enemy: 0
     StartSecond: 31.8
     BeatEffectStrength: 3
@@ -261,7 +261,7 @@ MonoBehaviour:
   - Enemy: 0
     StartSecond: 32.3
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 3
   - Enemy: 0
     StartSecond: 32.8
     BeatEffectStrength: 3
@@ -269,7 +269,7 @@ MonoBehaviour:
   - Enemy: 0
     StartSecond: 32.8
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 3
   - Enemy: 0
     StartSecond: 33.4
     BeatEffectStrength: 3
@@ -281,55 +281,55 @@ MonoBehaviour:
   - Enemy: 0
     StartSecond: 34.7
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 3
   - Enemy: 0
     StartSecond: 35.2
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 1
   - Enemy: 0
     StartSecond: 35.7
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 2
   - Enemy: 0
     StartSecond: 35.7
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 1
   - Enemy: 0
     StartSecond: 36.4
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 3
   - Enemy: 0
     StartSecond: 36.8
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 1
   - Enemy: 0
     StartSecond: 37.2
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 2
   - Enemy: 0
     StartSecond: 37.9
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 1
   - Enemy: 0
     StartSecond: 38.4
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 3
   - Enemy: 0
     StartSecond: 38.8
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 2
   - Enemy: 0
     StartSecond: 39.3
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 2
   - Enemy: 0
     StartSecond: 39.7
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 1
   - Enemy: 0
     StartSecond: 40.4
     BeatEffectStrength: 3
-    ArrowType: 0
+    ArrowType: 1
   - Enemy: 1
     StartSecond: 41.3
     BeatEffectStrength: 3
