@@ -5,8 +5,9 @@ namespace LOK1game
 {
     public class PlayerInputManager : MonoBehaviour, IPawn
     {
+        public Controller Controller { get; private set; }
+        
         [HideInInspector] public List<IPawn> PawnInputs = new List<IPawn>();
-
         [SerializeField] private List<MonoBehaviour> _actors = new List<MonoBehaviour>();
 
         private void Awake()
@@ -41,6 +42,7 @@ namespace LOK1game
             //Test temp solution
             OnInput(this);
         }
+        
 
         public void OnInput(object sender)
         {
@@ -61,7 +63,12 @@ namespace LOK1game
 
         public void OnPocces(Controller sender)
         {
-            throw new System.NotImplementedException();
+            Controller = sender;
+        }
+
+        public void OnUnpocces()
+        {
+            Controller = null;
         }
     }
 

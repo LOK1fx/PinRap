@@ -5,6 +5,8 @@ namespace LOK1game.PinRap
 {
     public class PinRapMapEditorPlayer : Pawn
     {
+        private const float MOVE_SPEED_MULTIPLIER = 100f;
+        
         [SerializeField] private CinemachineVirtualCamera _camera;
         [SerializeField] private Transform _cameraTransform;
         [SerializeField] private float _moveSpeed = 8f;
@@ -13,7 +15,7 @@ namespace LOK1game.PinRap
 
         private const float ZOOM_MIN_RANGE = 2f;
 
-        private float _currentZoom;
+        private float _currentZoom = 5f;
         private Vector3 _startDragPosition;
         private bool _isDragging;
 
@@ -25,6 +27,11 @@ namespace LOK1game.PinRap
             }
 
             _camera.m_Lens.OrthographicSize = _currentZoom;
+        }
+
+        private void MoveInDirection(Vector3 direction)
+        {
+            _cameraTransform.localPosition += direction * (_moveSpeed * MOVE_SPEED_MULTIPLIER * Time.deltaTime);
         }
 
         public override void OnPocces(Controller sender)
@@ -40,11 +47,17 @@ namespace LOK1game.PinRap
                 
                 _isDragging = true;
             }
-
             if (Input.GetKeyUp(KeyCode.Mouse2))
             {
                 _isDragging = false;
             }
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                _cameraTransform.localPosition = Vector3.up;
+            }
+            
+            MoveInDirection(Input.GetAxis("Horizontal") * Vector3.right);
+            MoveInDirection(Input.GetAxis("Vertical") * Vector3.up);
 
             _currentZoom -= Input.mouseScrollDelta.y * _zoomChangeSpeed;
             _currentZoom = Mathf.Clamp(_currentZoom, ZOOM_MIN_RANGE, _zoomMaxRange);

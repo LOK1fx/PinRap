@@ -1,14 +1,22 @@
-using UnityEngine.SceneManagement;
+using LOK1game.World;
+using UnityEngine;
 
-namespace LOK1game.World
+#if UNITY_EDITOR
+using UnityEngine.SceneManagement;
+#endif
+
+namespace LOK1game.PinRap.World
 {
+    [RequireComponent(typeof(WorldEnemy))]
     public class PinRapGameplayWorld : GameWorld
     {
         protected override void Initialize()
         {
 #if UNITY_EDITOR
-            if (StandardGameModeOverride == EGameModeId.Default)
-                SceneManager.LoadSceneAsync("PinRapGameplayCore", LoadSceneMode.Additive);
+
+            if (SceneManager.GetSceneByName("PinRapGameplayCore").isLoaded == false)
+                SceneManager.LoadScene("PinRapGameplayCore", LoadSceneMode.Additive);
+
 #endif
         }
     }

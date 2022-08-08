@@ -37,9 +37,19 @@ namespace LOK1game
         public static void Quit(int exitCode = 0)
         {
             EventManager.Clear();
+            Debug.LogWarning("The EventManager has been cleared!");
+            
             PersistentScene.Unload();
+            Debug.LogWarning("The persistent scene is unloaded!");
             
             Application.Quit(exitCode);
+            Debug.Log("Application quit!");
+
+#if UNITY_EDITOR
+
+            UnityEditor.EditorApplication.isPlaying = false;
+            
+#endif
         }
 
         private void InitializeComponents()

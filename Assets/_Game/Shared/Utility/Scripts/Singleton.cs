@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     protected virtual void Awake()
     {
         Instance = this as T;
+    }
+
+    protected void OnDestroy()
+    {
+        Instance = null;
     }
 
     protected virtual void OnApplicationQuit()

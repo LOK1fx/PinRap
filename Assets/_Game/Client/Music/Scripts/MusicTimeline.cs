@@ -20,6 +20,7 @@ namespace LOK1game
 
         public bool IsPlaying { get; private set; }
         public bool PlaybackResumed { get; private set; }
+        public MusicData MusicDataInstance { get; private set; }
 
         private MusicData _music;
         private float _currentSecond = 0;
@@ -104,11 +105,11 @@ namespace LOK1game
             IsPlaying = true;
             PlaybackResumed = false;
 
-            var musicInstance = ScriptableObject.CreateInstance<MusicData>();
+            MusicDataInstance = ScriptableObject.CreateInstance<MusicData>();
 
-            musicInstance = music;
+            MusicDataInstance = music;
 
-            _music = musicInstance;
+            _music = MusicDataInstance;
             _source.clip = _music.MusicClip;
             _source.Play();
             _currentSecond = second;

@@ -1,11 +1,12 @@
 using LOK1game.Game;
+using LOK1game.PinRap;
 using LOK1game.UI;
 using UnityEngine;
 
 namespace LOK1game
 {
     [RequireComponent(typeof(PinRapPlayerInput))]
-    public class PinRapPlayer : Pawn
+    public class PinRapPlayer : PinRapCharacter
     {
         private PinRapPlayerInput _input;
 
@@ -14,6 +15,13 @@ namespace LOK1game
             _input = GetComponent<PinRapPlayerInput>();
             
             SubscribeToEvents();
+        }
+
+        private void Start()
+        {
+            PlayerHud.Instance.DominationBar.SetPlayerCharacter(CharacterData);
+            
+            LocalPlayer.Initialize(this);
         }
 
         protected override void SubscribeToEvents()
@@ -52,11 +60,16 @@ namespace LOK1game
             TryBeatArrow(GetArrowSpawner().LeftArrowChecker);
         }
 
-        private void TryBeatArrow(BeatArrowChecker checker)
+        private void TryBeatArrow(MusicArrowChecker checker)
         {
             if (checker.IsArrowInbound(out var arrow))
             {
-                arrow.Beat();
+                BeatArrow(arrow);
+                
+                PlayerHud.Instance.DominationBar.AddPoints(1);
+                
+                if(arrow.BeatEffectStrength != EBeatEffectStrength.None)
+                    ClientApp.ClientContext.BeatController.InstantiateBeat(arrow.BeatEffectStrength);
             }
         }
 

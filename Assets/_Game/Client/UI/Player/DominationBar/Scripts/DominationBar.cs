@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using LOK1game.Tools;
-using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.UI;
 
 namespace LOK1game.UI

@@ -19,6 +19,13 @@ namespace LOK1game
             BeatDetection();
         }
 
+        public void SetBPM(int value)
+        {
+            _beatTimer = 0;
+            
+            _beatsPerMinute = value;
+        }
+
         private void BeatDetection()
         {
             _beatInterval = Constants.General.TIME_MINUTE / _beatsPerMinute;

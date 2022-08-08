@@ -38,15 +38,39 @@ MonoBehaviour:
     m_RotationOrder: 4
   _arrowsBaseSpeed: 10
   _secondError: 0.26
+  _bpm: 25
   _music: {fileID: 8300000, guid: e71aa594fb1e3b846b5aa297b435d6d0, type: 3}
   _musicVolumeOutOfFocus: 0.25
   _nodes:
-  - StartSecond: 3
+  - Enemy: 0
+    StartSecond: 4
     BeatEffectStrength: 0
     ArrowType: 0
-  - StartSecond: 4
+  - Enemy: 0
+    StartSecond: 7
     BeatEffectStrength: 0
     ArrowType: 0
-  - StartSecond: 6
+  - Enemy: 0
+    StartSecond: 7
     BeatEffectStrength: 0
-    ArrowType: 0
+    ArrowType: 3
+  - Enemy: 0
+    StartSecond: 8
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 0
+    StartSecond: 8.4
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 1
+    StartSecond: 9
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 1
+    StartSecond: 9.5
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 1
+    StartSecond: 10
+    BeatEffectStrength: 0
+    ArrowType: 2

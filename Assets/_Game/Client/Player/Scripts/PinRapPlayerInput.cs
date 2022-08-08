@@ -15,6 +15,8 @@ namespace LOK1game
 
         #endregion
         
+        public Controller Controller { get; private set; }
+        
         //Temp keys, after we just make a mobile and pc input provider
         [SerializeField] private KeyCode _tryBeatLeftArrowKey = KeyCode.A;
         [SerializeField] private KeyCode _tryBeatUpArrowKey = KeyCode.W;
@@ -25,11 +27,18 @@ namespace LOK1game
         
         public void OnPocces(Controller sender)
         {
+            Controller = sender;
+
             OnPoccesed?.Invoke();
             
             //Maybe do a subscription to mobile input provider
         }
-        
+
+        public void OnUnpocces()
+        {
+            Controller = null;
+        }
+
         //Will called from PinRapPlayerController
         //Calls only when our player is under control
         public void OnInput(object sender)

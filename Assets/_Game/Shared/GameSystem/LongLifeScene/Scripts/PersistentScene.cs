@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -30,7 +29,16 @@ namespace LOK1game
             SceneManager.LoadScene(SCENE_NAME, LoadSceneMode.Additive);
             _loadedScene = SceneManager.GetSceneByName(SCENE_NAME);
             
+            SceneManager.sceneUnloaded += OnSceneUnloaded;
+
             IsLoaded = true;
+        }
+
+        private static void OnSceneUnloaded(Scene scene)
+        {
+            if(scene.name != SCENE_NAME) { return; }
+
+            IsLoaded = false;
         }
 
         public static void Unload()

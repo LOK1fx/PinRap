@@ -36,32 +36,91 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _arrowsBaseSpeed: 10
-  _secondError: 0.15
+  _arrowsBaseSpeed: 60
+  _secondError: 0.01
+  _cameraChangeFocusMarkers:
+  - Focus: 0
+    StartSecond: 0
+    IsPlayed: 1
+  - Focus: 2
+    StartSecond: 2
+    IsPlayed: 1
+  - Focus: 0
+    StartSecond: 7.5
+    IsPlayed: 1
+  _bpm: 75
+  _music: {fileID: 8300000, guid: cbd7519cb4e2e294c94ef725ac3f0f4a, type: 3}
   _musicVolumeOutOfFocus: 0.25
   _nodes:
-  - StartSecond: 3.2
-    BeatEffectStrength: 3
+  - Enemy: 0
+    StartSecond: 3.2
+    BeatEffectStrength: 0
     ArrowType: 0
-  - StartSecond: 3.7
-    BeatEffectStrength: 3
+  - Enemy: 0
+    StartSecond: 3.7
+    BeatEffectStrength: 0
     ArrowType: 1
-  - StartSecond: 5
-    BeatEffectStrength: 3
+  - Enemy: 0
+    StartSecond: 5
+    BeatEffectStrength: 0
     ArrowType: 2
-  - StartSecond: 6
-    BeatEffectStrength: 3
+  - Enemy: 0
+    StartSecond: 6
+    BeatEffectStrength: 0
     ArrowType: 3
-  - StartSecond: 7
-    BeatEffectStrength: 3
+  - Enemy: 0
+    StartSecond: 7
+    BeatEffectStrength: 0
     ArrowType: 0
-  - StartSecond: 8
-    BeatEffectStrength: 3
+  - Enemy: 0
+    StartSecond: 8
+    BeatEffectStrength: 0
     ArrowType: 0
-  - StartSecond: 9
-    BeatEffectStrength: 3
+  - Enemy: 0
+    StartSecond: 9
+    BeatEffectStrength: 0
     ArrowType: 0
-  - StartSecond: 51
-    BeatEffectStrength: 3
+  - Enemy: 1
+    StartSecond: 9.1
+    BeatEffectStrength: 0
     ArrowType: 0
-  _music: {fileID: 8300000, guid: cbd7519cb4e2e294c94ef725ac3f0f4a, type: 3}
+  - Enemy: 1
+    StartSecond: 9.2
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 1
+    StartSecond: 9.3
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 1
+    StartSecond: 9.4
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 1
+    StartSecond: 9.5
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 1
+    StartSecond: 9.6
+    BeatEffectStrength: 0
+    ArrowType: 0
+  - Enemy: 1
+    StartSecond: 9.53
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 1
+    StartSecond: 9.54
+    BeatEffectStrength: 0
+    ArrowType: 1
+  - Enemy: 1
+    StartSecond: 9.55
+    BeatEffectStrength: 0
+    ArrowType: 2
+  - Enemy: 1
+    StartSecond: 9.56
+    BeatEffectStrength: 0
+    ArrowType: 3
+  - Enemy: 0
+    StartSecond: 58
+    BeatEffectStrength: 1
+    ArrowType: 3
