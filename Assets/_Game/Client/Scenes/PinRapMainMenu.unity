@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 73651006}
   - component: {fileID: 73651005}
   m_Layer: 0
-  m_Name: FlytingTextUIController
+  m_Name: FlyingTextUIController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -299,7 +299,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPrefab: {fileID: 8056102977965993855, guid: 77ae03aeffe20d74f9240c6a766c6d7b, type: 3}
-  textSpeed: 5
+  textSpeed: 30
+  textWait: 5
 --- !u!4 &73651006
 Transform:
   m_ObjectHideFlags: 0
@@ -1222,6 +1223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2114824598}
   - component: {fileID: 2114824597}
+  - component: {fileID: 2114824599}
   m_Layer: 0
   m_Name: PlayerDataController
   m_TagString: Untagged
@@ -1256,3 +1258,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2114824599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114824596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eaccbaae0d4c11a5fa82741a6c8bb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
