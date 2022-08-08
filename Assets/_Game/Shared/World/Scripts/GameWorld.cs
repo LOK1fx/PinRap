@@ -34,19 +34,16 @@ namespace LOK1game.World
             Current = null;
         }
 
-        private void OnProjectContextInitialized(OnProjectContextInitializedEvent evt)
+        public static bool TryGetWorld<T>(out T world) where T : GameWorld
         {
-            var gameModeManager = evt.ProjectContext.GameModeManager;
-            
-            Debug.Log("OnProjectContext initialized");
-
-            if (gameModeManager.CurrentGameModeId == _standardGameModeOverride
-                && gameModeManager.CurrentGameModeId != EGameModeId.None || _standardGameModeOverride == EGameModeId.None)
+            if (Current != null && Current is T)
             {
-                return;
+                world = Current as T;
+                return true;
             }
 
-            gameModeManager.SetGameMode(_standardGameModeOverride);
+            world = null;
+            return false;
         }
 
         protected abstract void Initialize();

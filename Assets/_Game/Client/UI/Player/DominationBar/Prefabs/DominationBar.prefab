@@ -323,6 +323,8 @@ MonoBehaviour:
   _playerAvatar: {fileID: 4531775551326651576}
   _enemyAvatar: {fileID: 2829221127292988117}
   _bar: {fileID: 3884538673215290563}
+  _background: {fileID: 1788709261394664842}
+  _avatarsStepSize: 10
 --- !u!222 &5448859195770210124
 CanvasRenderer:
   m_ObjectHideFlags: 0

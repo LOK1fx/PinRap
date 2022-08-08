@@ -19,7 +19,8 @@ namespace LOK1game
         [Header("GameModes")]
         [SerializeField] private GameModeManager _gameModeManager;
         [SerializeField] private EGameModeId _standardGameModeId;
-        [SerializeField] private List<BaseGameMode> _gameModes = new List<BaseGameMode>();
+        [Header("Attention! In list, use only \nobjects with GM_ prefix!")]
+        [SerializeField] private List<GameObject> _gameModes = new List<GameObject>();
 
         #region Facade //Удобность и доступность всех компонентов
 
@@ -50,14 +51,21 @@ namespace LOK1game
             GameStateManager = new GameStateManager();
             ExperienceManager = new ExperienceManager();
             _gameModeManager = new GameModeManager();
+            
+            if (Application.isMobilePlatform)
+            {
+                Application.targetFrameRate = Screen.currentResolution.refreshRate;
+            }
 
             if(!PlayerConfig.IsInitialized)
                 PlayerConfig.Initialize();
 
             SetupGameSession(PlayerConfig.GetLaunchConfig());
 
-            foreach (var gameMode in _gameModes)
+            foreach (var gameModeObject in _gameModes)
             {
+                var gameMode = gameModeObject.GetComponent<IGameMode>();
+                
                 _gameModeManager.AddGameMode(gameMode.Id, gameMode);
             }
 

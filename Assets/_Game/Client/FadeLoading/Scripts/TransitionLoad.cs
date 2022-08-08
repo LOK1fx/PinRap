@@ -51,15 +51,13 @@ namespace LOK1game
             SetAllowSceneActivation(false);
         }
 
-        public static void LoadScene(string currentSceneName, string sceneToLoadName)
+        public static void LoadScene(string sceneToLoadName)
         {
             if(IsLoading) { return; }
-
-            SceneManager.UnloadSceneAsync(currentSceneName);
             
             IsLoading = true;
             _instance._animator.SetTrigger(TRIGGER_CLOSE);
-            _instance._loadingOperations.Add(SceneManager.LoadSceneAsync(sceneToLoadName, LoadSceneMode.Additive));
+            _instance._loadingOperations.Add(SceneManager.LoadSceneAsync(sceneToLoadName, LoadSceneMode.Single));
             
             SetAllowSceneActivation(false);
         }

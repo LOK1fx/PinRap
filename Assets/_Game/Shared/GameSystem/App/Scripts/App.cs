@@ -27,8 +27,6 @@ namespace LOK1game
             app.name = APP_GAME_OBJECT_NAME;
             app.InitializeComponents();
 
-            PersistentScene.Load();
-            
             DontDestroyOnLoad(app.gameObject);
         }
 
@@ -38,10 +36,7 @@ namespace LOK1game
         {
             EventManager.Clear();
             Debug.LogWarning("The EventManager has been cleared!");
-            
-            PersistentScene.Unload();
-            Debug.LogWarning("The persistent scene is unloaded!");
-            
+
             Application.Quit(exitCode);
             Debug.Log("Application quit!");
 

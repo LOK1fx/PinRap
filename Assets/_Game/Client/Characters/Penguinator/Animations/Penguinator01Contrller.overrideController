@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Penguinator01Contrller
+  m_Controller: {fileID: 9100000, guid: af1787ae6d3b6b04cb7b8e71769fa4a6, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 95b5ce0c743fec842a7ec15ebbd7a7cb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6a6b67a3b5b3f61408aa0e566836ea10, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d6598992348489d46bf32116da121011, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8fd9f5ba7b65b8e4280d9dbc89f38836, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 839abdc959614e845bb9d6c7a294842e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dc75c08a9058b744c8e5f2c1581019da, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 4d33f93d44db9794c9c18110213b1001, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: aa203f0f8857be7448fdda0081985536, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0167f0481b3ca4e40856efc73114dd68, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c2a771e441a956a4e9771a28358575b9, type: 2}

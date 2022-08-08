@@ -188,6 +188,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerType: 1
   _characterData: {fileID: 11400000, guid: 3442b0ee88a20dd4a9351351eac63da3, type: 2}
+  _damagedColor: {r: 1, g: 0, b: 0, a: 1}
+  _popupTextOffset: {x: 0, y: 1.9, z: 0}
 --- !u!114 &3011001083653666663
 MonoBehaviour:
   m_ObjectHideFlags: 0

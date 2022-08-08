@@ -1,3 +1,4 @@
+using System;
 using LOK1game.Game;
 using LOK1game.PinRap;
 using LOK1game.UI;
@@ -8,36 +9,59 @@ namespace LOK1game
     [RequireComponent(typeof(PinRapPlayerInput))]
     public class PinRapPlayer : PinRapCharacter
     {
-        private PinRapPlayerInput _input;
+        public event Action OnDie;
+        public PinRapPlayerInput Input { get; private set; }
 
-        private void Awake()
+        [SerializeField] private Vector3 _popupTextOffset;
+        
+        private bool _isDead;
+
+        protected override void Awake()
         {
-            _input = GetComponent<PinRapPlayerInput>();
+            base.Awake();
             
+            Input = GetComponent<PinRapPlayerInput>();
             SubscribeToEvents();
         }
 
         private void Start()
         {
             PlayerHud.Instance.DominationBar.SetPlayerCharacter(CharacterData);
+            PlayerHud.Instance.DominationBar.OnPointsChanged += OnDominationBarPointsChanged;
             
             LocalPlayer.Initialize(this);
         }
 
+        private void OnDominationBarPointsChanged(int points)
+        {
+            if(points > 0) { return; }
+            
+            MusicTimeline.Instance.StopPlayback();
+            
+            Kill();
+        }
+
         protected override void SubscribeToEvents()
         {
-            _input.OnLeftArrowPressed += OnOnLeftArrowPressed;
-            _input.OnDownArrowPressed += OnDownArrowPressed;
-            _input.OnUpArrowPressed += OnUpArrowPressed;
-            _input.OnRightArrowPressed += OnRightArrowPressed;
+            Input.OnLeftArrowPressed += OnOnLeftArrowPressed;
+            Input.OnDownArrowPressed += OnDownArrowPressed;
+            Input.OnUpArrowPressed += OnUpArrowPressed;
+            Input.OnRightArrowPressed += OnRightArrowPressed;
+        }
+
+        public void Kill()
+        {
+            _isDead = true;
+
+            TransitionLoad.LoadScene("PinRapMainMenu");
         }
 
         protected override void UnsubscribeFromEvents()
         {
-            _input.OnLeftArrowPressed -= OnOnLeftArrowPressed;
-            _input.OnDownArrowPressed -= OnDownArrowPressed;
-            _input.OnUpArrowPressed -= OnUpArrowPressed;
-            _input.OnRightArrowPressed -= OnRightArrowPressed;
+            Input.OnLeftArrowPressed -= OnOnLeftArrowPressed;
+            Input.OnDownArrowPressed -= OnDownArrowPressed;
+            Input.OnUpArrowPressed -= OnUpArrowPressed;
+            Input.OnRightArrowPressed -= OnRightArrowPressed;
         }
 
         private void OnRightArrowPressed()
@@ -62,14 +86,30 @@ namespace LOK1game
 
         private void TryBeatArrow(MusicArrowChecker checker)
         {
+            var popupPosition = transform.position + _popupTextOffset;
+            
             if (checker.IsArrowInbound(out var arrow))
             {
                 BeatArrow(arrow);
                 
                 PlayerHud.Instance.DominationBar.AddPoints(1);
+
+                var text = new PopupTextParams("1", 3f);
+                var popup = PopupText.Spawn<PopupText3D>(transform.position, text);
+                popup.SetPosition(popupPosition);
                 
                 if(arrow.BeatEffectStrength != EBeatEffectStrength.None)
                     ClientApp.ClientContext.BeatController.InstantiateBeat(arrow.BeatEffectStrength);
+            }
+            else
+            {
+                PlayerHud.Instance.DominationBar.RemovePoints(5);
+                
+                var text = new PopupTextParams("-5", 3f);
+                var popup = PopupText.Spawn<PopupText3D>(transform.position, text);
+                popup.SetPosition(popupPosition);
+                
+                TakeDamage(new Damage(5));
             }
         }
 
@@ -80,14 +120,16 @@ namespace LOK1game
 
         public override void OnInput(object sender)
         {
-            if(ProjectContext.GetGameStateManager().CurrentGameState == EGameState.Paused) { return; }
+            var currentGameState = ProjectContext.GetGameStateManager().CurrentGameState;
             
-            _input.OnInput(sender);
+            if(currentGameState == EGameState.Paused || _isDead || DialoguePanel.Instance.IsPlaying) { return; }
+            
+            Input.OnInput(sender);
         }
 
         public override void OnPocces(Controller sender)
         {
-            _input.OnPocces(sender);
+            Input.OnPocces(sender);
         }
     }
 }

@@ -53,7 +53,7 @@ namespace LOK1game
                 OnDestroy?.Invoke(this, true);
                 
                 //TODO: REWORK THIS SHIT!!!
-                PlayerHud.Instance.DominationBar.RemovePoints(1);
+                PlayerHud.Instance.DominationBar.RemovePoints(5);
                 
                 Destroy(gameObject);
             }
@@ -61,8 +61,10 @@ namespace LOK1game
 
         public void Beat()
         {
-            OnDestroy?.Invoke(this, false);
+            if(Observer != null)
+                Observer.Visual.Beat();
             
+            OnDestroy?.Invoke(this, false);
             Destroy(gameObject);
         }
 

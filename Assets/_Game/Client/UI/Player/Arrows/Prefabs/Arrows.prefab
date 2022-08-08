@@ -76,6 +76,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1398138708881506796}
+  - component: {fileID: 3556695152474944405}
   - component: {fileID: 8870800499916854257}
   - component: {fileID: 2687586024772626985}
   - component: {fileID: 2621607016989613670}
@@ -106,6 +107,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3556695152474944405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654852704902831752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca78ce951743d3848921a7b78b4f4725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _beatedColor: {r: 0, g: 1, b: 0.013636351, a: 1}
+  _speed: 12
 --- !u!114 &8870800499916854257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4131b3b64d77943408f1e658259d1750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiArrowBoundSize: 0.3
+  _uiArrowBoundSize: 0.25
 --- !u!222 &2687586024772626985
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -139,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 66b053fcbcff2014dadca6d299ff6839, type: 2}
   m_Color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -202,6 +217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3068428784201720947}
+  - component: {fileID: 560439584427593838}
   - component: {fileID: 6858529043502854532}
   - component: {fileID: 8339494279477971767}
   - component: {fileID: 6806400189947864958}
@@ -232,6 +248,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &560439584427593838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5403429945533498430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca78ce951743d3848921a7b78b4f4725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _beatedColor: {r: 1, g: 0, b: 0.679348, a: 1}
+  _speed: 12
 --- !u!114 &6858529043502854532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4131b3b64d77943408f1e658259d1750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiArrowBoundSize: 0.3
+  _uiArrowBoundSize: 0.25
 --- !u!222 &8339494279477971767
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -265,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 66b053fcbcff2014dadca6d299ff6839, type: 2}
   m_Color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -292,6 +322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1186039662517760083}
+  - component: {fileID: 2677001947495482364}
   - component: {fileID: 6664015695420124353}
   - component: {fileID: 3499081639425617284}
   - component: {fileID: 8696900834195154688}
@@ -322,6 +353,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2677001947495482364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5809026739937901896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca78ce951743d3848921a7b78b4f4725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _beatedColor: {r: 1, g: 0.5039347, b: 0, a: 1}
+  _speed: 12
 --- !u!114 &6664015695420124353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4131b3b64d77943408f1e658259d1750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiArrowBoundSize: 0.3
+  _uiArrowBoundSize: 0.25
 --- !u!222 &3499081639425617284
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -355,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 66b053fcbcff2014dadca6d299ff6839, type: 2}
   m_Color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -382,6 +427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1558164422258463012}
+  - component: {fileID: 2180229096263927241}
   - component: {fileID: 6669364545003199156}
   - component: {fileID: 2167082031403333671}
   - component: {fileID: 6564518457027479905}
@@ -412,6 +458,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2180229096263927241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7180306644652811120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca78ce951743d3848921a7b78b4f4725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _beatedColor: {r: 0, g: 0.49324083, b: 1, a: 1}
+  _speed: 12
 --- !u!114 &6669364545003199156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4131b3b64d77943408f1e658259d1750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiArrowBoundSize: 0.3
+  _uiArrowBoundSize: 0.25
 --- !u!222 &2167082031403333671
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -445,7 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 66b053fcbcff2014dadca6d299ff6839, type: 2}
   m_Color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}

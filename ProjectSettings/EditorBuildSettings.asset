@@ -26,4 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Client/Scenes/PinRapMapEditor.unity
     guid: 40a772be723f157469a8bd42c3d4396c
+  - enabled: 1
+    path: Assets/_Game/Client/Scenes/Level01_phase01.unity
+    guid: 83d58cb7ff63c4447a7f74ac467cb2cb
+  - enabled: 1
+    path: Assets/_Game/Client/Scenes/Level01_phase02.unity
+    guid: 181dd686f8bd6ca40b1c0be8b2fef209
+  - enabled: 1
+    path: Assets/_Game/Client/Scenes/PinRapTutorial.unity
+    guid: e59e5df51f19a8646b1389f488a6f278
   m_configObjects: {}

@@ -4,11 +4,18 @@ using UnityEngine;
 
 namespace LOK1game
 {
+    [RequireComponent(typeof(MusicArrowCheckerVisual))]
     public class MusicArrowChecker : MonoBehaviour
     {
+        public MusicArrowCheckerVisual Visual { get; private set; }
+        
         [SerializeField] private float _uiArrowBoundSize = 0.3f;
-
         private readonly List<MusicArrow> _arrowsToCheck = new List<MusicArrow>();
+
+        private void Awake()
+        {
+            Visual = GetComponent<MusicArrowCheckerVisual>();
+        }
 
         public bool IsArrowInbound(out MusicArrow boundArrow)
         {
@@ -21,7 +28,7 @@ namespace LOK1game
                 if (distance <= _uiArrowBoundSize)
                 {
                     boundArrow = arrow;
-
+                    
                     return true;
                 }
             }

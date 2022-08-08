@@ -39,6 +39,26 @@ namespace LOK1game
             Controller = null;
         }
 
+        public void PressLeft()
+        {
+            OnLeftArrowPressed?.Invoke();
+        }
+
+        public void PressUp()
+        {
+            OnUpArrowPressed?.Invoke();
+        }
+
+        public void PressDown()
+        {
+            OnDownArrowPressed?.Invoke();
+        }
+
+        public void PressRight()
+        {
+            OnRightArrowPressed?.Invoke();
+        }
+
         //Will called from PinRapPlayerController
         //Calls only when our player is under control
         public void OnInput(object sender)

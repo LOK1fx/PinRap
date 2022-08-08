@@ -39,8 +39,7 @@ namespace LOK1game.Game
         public override IEnumerator OnEnd()
         {
             State = EGameModeState.Ending;
-
-            App.ProjectContext.GameStateManager.SetState(EGameState.Gameplay);
+            
             yield return DestroyAllGameModeObjects();
 
             State = EGameModeState.Ended;

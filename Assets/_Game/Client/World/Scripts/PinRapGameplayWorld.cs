@@ -10,6 +10,10 @@ namespace LOK1game.PinRap.World
     [RequireComponent(typeof(WorldEnemy))]
     public class PinRapGameplayWorld : GameWorld
     {
+        public MusicData MusicData => _musicData;
+        
+        [SerializeField] private MusicData _musicData;
+        
         protected override void Initialize()
         {
 #if UNITY_EDITOR

@@ -1,21 +1,22 @@
-using System;
 using System.Collections;
 using Ink.Runtime;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace LOK1game
 {
+    [RequireComponent(typeof(AudioSource))]
     public class DialoguePanel : MonoBehaviour
     {
-        public event Action DialogueEntered;
+        public UnityEvent DialogueEntered;
+        public UnityEvent DialogueEnded;
+        
         public static DialoguePanel Instance { get; private set; }
 
         public bool IsPlaying { get; private set; }
 
-        [SerializeField] private float _typingSpeed = 0.1f;
-        
         [Space]
         [SerializeField] private GameObject _panel;
         [SerializeField] private TextMeshProUGUI _text;
@@ -24,14 +25,22 @@ namespace LOK1game
         
         [Header("Character preview")]
         [SerializeField] private Image _speakerCharacter;
+        
+        [Header("Typing effect")]
+        [SerializeField] private float _typingSpeed = 0.1f;
+        [SerializeField] private AudioClip _typeClip;
+        [SerializeField] private AudioClip _continuieClip;
+        
+        private AudioSource _audio;
+        private Coroutine _displayLineRoutine;
 
         private void Awake()
         {
             if(Instance != null)
                 Destroy(gameObject);
-            
             Instance = this;
             
+            _audio = GetComponent<AudioSource>();
             IsPlaying = false;
             _panel.SetActive(false);
             _speakerCharacter.gameObject.SetActive(false);
@@ -44,9 +53,15 @@ namespace LOK1game
 
         private void Update()
         {
-            if(Input.GetButtonDown("Jump") && IsPlaying)
-                if(_currentStory != null)
+            if (Input.GetButtonDown("Jump") && IsPlaying)
+            {
+                if (_currentStory != null)
+                {
+                    _audio.PlayOneShot(_continuieClip);
+
                     ContinueStory();
+                }
+            }
         }
 
         public void EnterDialogue(TextAsset inkJson, CharacterData speaker)
@@ -65,8 +80,11 @@ namespace LOK1game
             _currentStory = new Story(inkJson.text);
             IsPlaying = true;
             _panel.SetActive(true);
+            _audio.volume = 1f;
 
             ContinueStory();
+            
+            DialogueEntered?.Invoke();
         }
 
         private void ExitDialogue()
@@ -75,15 +93,20 @@ namespace LOK1game
             IsPlaying = false;
             _panel.SetActive(false);
             _speakerCharacter.gameObject.SetActive(false);
+            _audio.Stop();
+            _audio.volume = 0f;
+            
+            DialogueEnded?.Invoke();
         }
 
-        private void ContinueStory()
+        public void ContinueStory()
         {
             if (_currentStory.canContinue)
             {
-                _text.text = _currentStory.Continue();
+                if (_displayLineRoutine != null)
+                    StopCoroutine(_displayLineRoutine);
                 
-                DialogueEntered?.Invoke();
+                _displayLineRoutine = StartCoroutine(DisplayLineRoutine(_currentStory.Continue()));
             }
             else
             {
@@ -93,9 +116,12 @@ namespace LOK1game
 
         private IEnumerator DisplayLineRoutine(string text)
         {
+            _text.text = "";
+            
             foreach (var character in text.ToCharArray())
             {
                 _text.text += character;
+                _audio.PlayOneShot(_typeClip);
 
                 yield return new WaitForSeconds(_typingSpeed);
             }

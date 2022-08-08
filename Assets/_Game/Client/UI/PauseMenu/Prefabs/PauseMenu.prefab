@@ -461,10 +461,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2626900374905742815, guid: cf1e31ff69d0b404b8412a6c36aab0cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2626900374905742815, guid: cf1e31ff69d0b404b8412a6c36aab0cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626900374905742815, guid: cf1e31ff69d0b404b8412a6c36aab0cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2626900374905742815, guid: cf1e31ff69d0b404b8412a6c36aab0cf, type: 3}
@@ -472,7 +476,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6985757134050849983}
     - target: {fileID: 2626900374905742815, guid: cf1e31ff69d0b404b8412a6c36aab0cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 3162853367575080497}
+    - target: {fileID: 2626900374905742815, guid: cf1e31ff69d0b404b8412a6c36aab0cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626900374905742815, guid: cf1e31ff69d0b404b8412a6c36aab0cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2626900374905742815, guid: cf1e31ff69d0b404b8412a6c36aab0cf, type: 3}
@@ -480,11 +492,23 @@ PrefabInstance:
       value: ChangeLevel
       objectReference: {fileID: 0}
     - target: {fileID: 2626900374905742815, guid: cf1e31ff69d0b404b8412a6c36aab0cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626900374905742815, guid: cf1e31ff69d0b404b8412a6c36aab0cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: LOK1game.LevelChanger, LOK1game.Client
       objectReference: {fileID: 0}
     - target: {fileID: 2626900374905742815, guid: cf1e31ff69d0b404b8412a6c36aab0cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: LOK1game.PauseMenu, LOK1game.Client
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626900374905742815, guid: cf1e31ff69d0b404b8412a6c36aab0cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626900374905742815, guid: cf1e31ff69d0b404b8412a6c36aab0cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3092521316172862166, guid: cf1e31ff69d0b404b8412a6c36aab0cf, type: 3}
