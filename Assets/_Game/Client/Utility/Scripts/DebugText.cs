@@ -8,7 +8,7 @@ namespace LOK1game.Editor
         public string Text;
         public Vector3 PositionOffset;
         
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
 
         private void OnDrawGizmos()
         {

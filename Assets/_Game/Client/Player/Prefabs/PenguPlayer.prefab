@@ -186,8 +186,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3e6c9c084184846adb8ff195d5f3c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dataLayers: []
   _playerType: 1
   _characterData: {fileID: 11400000, guid: 3442b0ee88a20dd4a9351351eac63da3, type: 2}
+  _resetColorsDelay: 0.45
   _damagedColor: {r: 1, g: 0, b: 0, a: 1}
   _popupTextOffset: {x: 0, y: 1.9, z: 0}
 --- !u!114 &3011001083653666663
