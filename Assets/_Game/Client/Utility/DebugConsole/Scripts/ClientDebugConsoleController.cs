@@ -13,7 +13,6 @@ namespace LOK1game.DebugTools
 
         #region Commands
 
-        private static DebugConsoleCommand _startMusicTimelinePlaybackCommand;
         private static DebugConsoleCommand _stopMusicTimelinePlaybackCommand;
         
         private static DebugConsoleCommand _instantiateBeatEffectCommand;
@@ -49,7 +48,6 @@ namespace LOK1game.DebugTools
         {
             _commands = new List<DebugConsoleCommandBase>()
             {
-                _startMusicTimelinePlaybackCommand,
                 _stopMusicTimelinePlaybackCommand,
                 _instantiateBeatEffectCommand,
                 _instantiateBeatCommand,
@@ -69,13 +67,6 @@ namespace LOK1game.DebugTools
 
         private void InitializeCommands()
         {
-            _startMusicTimelinePlaybackCommand = new DebugConsoleCommand("cl_music_timeline_start", "",
-                "cl_music_timeline_start",
-                () =>
-                {
-                    if(MusicTimeline.Instance != null)
-                        MusicTimeline.Instance.StartPlayback(ClientApp.ClientContext.MusicDatabase.AllMusicData[0]);
-                });
             _stopMusicTimelinePlaybackCommand = new DebugConsoleCommand("cl_music_timeline_stop", "",
                 "cl_music_timeline_stop",
                 () =>

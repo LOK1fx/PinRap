@@ -8,11 +8,8 @@ namespace LOK1game
     public class ClientContext : Context
     {
         public event Action OnInitialized;
-
-        private const string MUSIC_DATABASE_PATH = "MainMusicDatabase";
-        
+    
         public BeatController BeatController { get; private set; }
-        public MusicDatabase MusicDatabase { get; private set; }
         public PostProcessingController PostProcessingController { get; private set; }
 
         [SerializeField] private TransitionLoad _loadingScreenPrefab;
@@ -20,7 +17,6 @@ namespace LOK1game
 
         public override void Initialize()
         {
-            MusicDatabase = Resources.Load<MusicDatabase>(MUSIC_DATABASE_PATH);
             BeatController = new BeatController();
             
             PostProcessingController = new PostProcessingController();
