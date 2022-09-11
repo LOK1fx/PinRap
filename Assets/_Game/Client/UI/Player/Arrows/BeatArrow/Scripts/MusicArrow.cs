@@ -13,13 +13,11 @@ namespace LOK1game
         public event ArrowDestroyed OnDestroy;
         
         public MusicArrowChecker Observer { get; private set; }
-        public EBeatEffectStrength BeatEffectStrength => _beatEffectStrength;
+        public EBeatEffectStrength BeatEffectStrength { get; private set; } = EBeatEffectStrength.Weak;
         public EArrowType Type { get; private set; }
         
         [SerializeField] private float _destroyHeight;
         [SerializeField] private float _moveSpeed;
-        
-        private EBeatEffectStrength _beatEffectStrength = EBeatEffectStrength.Weak;
         private bool _isPaused;
 
         private void Awake()
@@ -75,7 +73,7 @@ namespace LOK1game
 
         public void Setup(EBeatEffectStrength effectStrength, EArrowType type, float moveSpeed)
         {
-            _beatEffectStrength = effectStrength;
+            BeatEffectStrength = effectStrength;
             _moveSpeed = moveSpeed;
             Type = type;
         }
