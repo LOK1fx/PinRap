@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using LOK1game.Game.Events;
 using UnityEngine;
 
 namespace LOK1game.World
@@ -15,7 +13,7 @@ namespace LOK1game.World
         {
             Current = this;
 
-            var gameModeManager = ProjectContext.GetGameModeManager();
+            var gameModeManager = App.ProjectContext.GameModeManager;
 
             if (_standardGameModeOverride != EGameModeId.None)
             {

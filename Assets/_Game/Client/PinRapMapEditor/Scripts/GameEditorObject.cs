@@ -31,7 +31,6 @@ namespace LOK1game
                 return false;
 
             Hooked = true;
-
             Updated?.Invoke();
 
             return true;

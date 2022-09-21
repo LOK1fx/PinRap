@@ -13,7 +13,6 @@ namespace LOK1game
         public PinRapPlayerInput Input { get; private set; }
 
         [SerializeField] private Vector3 _popupTextOffset;
-        
         private bool _isDead;
 
         protected override void Awake()
@@ -32,23 +31,6 @@ namespace LOK1game
             LocalPlayer.Initialize(this);
         }
 
-        private void OnDominationBarPointsChanged(int points)
-        {
-            if(points > 0) { return; }
-            
-            MusicTimeline.Instance.StopPlayback();
-            
-            Kill();
-        }
-
-        protected override void SubscribeToEvents()
-        {
-            Input.OnLeftArrowPressed += OnOnLeftArrowPressed;
-            Input.OnDownArrowPressed += OnDownArrowPressed;
-            Input.OnUpArrowPressed += OnUpArrowPressed;
-            Input.OnRightArrowPressed += OnRightArrowPressed;
-        }
-
         public void Kill()
         {
             _isDead = true;
@@ -56,12 +38,19 @@ namespace LOK1game
             TransitionLoad.LoadScene("PinRapMainMenu");
         }
 
-        protected override void UnsubscribeFromEvents()
+        public override void OnPocces(Controller sender)
         {
-            Input.OnLeftArrowPressed -= OnOnLeftArrowPressed;
-            Input.OnDownArrowPressed -= OnDownArrowPressed;
-            Input.OnUpArrowPressed -= OnUpArrowPressed;
-            Input.OnRightArrowPressed -= OnRightArrowPressed;
+            Input.OnPocces(sender);
+        }
+
+        public override void OnInput(object sender)
+        {
+            var currentGameState = GetProjectContext().GameStateManager.CurrentGameState;
+
+            if (currentGameState == EGameState.Paused || _isDead || DialoguePanel.Instance.IsPlaying)
+                return;
+
+            Input.OnInput(sender);
         }
 
         private void OnRightArrowPressed()
@@ -87,30 +76,37 @@ namespace LOK1game
         private void TryBeatArrow(MusicArrowChecker checker)
         {
             var popupPosition = transform.position + _popupTextOffset;
-            
+            var popupText = new PopupTextParams("None", Color.white);
+
             if (checker.IsArrowInbound(out var arrow))
             {
-                BeatArrow(arrow);
-                
                 PlayerHud.Instance.DominationBar.AddPoints(1);
+                popupText = new PopupTextParams("1", 3f);
 
-                var text = new PopupTextParams("1", 3f);
-                var popup = PopupText.Spawn<PopupText3D>(transform.position, text);
-                popup.SetPosition(popupPosition);
-                
-                if(arrow.BeatEffectStrength != EBeatEffectStrength.None)
+                BeatArrow(arrow);
+
+                if (arrow.BeatEffectStrength != EBeatEffectStrength.None)
                     ClientApp.ClientContext.BeatController.InstantiateBeat(arrow.BeatEffectStrength);
             }
             else
             {
                 PlayerHud.Instance.DominationBar.RemovePoints(5);
-                
-                var text = new PopupTextParams("-5", 3f);
-                var popup = PopupText.Spawn<PopupText3D>(transform.position, text);
-                popup.SetPosition(popupPosition);
-                
+                popupText = new PopupTextParams("-5", 3f);
+
                 TakeDamage(new Damage(5));
             }
+
+            var popup = PopupText.Spawn<PopupText3D>(transform.position, popupText);
+            popup.SetPosition(popupPosition);
+        }
+
+        private void OnDominationBarPointsChanged(int points)
+        {
+            if (points > 0) { return; }
+
+            MusicTimeline.Instance.StopPlayback();
+
+            Kill();
         }
 
         private UIArrowSpawner GetArrowSpawner()
@@ -118,18 +114,20 @@ namespace LOK1game
             return PlayerHud.Instance.PlayerArrowSpawner;
         }
 
-        public override void OnInput(object sender)
+        protected override void SubscribeToEvents()
         {
-            var currentGameState = ProjectContext.GetGameStateManager().CurrentGameState;
-            
-            if(currentGameState == EGameState.Paused || _isDead || DialoguePanel.Instance.IsPlaying) { return; }
-            
-            Input.OnInput(sender);
+            Input.OnLeftArrowPressed += OnOnLeftArrowPressed;
+            Input.OnDownArrowPressed += OnDownArrowPressed;
+            Input.OnUpArrowPressed += OnUpArrowPressed;
+            Input.OnRightArrowPressed += OnRightArrowPressed;
         }
 
-        public override void OnPocces(Controller sender)
+        protected override void UnsubscribeFromEvents()
         {
-            Input.OnPocces(sender);
+            Input.OnLeftArrowPressed -= OnOnLeftArrowPressed;
+            Input.OnDownArrowPressed -= OnDownArrowPressed;
+            Input.OnUpArrowPressed -= OnUpArrowPressed;
+            Input.OnRightArrowPressed -= OnRightArrowPressed;
         }
     }
 }

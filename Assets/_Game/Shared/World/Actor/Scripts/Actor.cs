@@ -1,5 +1,4 @@
 using UnityEngine;
-using LOK1game.SDK;
 
 namespace LOK1game
 {
@@ -13,6 +12,11 @@ namespace LOK1game
         protected virtual void UnsubscribeFromEvents()
         {
 
+        }
+
+        protected ProjectContext GetProjectContext()
+        {
+            return App.ProjectContext;
         }
     }
 }

@@ -5,7 +5,6 @@ namespace LOK1game.PinRap
     public static class LocalPlayer
     {
         public static Camera Camera { get; private set; }
-        public static Vector3 Position => _player.transform.position;
         public static PinRapPlayerInput Input { get; private set; }
         public static PlayerController Controller { get; private set; }
 

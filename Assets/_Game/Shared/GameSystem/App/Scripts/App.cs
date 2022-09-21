@@ -49,6 +49,9 @@ namespace LOK1game
 
         private void InitializeComponents()
         {
+            if (Application.isMobilePlatform)
+                Application.targetFrameRate = Screen.currentResolution.refreshRate;
+
             ProjectContext = _projectContext;
             ProjectContext.Initialize();
         }

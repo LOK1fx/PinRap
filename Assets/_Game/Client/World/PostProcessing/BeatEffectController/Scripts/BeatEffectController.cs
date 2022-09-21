@@ -33,8 +33,6 @@ namespace LOK1game
             if(strength == EBeatEffectStrength.None) { return; }
             
             _volume.weight = 1f / (int)strength;
-
-            Debug.Log(_volume.weight);
         }
     }
 
