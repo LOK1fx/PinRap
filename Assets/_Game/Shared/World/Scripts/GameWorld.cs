@@ -32,6 +32,14 @@ namespace LOK1game.World
             Current = null;
         }
 
+        public static T GetWorld<T>() where T : GameWorld
+        {
+            if (TryGetWorld(out T world))
+                return world;
+
+            throw new System.InvalidCastException($"Where are no active {nameof(T)} world");
+        }
+
         public static bool TryGetWorld<T>(out T world) where T : GameWorld
         {
             if (Current != null && Current is T)

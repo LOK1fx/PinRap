@@ -1,7 +1,10 @@
 using System;
 using LOK1game.Game;
+using LOK1game.World;
 using LOK1game.UI;
 using UnityEngine;
+using LOK1game.PinRap.World;
+using LOK1game.PinRap;
 
 namespace LOK1game
 {
@@ -18,6 +21,7 @@ namespace LOK1game
         
         [SerializeField] private float _destroyHeight;
         [SerializeField] private float _moveSpeed;
+
         private bool _isPaused;
 
         private void Awake()
@@ -49,10 +53,9 @@ namespace LOK1game
             if (transform.localPosition.y > _destroyHeight)
             {
                 OnDestroy?.Invoke(this, true);
-                
-                //TODO: REWORK THIS SHIT!!!
-                PlayerHud.Instance.DominationBar.RemovePoints(5);
-                
+
+                LocalPlayer.RemovePoints(); //!!!
+
                 Destroy(gameObject);
             }
         }

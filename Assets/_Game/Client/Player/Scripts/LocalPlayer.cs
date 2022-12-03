@@ -1,3 +1,4 @@
+using LOK1game.PinRap.World;
 using UnityEngine;
 
 namespace LOK1game.PinRap
@@ -9,19 +10,37 @@ namespace LOK1game.PinRap
         public static PlayerController Controller { get; private set; }
 
         private static PinRapPlayer _player;
+        private static PinRapGameplayWorld _world;
 
-        public static void Initialize(PinRapPlayer player)
+        public static void Initialize(PinRapPlayer player, Controller controller, PinRapGameplayWorld world)
         {
             _player = player;
-            
+            _world = world;
+
+            Controller = controller as PlayerController;
+            Controller.Points = _world.LevelConfigData.StartPlayerPoints;
+
             Input = _player.Input;
-            Controller = _player.Controller as PlayerController;
             Camera = Camera.main;
         }
 
-        public static void Kill()
+        public static void AddPoints()
         {
-            _player.Kill();
+            Controller.Points += _world.LevelConfigData.EarnPoints;
+
+            RefreshPoints();
+        }
+
+        public static void RemovePoints()
+        {
+            Controller.Points -= _world.LevelConfigData.LosedPoints;
+
+            RefreshPoints();
+        }
+
+        private static void RefreshPoints()
+        {
+            _player.PointsChanged();
         }
     }
 }

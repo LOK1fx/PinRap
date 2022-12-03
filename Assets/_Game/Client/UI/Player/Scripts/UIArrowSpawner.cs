@@ -56,17 +56,16 @@ namespace LOK1game.UI
             var nextPosition = new Vector3(uiArrowTransform.position.x, arrowsSpawnPoint.position.y,
                 uiArrowTransform.position.z); 
             
-            CreateArrow(arrowPrefab, nextPosition, GetChecker(type), beatEffectStrength, type, moveSpeed);
+            CreateArrow(arrowPrefab, nextPosition, GetChecker(type), new ArrowData(type, beatEffectStrength, moveSpeed));
         }
 
         //TODO: Rework this shit
-        private void CreateArrow(MusicArrow prefab, Vector3 spawnPosition, MusicArrowChecker checker,
-            EBeatEffectStrength strength, EArrowType type, float moveSpeed)
+        private void CreateArrow(MusicArrow prefab, Vector3 spawnPosition, MusicArrowChecker checker, ArrowData arrowData)
         {
             var arrow = Instantiate(prefab, transform);
             
             arrow.transform.position = spawnPosition;
-            arrow.Setup(strength, type, moveSpeed);
+            arrow.Setup(arrowData.Strength, arrowData.Type, arrowData.Speed);
             arrow.SetObserver(checker);
             arrow.OnDestroy += ArrowOnDestroyed;
             

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using LOK1game.Game;
 using UnityEngine;
 using LOK1game.Tools;
+using System;
 
 namespace LOK1game.PinRap.Game
 {
+    [Obsolete]
     public class PinRapTutorialGameMode : BaseGameMode
     {
         [Space]

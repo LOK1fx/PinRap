@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using LOK1game.PinRap;
 using LOK1game.UI;
 using UnityEngine;
@@ -7,6 +8,8 @@ namespace LOK1game
 {
     public class PinRapEnemy : PinRapCharacter
     {
+        public event Action OnSuccesfullBeat;
+
         [Header("PinRapEnemy: dialogues")]
         [SerializeField] private TextAsset _startDialogue;
         [SerializeField] private float _startDialogueDelay = 1f;
@@ -18,8 +21,6 @@ namespace LOK1game
 
         private void Start()
         {
-            PlayerHud.Instance.DominationBar.SetEnemyCharacter(CharacterData);
-
             if (_startDialogue != null)
             {
                 if(_currentDialogueRoutine != null)
@@ -88,6 +89,8 @@ namespace LOK1game
             if (checker.IsArrowInbound(out var arrow))
             {
                 BeatArrow(arrow);
+
+                OnSuccesfullBeat?.Invoke();
             }
         }
     }

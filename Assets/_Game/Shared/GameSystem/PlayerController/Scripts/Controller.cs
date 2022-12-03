@@ -28,16 +28,21 @@ namespace LOK1game
             return controller;
         }
 
+        public static T GetController<T>() where T : Controller
+        {
+            if (TryGetController(out T controller))
+                return controller;
+
+            throw new InvalidCastException($"Where are no {nameof(T)} controller registred");
+        }
+
         public static bool TryGetController<T>(out T foundController) where T : Controller
         {
-            foreach (var controller in _controllers.OfType<T>())
-            {
-                foundController = controller;
-                return true;
-            }
+            var controller = FindObjectOfType<T>();
 
-            foundController = null;
-            return false;
+            controller.TryGetComponent(out foundController);
+
+            return true;
         }
         
         public void SetControlledPawn(IPawn pawn)

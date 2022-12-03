@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using LOK1game.PinRap.World;
 using LOK1game.UI;
+using LOK1game.World;
 using UnityEngine;
 
 namespace LOK1game.PinRap
@@ -8,8 +10,10 @@ namespace LOK1game.PinRap
     public abstract class PinRapCharacter : Pawn, IDamagable
     {
         public event Action<EArrowType> OnBeatArrow;
+
         public CharacterData CharacterData => _characterData;
-        
+        public PinRapGameplayWorld World { get; private set; }
+
         [SerializeField] private CharacterData _characterData;
 
         [Header("Damage")]
@@ -22,6 +26,8 @@ namespace LOK1game.PinRap
 
         protected virtual void Awake()
         {
+            World = GameWorld.GetWorld<PinRapGameplayWorld>();
+
             _allCharacterSprites = GetComponentsInChildren<SpriteRenderer>();
             _defaultSpritesColors = new Color[_allCharacterSprites.Length];
 

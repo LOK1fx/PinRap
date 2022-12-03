@@ -10,9 +10,12 @@ namespace LOK1game
     public class PinRapPlayer : PinRapCharacter
     {
         public event Action OnDie;
+        public event Action OnPointsRefreshed;
+
         public PinRapPlayerInput Input { get; private set; }
 
         [SerializeField] private Vector3 _popupTextOffset;
+
         private bool _isDead;
 
         protected override void Awake()
@@ -21,14 +24,6 @@ namespace LOK1game
             
             Input = GetComponent<PinRapPlayerInput>();
             SubscribeToEvents();
-        }
-
-        private void Start()
-        {
-            PlayerHud.Instance.DominationBar.SetPlayerCharacter(CharacterData);
-            PlayerHud.Instance.DominationBar.OnPointsChanged += OnDominationBarPointsChanged;
-            
-            LocalPlayer.Initialize(this);
         }
 
         public void Kill()
@@ -40,6 +35,9 @@ namespace LOK1game
 
         public override void OnPocces(Controller sender)
         {
+            LocalPlayer.Initialize(this, sender, World);
+            LocalPlayer.Controller.Points = World.LevelConfigData.StartPlayerPoints;
+
             Input.OnPocces(sender);
         }
 
@@ -80,9 +78,10 @@ namespace LOK1game
 
             if (checker.IsArrowInbound(out var arrow))
             {
-                PlayerHud.Instance.DominationBar.AddPoints(1);
-                popupText = new PopupTextParams("1", 3f);
+                var earnPoints = World.LevelConfigData.EarnPoints;
+                popupText = new PopupTextParams(World.LevelConfigData.EarnPoints.ToString(), 3f);
 
+                LocalPlayer.AddPoints();
                 BeatArrow(arrow);
 
                 if (arrow.BeatEffectStrength != EBeatEffectStrength.None)
@@ -90,23 +89,29 @@ namespace LOK1game
             }
             else
             {
-                PlayerHud.Instance.DominationBar.RemovePoints(5);
-                popupText = new PopupTextParams("-5", 3f);
+                var losedPoints = World.LevelConfigData.LosedPoints;
+                popupText = new PopupTextParams($"-{losedPoints}", 3f, Color.red);
 
+                LocalPlayer.RemovePoints();
                 TakeDamage(new Damage(5));
             }
 
             var popup = PopupText.Spawn<PopupText3D>(transform.position, popupText);
             popup.SetPosition(popupPosition);
+
+            PointsChanged();
         }
 
-        private void OnDominationBarPointsChanged(int points)
+        public void PointsChanged()
         {
-            if (points > 0) { return; }
+            OnPointsRefreshed?.Invoke();
 
-            MusicTimeline.Instance.StopPlayback();
+            if (LocalPlayer.Controller.Points <= 0)
+            {
+                MusicTimeline.Instance.StopPlayback();
 
-            Kill();
+                Kill();
+            }
         }
 
         private UIArrowSpawner GetArrowSpawner()

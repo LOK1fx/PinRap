@@ -1,5 +1,6 @@
 using System.Collections;
 using LOK1game.PinRap;
+using LOK1game.UI;
 using UnityEngine;
 
 namespace LOK1game.Game
@@ -10,6 +11,8 @@ namespace LOK1game.Game
         [SerializeField] private BeatEffectController _beatController;
         [SerializeField] private PauseController _pauseController;
 
+        private IPlayerHud _playerHud;
+
         public override EGameModeId Id => EGameModeId.Default;
 
         public override IEnumerator OnStart()
@@ -17,16 +20,18 @@ namespace LOK1game.Game
             State = EGameModeState.Starting;
 
             SpawnGameModeObject(CameraPrefab);
-            SpawnGameModeObject(UiPrefab);
             SpawnGameModeObject(_pauseController.gameObject);
 
-            //So strange code
             var player = SpawnGameModeObject(PlayerPrefab.gameObject);
             player.transform.position = GetRandomSpawnPointPosition();
 
-            CreatePlayerController(player.GetComponent<Pawn>());
+            var playerController = CreatePlayerController(player.GetComponent<Pawn>());
+            var uiGameObject = SpawnGameModeObject(UiPrefab);
 
-            if(BeatEffectController.Instance == null)
+            _playerHud = uiGameObject.GetComponent<IPlayerHud>();
+            _playerHud.Bind(playerController, player.GetComponent<PinRapPlayer>());
+
+            if (BeatEffectController.Instance == null)
                 Instantiate(_beatController);
             
             EnemyManager.CreateEnemy(WorldEnemy.Instance.EnemyPrefab);
@@ -39,7 +44,9 @@ namespace LOK1game.Game
         public override IEnumerator OnEnd()
         {
             State = EGameModeState.Ending;
-            
+
+            _playerHud.Unbind();
+
             yield return DestroyAllGameModeObjects();
 
             State = EGameModeState.Ended;

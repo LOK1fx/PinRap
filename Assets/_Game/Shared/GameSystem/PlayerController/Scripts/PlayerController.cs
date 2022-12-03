@@ -2,6 +2,9 @@ namespace LOK1game
 {
     public class PlayerController : Controller
     {
+        public int Points;
+
+
         protected override void Awake()
         {
             
@@ -9,7 +12,8 @@ namespace LOK1game
 
         protected override void Update()
         {
-            ControlledPawn?.OnInput(this);
+            if(ControlledPawn != null)
+                ControlledPawn.OnInput(this);
         }
     }
 }

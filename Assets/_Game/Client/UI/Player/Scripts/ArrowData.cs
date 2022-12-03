@@ -7,5 +7,12 @@ namespace LOK1game
         public EArrowType Type;
         public EBeatEffectStrength Strength;
         public float Speed;
+
+        public ArrowData(EArrowType type, EBeatEffectStrength strength, float speed)
+        {
+            Type = type;
+            Strength = strength;
+            Speed = speed;
+        }
     }
 }

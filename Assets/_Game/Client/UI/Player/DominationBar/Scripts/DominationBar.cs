@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,8 +7,6 @@ namespace LOK1game.UI
     {
         private const int MAX_POINTS = 100;
         private const int MIN_POINTS = 0;
-
-        public event Action<int> OnPointsChanged;
         
         [SerializeField] private Image _playerAvatar;
         [SerializeField] private Image _enemyAvatar;
@@ -27,6 +24,16 @@ namespace LOK1game.UI
         {
             _playerAvatarTransform = _playerAvatar.GetComponent<RectTransform>();
             _enemyAvatarTransform = _enemyAvatar.GetComponent<RectTransform>();
+        }
+
+        public void SetPoints(int points)
+        {
+            var oldPoints = _currentPoints;
+
+            _currentPoints = points;
+
+            ClampPoints();
+            UpdateBar(oldPoints - _currentPoints);
         }
 
         public void AddPoints(int points)
@@ -63,7 +70,6 @@ namespace LOK1game.UI
         private void ClampPoints()
         {
             _currentPoints = Mathf.Clamp(_currentPoints, MIN_POINTS, MAX_POINTS);
-            OnPointsChanged?.Invoke(_currentPoints);
         }
 
         private void UpdateBar(int pointsDifference)

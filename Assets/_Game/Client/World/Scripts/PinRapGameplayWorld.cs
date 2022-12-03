@@ -11,9 +11,11 @@ namespace LOK1game.PinRap.World
     public class PinRapGameplayWorld : GameWorld
     {
         public MusicData MusicData => _musicData;
+        public LevelConfigData LevelConfigData => _levelConfigData;
         
         [SerializeField] private MusicData _musicData;
-        
+        [SerializeField] private LevelConfigData _levelConfigData;
+
         protected override void Initialize()
         {
 #if UNITY_EDITOR
