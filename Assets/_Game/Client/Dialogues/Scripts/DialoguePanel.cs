@@ -117,13 +117,27 @@ namespace LOK1game
         private IEnumerator DisplayLineRoutine(string text)
         {
             _text.text = "";
-            
+
+            var isAddingRichTextTag = false;
+
             foreach (var character in text.ToCharArray())
             {
-                _text.text += character;
-                _audio.PlayOneShot(_typeClip);
+                if (character == '<' || isAddingRichTextTag)
+                {
+                    isAddingRichTextTag = true;
 
-                yield return new WaitForSeconds(_typingSpeed);
+                    _text.text += character;
+
+                    if (character == '>')
+                        isAddingRichTextTag = false;
+                }
+                else
+                {
+                    _text.text += character;
+                    _audio.PlayOneShot(_typeClip);
+
+                    yield return new WaitForSeconds(_typingSpeed);
+                }
             }
         }
     }

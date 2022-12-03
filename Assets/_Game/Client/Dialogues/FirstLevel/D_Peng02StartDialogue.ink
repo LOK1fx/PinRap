@@ -7,5 +7,5 @@
 Стоп.
 Ты не победил меня!
 Я лишь <b>ошибся</b>.
-<color="red">РЕВАНШ!</color>
+<align="center"><size=350%><color="red">РЕВАНШ!</color><size=100%><align="left">
 -> END
