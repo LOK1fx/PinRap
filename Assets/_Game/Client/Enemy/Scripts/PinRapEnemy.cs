@@ -8,7 +8,7 @@ namespace LOK1game
 {
     public class PinRapEnemy : PinRapCharacter
     {
-        public event Action OnSuccesfullBeat;
+        public event Action<EArrowType> OnSuccesfullBeat;
 
         [Header("PinRapEnemy: dialogues")]
         [SerializeField] private TextAsset _startDialogue;
@@ -21,6 +21,8 @@ namespace LOK1game
 
         private void Start()
         {
+            PlayerHud.Instance.SetEnemyAvatar(CharacterData);
+
             if (_startDialogue != null)
             {
                 if(_currentDialogueRoutine != null)
@@ -90,7 +92,7 @@ namespace LOK1game
             {
                 BeatArrow(arrow);
 
-                OnSuccesfullBeat?.Invoke();
+                OnSuccesfullBeat?.Invoke(arrow.Type);
             }
         }
     }

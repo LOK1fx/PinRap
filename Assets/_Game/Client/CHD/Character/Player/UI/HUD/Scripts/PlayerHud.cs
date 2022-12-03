@@ -20,6 +20,7 @@ namespace LOK1game.UI
             _player = player;
 
             _player.OnPointsRefreshed += OnPlayerSuccesfullBeat;
+            _dominationBar.SetPlayerCharacter(_player.CharacterData);
         }
 
         public void Unbind()
@@ -27,9 +28,9 @@ namespace LOK1game.UI
             _player.OnPointsRefreshed -= OnPlayerSuccesfullBeat;
         }
 
-        public void Initialize()
+        public void SetEnemyAvatar(CharacterData data)
         {
-            _dominationBar.SetPlayerCharacter(_player.CharacterData);
+            _dominationBar.SetEnemyCharacter(data);
         }
 
         private void OnPlayerSuccesfullBeat()

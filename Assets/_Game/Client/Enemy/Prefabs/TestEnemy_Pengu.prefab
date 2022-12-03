@@ -176,6 +176,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerType: 2
   _characterData: {fileID: 11400000, guid: 5af69dfcb22360e40b7032b157d86a89, type: 2}
+  _resetColorsDelay: 0.45
+  _damagedColor: {r: 1, g: 0, b: 0, a: 1}
   _startDialogue: {fileID: 4900000, guid: 990c45b62116747498153fdf74e7d3d9, type: 3}
   _startDialogueDelay: 1
   _endDialogue: {fileID: 4900000, guid: 51de5ce4981d5e145874890e3f23d13f, type: 3}
@@ -195,3 +197,15 @@ MonoBehaviour:
   _onDownArrowBeated: {fileID: 0}
   _onUpArrowBeated: {fileID: 0}
   _onRightArrowBeated: {fileID: 0}
+--- !u!114 &302897453938817355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5732621104122874132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfd905217d48e845955854435dcd5c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

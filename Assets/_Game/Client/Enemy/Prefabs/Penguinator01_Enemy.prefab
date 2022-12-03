@@ -80,5 +80,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerType: 1
   _characterData: {fileID: 11400000, guid: e7abbb39a1f1415469808fb08cb1c992, type: 2}
+  _resetColorsDelay: 0.45
+  _damagedColor: {r: 1, g: 0, b: 0, a: 1}
   _startDialogue: {fileID: 4900000, guid: f2c938a3e43dc64419e010ee825ff659, type: 3}
   _startDialogueDelay: 1
+  _endDialogue: {fileID: 0}
+--- !u!114 &6697853236757878755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4533595588998251641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfd905217d48e845955854435dcd5c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

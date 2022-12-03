@@ -1,16 +1,10 @@
 using UnityEngine;
 
-namespace LOK1game
+namespace LOK1game.PinRap
 {
     [RequireComponent(typeof(PinRapPlayer), typeof(Animator))]
     public class PinRapPlayerAnimation : MonoBehaviour
     {
-        private const string ACTION_BEAT_LEFT = "Character_BeatLeft";
-        private const string ACTION_BEAT_UP = "Character_BeatUp";
-        private const string ACTION_BEAT_DOWN = "Character_BeatDown";
-        private const string ACTION_BEAT_RIGHT = "Character_BeatRight";
-        private const string ACTION_DIE = "Character_Die";
-        
         private Animator _animator;
         private PinRapPlayer _player;
 
@@ -28,7 +22,7 @@ namespace LOK1game
 
         private void OnDie()
         {
-            PlayAction(ACTION_DIE);
+            PlayAction(PinRapCharacterAnimationConstants.ACTION_DIE);
         }
 
         private void OnDestroy()
@@ -43,21 +37,21 @@ namespace LOK1game
 
         private void OnLeftArrowPressed()
         {
-            PlayAction(ACTION_BEAT_LEFT);
+            PlayAction(PinRapCharacterAnimationConstants.ACTION_BEAT_LEFT);
         }
         
         private void OnUpArrowPressed()
         {
-            PlayAction(ACTION_BEAT_UP);
+            PlayAction(PinRapCharacterAnimationConstants.ACTION_BEAT_UP);
         }
         
         private void OnDownArrowPressed()
         {
-            PlayAction(ACTION_BEAT_DOWN);
+            PlayAction(PinRapCharacterAnimationConstants.ACTION_BEAT_DOWN);
         }
         private void OnRightArrowPressed()
         {
-            PlayAction(ACTION_BEAT_RIGHT);
+            PlayAction(PinRapCharacterAnimationConstants.ACTION_BEAT_RIGHT);
         }
 
         private void PlayAction(string actionName)
