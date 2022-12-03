@@ -74,6 +74,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4233885361357333734, guid: 5a0cd44521984b44a8438f2b82320ce2, type: 3}
   m_PrefabInstance: {fileID: 684764277652429628}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2135169720086917473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693247696396074970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfd905217d48e845955854435dcd5c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7998923523960927921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,17 +103,5 @@ MonoBehaviour:
   _resetColorsDelay: 0.45
   _damagedColor: {r: 1, g: 0, b: 0, a: 1}
   _startDialogue: {fileID: 4900000, guid: 9faecc26203e3e046afe70eb88286a19, type: 3}
-  _startDialogueDelay: 1
-  _endDialogue: {fileID: 0}
---- !u!114 &2135169720086917473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3693247696396074970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bfd905217d48e845955854435dcd5c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _startDialogueDelay: 1.24
+  _endDialogue: {fileID: 4900000, guid: e8913ce3a9f90984c8ef9886ca25460b, type: 3}

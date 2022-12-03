@@ -84,7 +84,7 @@ MonoBehaviour:
   _damagedColor: {r: 1, g: 0, b: 0, a: 1}
   _startDialogue: {fileID: 4900000, guid: f2c938a3e43dc64419e010ee825ff659, type: 3}
   _startDialogueDelay: 1
-  _endDialogue: {fileID: 0}
+  _endDialogue: {fileID: 4900000, guid: 484564f901ae86249868483846a8e212, type: 3}
 --- !u!114 &6697853236757878755
 MonoBehaviour:
   m_ObjectHideFlags: 0
